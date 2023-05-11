@@ -1,0 +1,60 @@
+\documentclass{thesis}
+\input{preamble}
+% for german language type 'ngernman' as option for babel package in in preamble.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PDF SETTINGS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \hypersetup{hidelinks} % hides boxes around hyperlinks uncomment this with ctrl+shift+7
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\include{texs/pre/title}
+
+\pagenumbering{Roman}
+\include{texs/pre/abstract}
+
+\renewcommand{\baselinestretch}{0.8}
+\tableofcontents
+\renewcommand{\baselinestretch}{1.2}
+
+\normalsize
+% \setcounter{page}{1}
+
+\include{texs/pre/nomenclature}
+\printnomenclature
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+
+
+\include{texs/chapter1/chapter}
+\include{texs/chapter2/chapter}
+
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{geralpha}
+\bibliography{bibs/literatur}
+
+\appendix
+\include{texs/appendix/appendix}
+
+
+%table of figures
+%\clearpage
+%\listoffigures
+%\clearpage
+
+%empty page 
+% \thispagestyle{empty}
+% \cleardoublepage
+
+\end{document}
