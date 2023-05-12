@@ -13,7 +13,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}
-\LoadClass[a4paper,english,12pt,oneside, openright]{report} % Base class
+\LoadClass[a4paper,english,ngerman,12pt,oneside, openright]{report} % Base class
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PACKAGES REQUIRED FOR CLASS LAYOUT
@@ -22,7 +22,7 @@
 \RequirePackage{nomencl}
 \RequirePackage{caption}
 \RequirePackage{fancyhdr}
-\RequirePackage{listings} 
+\RequirePackage{listings}
 \RequirePackage{hyperref}
 \RequirePackage{subcaption}
 \RequirePackage{makeidx}
@@ -45,27 +45,27 @@
 
 \newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
 
-\pagestyle{fancy} 
+\pagestyle{fancy}
 \fancyhf{}
 \fancyhead[OR]{						 	% "O" steht f�r "odd", also ungerade Seiten; "L" steht f�r links
-	\color{black}
-	\changefont{pag}{m}{n}
-	\bfseries\leftmark
+    \color{black}
+    \changefont{pag}{m}{n}
+    \bfseries\leftmark
 }
 \fancyhead[EL]{ % "E" f�r "even", also gerade Seiten; "R" steht f�r rechts
-%\fancyhead[L]{
-	\color{black}
-	\changefont{pag}{m}{n}
-	\bfseries\rightmark
+    %\fancyhead[L]{
+    \color{black}
+    \changefont{pag}{m}{n}
+    \bfseries\rightmark
 }
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} 
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \renewcommand{\headrulewidth}{0.4pt}
 
-\fancyfoot[OR,EL]{			
-	\color{black}
-	\changefont{pag}{m}{n}
-	\bfseries\thepage
+\fancyfoot[OR,EL]{
+    \color{black}
+    \changefont{pag}{m}{n}
+    \bfseries\thepage
 }
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -76,13 +76,13 @@
 }
 
 \renewcommand{\headrule}{{\color{black}
-	\hrule width\headwidth height\headrulewidth 
-    \vskip-\headrulewidth}
+            \hrule width\headwidth height\headrulewidth
+            \vskip-\headrulewidth}
 }
 
 \renewcommand{\footrule}{{\color{black}
-	\hrule width\headwidth height\headrulewidth 
-    \vskip-\headrulewidth \vspace{2mm}}
+            \hrule width\headwidth height\headrulewidth
+            \vskip-\headrulewidth \vspace{2mm}}
 }
 
 % \hfuzz=0.1pt \vfuzz=0.1pt \hbadness=1000 \vbadness=1000 \tolerance=8000

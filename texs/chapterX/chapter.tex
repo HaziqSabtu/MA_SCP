@@ -1,18 +1,32 @@
 \chapter{Methodology}
 
 \section{MVC Pattern}
+\begin{itemize}
+	\item What is MVC?
+	\item What are the distinct responsibilities and roles of the Model, View, and Controller components in the MVC pattern?
+	\item What are the benefits of using MVC?
+\end{itemize}
+
+
 The Model-View-Controller (MVC) pattern is a software architectural pattern that separates an application into three interconnected components: the model, the view, and the controller. The model represents the data and logic of the application, the view displays the data to the user, and the controller handles user input and updates the model and view accordingly. This pattern promotes separation of concerns, modularity, and code reusability in software development. \cite{Verstehen19}
 
 \section{Design Patterns - Thread Pool}
+\begin{itemize}
+	\item What is a thread pool?
+	\item What are the benefits of using a thread pool?
+	\item What are the drawbacks of using a thread pool?
+\end{itemize}
+
+
 A thread pool is a software design pattern that manages a pool of worker threads to efficiently execute tasks. Instead of creating a new thread for each task, a thread pool reuses existing threads, minimizing the overhead of thread creation. It improves performance and resource utilization by limiting the number of concurrent threads and providing a queue to handle incoming tasks.\cite{Brownlee22}
 
-\chapter{Designing}
-\section{Requirement}
+\chapter{Requirements and Design}
+\section{Requirements}
 
 Must have:
 \begin{itemize}
 	\item Usability - Easy to use
-	\item performance - Fast processing by utilising multiple threads
+	\item Performance - Fast processing by utilising multiple threads
 	\item Responsiveness - Responsive GUI, avoid methods that block the GUI thread
 	\item Error Handling - Handle errors gracefully, avoid crashing the application
 	\item Scalability - For future development
@@ -25,14 +39,51 @@ Program flow and GUI design will be presented in a wireframe.
 
 * Flow of the program is not finalized, will be updated in the future
 
+\begin{itemize}
+	\item All panels involved in the program will be presented here
+	\item Flow of the program will be presented here.
+	\item Which panel comes before and after another panel will be presented here
+	\item What happens when the user clicks on a button will be presented here
+\end{itemize}
+
 \section{GUI Design}
 Design of the GUI will be presented here. Panels, Buttons, Textfields, etc.
 
-\chapter{GUI-Implementation}
+\begin{itemize}
+	\item Layout of the GUI will be defined here
+	\item What panels will be used will be defined here
+\end{itemize}
+
+\chapter{Solutions and Implementations}
+In this chapter, the solutions and implementations of the project will be presented.
 \section{Model}
-Implementation of the model
+Implementation of the Model
+
+\begin{itemize}
+	\item What is the Model?
+	\item What are the key responsibilities of the Model?
+	\item What is the primary purpose and responsibility of the Model component in the application's architecture?
+\end{itemize}
 \section{View}
-Implementation of the view
+Implementation of the View
+
+\begin{itemize}
+	\item What is the View?
+	\item What are the key responsibilities of the View?
+	\item How does the View handle the presentation and visualization of data to the user?
+	\item How does the View respond to user input and events, and how are these interactions managed?
+	\item What are the mechanisms for updating the View based on changes in the Model or instructions from the Controller?
+\end{itemize}
+
+\section{Controller}
+Implementation of the Controller
+
+\begin{itemize}
+	\item What is the Controller?
+	\item What are the key responsibilities of the Controller?
+	\item How does the Controller handle user input and events?
+	\item How does the Controller update the Model and View?
+\end{itemize}
 
 \chapter{Testing}
 \section{Unit Testing}
