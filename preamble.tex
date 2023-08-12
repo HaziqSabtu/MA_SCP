@@ -11,10 +11,10 @@
 \usepackage{bibgerm}
 % \usepackage{mathptmx} %Schriftart Times New Roman
 
-\usepackage{dsfont} 
+\usepackage{dsfont}
 
-\usepackage{setspace} 
-\onehalfspace 
+\usepackage{setspace}
+\onehalfspace
 
 
 \usepackage{caption}
@@ -22,7 +22,7 @@
 \usepackage{fancyhdr}
 
 \usepackage{amssymb}
-\usepackage{amsmath} 
+\usepackage{amsmath}
 \usepackage{amsfonts}
 
 \usepackage{makeidx}
@@ -63,11 +63,11 @@
 	bookmarksnumbered=true,				% Anzeige der Kapitelzahlen am Anfang der Namen der Lesezeichen
 	pdfstartpage=1,							% Seite, welche automatisch ge�ffnet werden soll
 	pdftitle={Titel},
-  % Titel des PDF-Dokuments
+	% Titel des PDF-Dokuments
 	pdfauthor={Autor},	% Autor(Innen) des PDF-Dokuments
 	pdfsubject={Betreff},	% Inhaltsbeschreibung des
 	pdfkeywords={Schl�sselw�rter},
-  % Stichwortangabe zum PDF-Dokument
+	% Stichwortangabe zum PDF-Dokument
 	breaklinks=true,							% erm�glicht einen Umbruch von URLs
 	colorlinks=true,							% Einf�rbung von Links
 	linkcolor=myBlue,							% Linkfarbe: blau
@@ -91,11 +91,15 @@
 \definecolor{myBlue2} {cmyk}{0.681,0.511,0,0.471}
 \definecolor{myTablehead} {cmyk}{0.57,0.19,0,0}
 
-\let\abbrev\nomenclature    
+\let\abbrev\nomenclature
 \renewcommand{\nomname}{List of Abbreviations}
 \setlength{\nomlabelwidth}{.3\hsize}
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \setlength{\nomitemsep}{-\parsep}
 \makenomenclature
 
+
+% box frame size
+\fboxsep=1pt
+\fboxrule=1pt
 

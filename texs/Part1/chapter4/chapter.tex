@@ -1,0 +1,199 @@
+\chapter{Embodiment Design}
+
+bla bla \dots
+
+intro
+
+\section{Basic Rules of Embodiment Design}
+\begin{itemize}
+    \item Clarity
+    \item Simplicity
+    \item Safety
+\end{itemize}
+
+\section{Guideline of embodiment design}
+\begin{itemize}
+    \item Design for ergonomics
+    \item Design for production
+\end{itemize}
+
+% https://www.ddd-imension.com/en/post/complete-design-guide-for-3d-printing
+
+% https://www.hubs.com/get/3d-printing-design-rules/
+
+
+\section{Preliminary Design Variant 2}
+This section delves into a detailed exploration of Solution Variant 2. Figure \ref{fig:preliminary_design_variant_2} shows the preliminary design variant 2 and different views and body measurement are shown in Figure \ref{fig:variant2_views}. The main attraction of this design is the emphasis on ergonomic form and user-friendly features. The device incorporates a sleek and aesthetically pleasing design with rounded edges and a lightweight build, making it easily portable and comfortable to hold for extended periods. With a thickness of 46 mm (Figure \ref{fig:variant2_right_view}), the device strikes a balance between being slim and accommodating the necessary components for optimal functionality .
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=5 cm]{texs/Part1/chapter4/image/v21.png}
+    \caption{Preliminary design variant 2}
+    \label{fig:preliminary_design_variant_2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[c]{0.65\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=4 cm]{texs/Part1/chapter4/image/v22.png}
+        \end{minipage}
+        \caption{Front View}
+        \label{fig:variant2_front_view}
+    \end{subfigure}
+    % \hfill
+    \begin{subfigure}[c]{0.25\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=4 cm]{texs/Part1/chapter4/image/v23.png}
+        \end{minipage}
+        \caption{Right View}
+        \label{fig:variant2_right_view}
+    \end{subfigure}
+    \caption{Views of preliminary design variant 2}
+    \label{fig:variant2_views}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{texs/Part1/chapter4/image/v24.png}
+    \caption{Body Components of preliminary design variant 2}
+    \label{fig:variant2_body_components}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[c]{0.47\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=4 cm]{texs/Part1/chapter4/image/v25.png}
+        \end{minipage}
+        \caption{Front View}
+        \label{fig:variant2_front_view_main}
+    \end{subfigure}
+    % \hfill
+    \begin{subfigure}[c]{0.47\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=4 cm]{texs/Part1/chapter4/image/v26.png}
+        \end{minipage}
+        \caption{Back View}
+        \label{fig:variant2_back_view_main}
+    \end{subfigure}
+    \caption{Placement of inner components}
+    \label{fig:variant2_inner_components}
+\end{figure}
+
+The physical design of Solution Variant 2 follows a carefully crafted sandwich-like structure, consisting of a main body, top cover, and back cover (Figure \ref{fig:variant2_body_components}). This design choice not only ensures the protection of the internal components but also facilitates ease of assembly and maintenance. The main body serves as the central hub, housing all the essential electronics and functional elements, while the top and back covers act as protective layers, safeguarding the delicate components from potential damage due to external impacts.
+
+
+A key consideration in the design is the arrangement of the inner components within the device. Following a tablet-like configuration, the main LCD is thoughtfully positioned on the front side of the main body, providing users with a clear and interactive interface (Figure \ref{fig:variant2_front_view_main}). Meanwhile, the camera, Raspberry Pi, and battery are strategically placed on the back side of the body (Figure \ref{fig:variant2_back_view_main}), optimizing the distribution of weight and ensuring a well-balanced user experience. This arrangement also enhances the device's overall usability and convenience, making it suitable for a wide range of applications.
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{texs/Part1/chapter4/image/insert.png}
+    \caption{Methods to secure components \cite{Hermann20}}
+    \label{fig:insert}
+\end{figure}
+
+
+Ensuring the secure attachment of components to the main body is of paramount importance in the design process. Various methods for component fastening are considered, including direct attachment, threaded inserts, helicoils, side pockets, and bottom pockets as shown in Figure \ref{fig:insert}.
+
+The simplest approach is direct attachment, where threads are designed into the 3D printed part to allow components to be screwed in. For more robust connections, threaded inserts can be used by designing holes in the 3D printed part and installing the inserts appropriately.
+
+Helicoils offer durable threaded holes by inserting coil-shaped inserts into designed holes. Side pockets and bottom pockets involve creating cavities or slots in the 3D printed part to securely hold components. Each method offers its own set of advantages and challenges, and after careful evaluation, the variant opts for the use of threaded inserts due to their simplicity and robustness.
+
+The battery, being a critical component within the device, requires special attention to prevent any undesirable movement or instability. Figure \ref{fig:variant2_battery_cover} shows the battery cover which will be attached to the main body, while Figure \ref{fig:variant2_battery_placement} shows the method of securing the battery to the main body.
+
+
+To address this concern, an effective method for securing the battery firmly in place is implemented by utilizing a battery cover. The battery cover is then securely attached using screws and standoffs, ensuring that the battery remains in its designated position even during vigorous handling or movement.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[c]{\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=4 cm]{texs/Part1/chapter4/image/v27.png}
+        \end{minipage}
+        \caption{Battery Cover}
+        \label{fig:variant2_battery_cover}
+    \end{subfigure}
+    % \hfill
+    \begin{subfigure}[c]{\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=3 cm]{texs/Part1/chapter4/image/v28.png}
+        \end{minipage}
+        \caption{Placement of components}
+        \label{fig:variant2_battery_placement}
+    \end{subfigure}
+    \caption{Methods to secure the battery}
+    \label{fig:variant2_battery}
+\end{figure}
+
+
+Solution Variant 2 will employ a hybrid input method, combining both touch screen and physical buttons. The touch screen will be oriented in landscape mode, while the buttons will be positioned on either side of the screen (Figure \ref{fig:variant2_front_view}). To enable the integration of the touch screen, HDMI and USB connections will be established between the touch screen and the Raspberry Pi \cite{Sunfounder}. Additionally, to facilitate the functionality of the physical buttons, they will be connected to the Raspberry Pi using its GPIO (General Purpose Input/Output) pins \cite{Soren21}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[height=5 cm]{texs/Part1/chapter4/image/v29.png}
+    \caption{Quick release plate}
+    \label{fig:variant2_quick_release_plate}
+\end{figure}
+
+In Figure \ref{fig:variant2_quick_release_plate}, we can observe the quick release plate designed to be affixed to the tripod stand. For enhanced stability during usage, Solution Variant 2 can utilize the quick release plate which can be conveniently mounted on a tripod stand.
+
+\subsection{Cost Calculation}
+In this section, we will perform a cost analysis for producing Solution Variant 2. It is essential to emphasize that the cost calculation for the 3D printed parts solely considers the material cost and the estimated energy consumption during the printing process. Other expenses, such as the cost of the 3D printer itself, labor, and maintenance, are not factored into the calculation. Additionally, for better comparability with other variants, the costs of the Raspberry Pi, camera module, touch screen, and battery will not be included in the calculation. The formula used to calculate the cost of the 3D printed parts is as follows:
+
+\dots
+
+
+\section{Preliminary Design Variant 3}
+
+
+Figure \ref{} presents an insightful glimpse into the conceptualization of preliminary design variant 3. Much akin to variant 2, the arrangement of components exhibits striking resemblances, wherein the screen adorns the frontal expanse, while the camera, Raspberry Pi, and battery find their abode at the rear. However, a notable deviation takes form in variant 3, as the screen's orientation transforms into portrait mode, and a fascinating alteration emerges in the positioning of the computational unit and battery—they are now artfully stacked atop one another.
+
+The chassis structure, reminiscent of variant 2, boasts a harmonious triad of the main body, top cover, and back cover. Manifesting as the nucleus of the device, the main body houses an orchestration of vital electronics and functional intricacies. Meanwhile, the top and back covers diligently assume the mantle of guardians, cocooning the device's delicate components from potential harm inflicted by external forces.
+
+A compelling divergence emerges in the form of a tactile innovation—a subtle yet meaningful bump graces the back cover. This augmentation is a deliberate endeavor to enhance the device's ergonomics, tailored to seamlessly nestle within the contours of the user's palm. The result is an intuitively comfortable grip that heightens user engagement and prolongs usability.
+
+Distinctive alteration in battery placement marks yet another departure from variant 2's blueprint. Abandoning the concept of a dedicated battery cover, variant 3 strategically carves a snug slot within the back cover's canvas. This niche is bespoke to accommodate the battery, eliminating any possibility of unwanted shifts during device operation. Such ingenuity streamlines the process of battery replacement, ushering in an era of swift and effortless renewals.
+
+The input methodology undergoes a streamlining, harnessing the prowess of the touch screen as the singular interface. This approach offers a streamlined user experience, unfettered by physical buttons, and seamlessly marries the screen with user interaction. A comprehensive elucidation of the touch screen's connection to the Raspberry Pi is expounded upon in a prior section, ensuring a symphony of function and compatibility.
+
+The harmonious integration of the chassis with the tripod stand unfolds through a direct union. The tripod stand's mounting point affixes itself with grace to the underbelly of the main body. Meticulous scrutiny of the quick release plate's design yields an intriguing revelation—the focal point of attachment between the plate and the tripod stand rests upon the trapezoidal contour. Ingeniously, this prism becomes an organic extension of the main body, seamlessly embracing the tripod stand. The net result is an effortlessly achieved amalgamation, ushering the device into a realm of enhanced stability and versatile usage scenarios.
+
+\subsection{Cost Calculation}
+
+\section{Preliminary Design Variant 6}
+
+The unveiling of Figure \ref{} offers an illuminating exposition of the preliminary design variant 6. This iteration boldly forges a distinctive path, setting itself apart by orchestrating its internal components in a configuration reminiscent of the point-of-service (POS) system. A prominent departure from previous renditions, this design choice strategically aligns the screen at an angle, fostering effortless user interaction. This ingenious placement optimizes screen visibility, facilitating seamless engagement for the user. Furthermore, a striking juxtaposition of the battery and Raspberry Pi unfolds on the device's frontal landscape, one atop the other. To ensure structural integrity, the attachment of these components is meticulously executed through the use of screws and threaded inserts, as previously elucidated.
+
+Manifesting as an embodiment of thoughtful design, this variant is encapsulated by a bowl-like chassis structure. A symbiotic synergy of the main body, serving as the guardian of internal components, and a top cover, adorning the device with an added layer of protection, defines the architectural essence of this design.
+
+The realm of user experience is skillfully curated through the seamless integration of a handle grip nestled beneath the device. This strategic implementation empowers users with a comfortable grip, ensuring prolonged usage remains effortless and enjoyable. Alternatively, this ingenious handle grip serves as an anchor point for attaching the quick release plate—a gateway to mounting the device on a tripod stand. This multifaceted utility imbues the device with enhanced versatility, seamlessly transitioning from handheld to mounted scenarios.
+
+A familiar melody resonates in the input methodology and battery placement of this variant, akin to the orchestrations observed in variant 3. The touch screen takes center stage as the primary input mechanism, offering an intuitive and streamlined interaction experience. Similarly, the battery finds its abode within a specially crafted slot on the back cover, securely fastened in place by the steadfast embrace of screws and threaded inserts. This ergonomic battery placement facilitates easy removal and replacement, underscoring the design's practicality and user-centric ethos.
+
+\subsection{Cost Calculation}
+
+
+\section{Preliminary Design Variant 7}
+
+The unveiling of Figure \ref{} offers a captivating insight into the preliminary design variant 7, a configuration ingeniously influenced by the handheld PC paradigm. In this rendition, the raspberry pi stakes its claim on the rear side of the screen, creating an integrated and compact composition. Concurrently, the battery aligns itself in symphony, gracefully nestling alongside the screen in a harmonious juxtaposition.
+
+The design ethos extends to the chassis structure, which draws inspiration from the bowl-like form of variant 6. This architectural continuity ensures a cohesive aesthetic while enabling seamless integration of functional components.
+
+In the realm of user handling, a clever innovation akin to variant 3 is introduced, albeit with a distinctive twist. A strategically positioned bump adorns the side of the body, offering an ergonomic touch that resonates with the user. Remarkably, this bump also serves as a sanctum for the battery, providing a secure and discreet enclosure within the device's contours. Notably, in variant 7, the battery finds its dwelling as a permanent fixture within the device, fortifying its structural stability.
+
+The control mechanisms of this variant mirror those observed in variant 2, embracing a synthesis of tactile and touch interfaces. The touch screen assumes the mantle of the primary input mechanism, engaging users in an intuitive and seamless dialogue with the device. Complementing this touch-driven interaction, physical buttons find their abode along the device's side, imbuing the design with a secondary input avenue.
+
+In a fitting culmination, akin to the design philosophy of variant 3, the integration of the device with a tripod stand materializes through a direct symbiosis. A trapezoidal prism, an architectural marvel in its own right, becomes an extension of the device's body, facilitating a straightforward alliance with the tripod stand. This elegant integration underscores the design's commitment to stability and adaptability, transforming the device into a versatile tool suited for a spectrum of scenarios.
+
+
+
+
+
