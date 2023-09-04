@@ -1,59 +1,74 @@
-\chapter{Task Clarification and Specification}
+\chapter{Planning and Task Clarification}
 
-Task clarification and specification is a critical aspect of the product development process. It involves clearly defining and understanding the requirements and expectations associated with a particular task or project. This step aims to eliminate ambiguity and ensure that all stakeholders have a shared understanding of what needs to be accomplished.
+This chapter delves into the process of planning and clarifying tasks for the prototype, as depicted in Figure \ref{fig:planning} following Pahl and Beitz's model. As mentioned previously in Chapter \ref{ch:methodicproductdevelopment} this step play a critical role in the product development process. They involve precisely defining and understanding the requirements and expectations related to a specific task or project. The aim is to remove any confusion and ensure that everyone involved has a shared understanding of what needs to be achieved.
 
-This step involves identifying the specific goals, constraints, and deliverables associated with the task. By clarifying and specifying tasks, engineers and designers can establish a solid foundation for the subsequent stages of product development, enabling them to proceed with a clear direction and focus. In order to achieve this, the following questions must be answered:
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{texs/Part1/chapter2/image/planning.png}
+    \caption{Planning and Task Clarification \cite{Pahl07m}}
+    \label{fig:planning}
+\end{figure}
+
+During this step, the specific goals, limitations, and things that need to be produced for the task are identified \cite{Pahl07a}. By clarifying and specifying tasks, engineers and designers set a strong foundation for the later stages of product development. This allows them to move forward with a clear sense of direction and focus. To achieve this, Pahl and Beitz formulated a series of questions that must be answered to ensure that the task is well-defined and understood \cite{Pahl07a}. These questions are:
 
 \begin{itemize}
     \item What is the objectives of the solution?
-    \item What properties must the solution include and what properties must it avoid?
+    \item What characteristics should the solution have?
+    \item What characteristics should the solution avoid?
 \end{itemize}
 
-By answering these questions, the requirements of the solution can be identified and specified. These requirements will serve as the basis for the subsequent stages of the product development process. The result of this step is a list of requirements which include the demands, expectations, and constraints associated with the task. \cite{Pahl07a}
+By answering these questions, the requirements for the solution can be identified and spelled out. These requirements will serve as the basis for the subsequent phases of the product development process. The outcome of this step is a list of requirements that outline the needs, expectations, and restrictions tied to the task \cite{Pahl07a}.
 
-\section{Establishing the Requirements of the Prototype}
-Establishing requirements in product development involves capturing and documenting the needs and expectations of stakeholders. Two important aspects to consider when establishing requirements are demands and wishes.
+\section{Establishing the Prototype's Requirements}
+To properly establish the requirements for the prototype, it is suggested to propely define the objectives of the prototype and clearly divide them into demands and wishes \cite{Pahl07n}.
 
-Demands are the essential and non-negotiable requirements that must be fulfilled for the product to be considered successful. They represent the core functionality and characteristics that the product must possess to meet its intended purpose and provide value to the users. Demands are typically based on objective criteria and are crucial for ensuring the product's basic functionality and compliance.
+Demands, as described by Pahl and Beitz \cite{Pahl07n}, are the essential and non-negotiable requirements that must be fulfilled for the product to be considered successful. They represent the core functionality and characteristics that the product must possess to meet its intended purpose and provide value to the users. Demands are typically based on objective criteria and are crucial for ensuring the product's basic functionality and compliance.
 
-On the other hand, wishes represent the desirable but non-essential requirements or features that stakeholders would like to see in the product. Wishes often involve additional functionalities, aesthetics, or user experience enhancements that would provide added value or differentiate the product in the market. While wishes may not be mandatory, they can contribute to customer satisfaction, competitive advantage, and overall product excellence.
+On the other hand, wishes are defined as the desirable but non-essential requirements or features that stakeholders would like to see in the product. Wishes often involve additional functionalities, aesthetics, or user experience enhancements that would provide added value or differentiate the product in the market. While wishes may not be mandatory, they can contribute to customer satisfaction, competitive advantage, and overall product excellence.
 
-In addition, all of the requirements defined is possible must be quantifiable. This means that the requirements must be measurable and testable. This is important for ensuring that the requirements are met and that the product is able to fulfill its intended purpose. According to Pahl and Beitz, it may be useful to define the requirements in terms of the parameters defined in Figure \ref{fig:parameters}.
+In addition, all of the requirements defined is possible must be quantifiable. This means that the requirements must be measurable and testable. This is important for ensuring that the requirements are met and that the product is able to fulfill its intended purpose.
 
 
-\section{Requirements of the Prototype}
-In this section, the requirements of the prototype will be established. The requirements will be divided into two categories.
+\section{Identifying the Prototype's Requirements}
+In this section, the requirements of the prototype will be established. The checklist (see Figure \ref{fig:checklist}) will be used as a guideline to ensure that all the requirements are properly identified and defined.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{texs/Part1/chapter2/image/requirements.png}
+    \caption{Checklist for Establishing the Prototype's Requirements \cite{Pahl07o}}
+    \label{fig:checklist}
+\end{figure}
 
 \subsection{Geometry}
-When designing a prototype, ensuring proper geometry size is crucial to enable users to interact with the device effectively. The geometry size determines the physical dimensions and proportions of the prototype, which directly impact its usability and functionality. However, the size of the prototype is subject to certain limitations, primarily based on the available production capabilities.
+When creating a prototype, it's crucial to get its size and shape right so that people can use it effectively. The size determines how big the prototype is and how well it functions. However, we need to be mindful not to make the prototype too large due to manufacturing limitations.
 
-In the case of our prototype, we are utilizing a 3D printing service provided by TH Brandenburg. This research will utilize the Original Prusa i3 MK3S+ with maximum available bed size of 210 mm x 210 mm x 250 mm \cite{Prusa}. This limitation influences the size constraints we can work within during the prototype development process.
+For our prototype, we're utilizing a 3D printing service provided by TH Brandenburg. We're specifically using the Original Prusa i3 MK3S+ 3D printer, which has a maximum printing area of 210 mm by 210 mm by 250 mm \cite{Prusa}. This means we have to work within these size constraints.
 
-To adhere to these limitations, we have set the geometry size of the prototype to be about 10\% offset from the maximum available bed size. This offset ensures that the prototype fits comfortably within the printing dimensions provided by TH Brandenburg. Due to the aforementioned limitations and considerations, we have set the maximum geometry size for the prototype to be 190 mm x 190 mm x 250 mm.
+To ensure that our prototype fits within these limits, we've decided to slightly reduce its size. We're making it about 10\% smaller than the maximum printing area. This adjustment ensures that our prototype can be comfortably accommodated on the 3D printer at TH Brandenburg. Given these considerations, the largest dimensions we've chosen for the prototype are 190 mm by 190 mm by 220 mm.
 
 \subsection{Energy}
-The energy requirement for the prototype is a crucial aspect that directly influences its usability and convenience. It is specified that the prototype must have the capability to operate autonomously for a minimum duration of 1 hour with the provided power supply. This requirement serves to ensure that the prototype can function independently, providing a seamless user experience.
+The energy needed for the prototype is really important because it affects how useful and convenient it is. We\'ve made a requirement that the prototype should be able to work on its own for at least 1 hour using the provided power supply. This rule is in place to make sure the prototype can work by itself and give users a smooth experience.
 
-By being able to operate for at least 1 hour, the prototype demonstrates its ability to sustain a reasonable runtime without the need for frequent recharging or reliance on external power sources. This ensures that users can interact with the prototype for an extended period, allowing for more in-depth evaluation and testing of its functionality and features. It enables users to engage with the prototype in real-world scenarios, facilitating a comprehensive understanding of its capabilities and performance.
+By being able to work for at least 1 hour, the prototype shows that it can keep running for a reasonable amount of time without needing to be charged often or relying on outside power. This enables users to operate the device without concern for an extended period, offering more opportunities to explore its functionality and capabilities. It also provides users with the freedom to engage with the prototype in real-life scenarios, offering valuable insights into its performance and effectiveness.
 
 \subsection{Forces}
-The requirement for forces in the prototype focuses on two key aspects: the ability to withstand the weight of its components and the limitation on the total mass of the prototype.
+The force requirement for the prototype has two main aspects: ensuring it can handle the weight of its components while also adhering to a maximum weight limit.
 
-Firstly, it is essential to ensure that the prototype can properly support the weight of its components without compromising its structural integrity or functionality. This requirement serves to ensure that the prototype is robust and durable, capable of withstanding the forces exerted by its components. It also ensures that the prototype can be handled and operated without the risk of damage or failure.
+Firstly, it's crucial to verify that the prototype can effectively support the weight of its components without compromising its overall structure or functionality. This ensures the prototype's durability and ability to withstand the forces exerted by its components. Additionally, it guarantees that the prototype can be manipulated and operated without the risk of damage or malfunction.
 
-In addition, there is a specific limitation on the total mass of the prototype, which should not exceed 2kg. This encompasses the combined weight of all internal components, including the predefined components and any additional materials incorporated during the design process. Adhering to this mass limitation ensures that the prototype remains lightweight and manageable while meeting the desired performance criteria.
+Furthermore, there is a specific constraint that the total weight of the prototype must not surpass 2 kg. This encompasses the collective weight of all internal components, including both the predefined components and any additional materials integrated during the design process. Adhering to this weight limit ensures the prototype remains lightweight and manageable, while still meeting the intended performance criteria.
 
 \subsection{Materials}
-In designing the prototype, it is essential to consider the specific materials and components that will be utilized. For this project, there are predefined components that must be incorporated to meet the requirements. These components include the Raspberry Pi 4B, a 7-inch touch screen, the Raspberry Pi Camera V2, and the Veektomx 10000mAh power bank.
+When crafting the prototype, it's crucial to carefully consider the specific materials and components that will be used. In this project, there are certain components that have already been chosen, and they must be included to meet the requirements. These components include the Raspberry Pi 4B, a 7-inch touch screen, the Raspberry Pi Camera V2, and the Veektomx 10000mAh power bank.
 
-The predefined components serve as key building blocks for the prototype's functionality and performance. The Raspberry Pi 4B, a versatile single-board computer, provides computing power and serves as the central control unit for the prototype. The 7-inch touch screen enhances user interaction by providing a responsive and intuitive interface for input and output.
+These chosen components act as essential building blocks for the prototype's function and performance. The Raspberry Pi 4B, a versatile single-board computer, supplies computing power and functions as the core control unit for the prototype. The 7-inch touch screen enhances user interaction by providing a responsive and user-friendly interface for input and output.
 
-The Raspberry Pi Camera V2 enables image and video capture, facilitating various applications within the prototype. Lastly, the Veektomx 10000mAh power bank offers a reliable power source, ensuring the prototype's uninterrupted operation.
+The Raspberry Pi Camera V2 enables the capture of images and videos, allowing for a range of applications within the prototype. Lastly, the Veektomx 10000mAh power bank provides a dependable power source, ensuring continuous operation of the prototype.
 
 \subsection{Ergonomics}
-In terms of ergonomics, the prototype has specific requirements related to its size, weight, and user handling. Firstly, the prototype must be designed to be small and lightweight. This ensures that it is compact and portable, allowing for easy handling and maneuverability. By keeping the prototype's size and weight minimized, it enhances user comfort and convenience during interaction.
+When it comes to ergonomics, the prototype has specific demands concerning its dimensions, mass, and how users hold it. First and foremost, the prototype needs to be compact and lightweight. This guarantees that it's easy to carry around, making it simple to handle and move. By minimizing the prototype's size and weight, it enhances user comfort and convenience during use.
 
-Additionally, an important aspect of the ergonomics requirement is that the user must be able to hold the prototype properly. This entails considering the shape, grip, and balance of the prototype to facilitate comfortable and secure handling. The design should accommodate the natural contours of the user's hand, ensuring a firm and ergonomic grip. By optimizing the prototype's form and considering user ergonomics, it can provide a seamless and user-friendly experience.
+Furthermore, a vital aspect of the ergonomics requirement is that users should be able to hold the prototype comfortably. This involves thinking about the prototype's shape, grip, and balance to ensure it's easy and secure to hold. The design should fit naturally into the contours of the user's hand, ensuring a stable and ergonomic grip. By optimizing the prototype's shape and considering user ergonomics, it can deliver a smooth and user-friendly experience.
 
 \subsection{Production}
 The production requirement for the prototype focuses on the manufacturing process and the materials used. The prototype must be designed to be manufactured using 3D printing technology. This ensures that the prototype can be produced using the available resources and capabilities. In addition, the prototype must be designed to be manufactured using PLA filament. This material is readily available and offers a good balance of strength and flexibility, making it suitable for the prototype's requirements.

@@ -32,41 +32,44 @@
 
 \include{texs/pre/abstract}
 
-\include{texs/Part0/chapter1/chapter}
-\part{Prototype Development}
-\setcounter{chapter}{0}
-\include{texs/Part1/chapter1/chapter}
-\include{texs/Part1/chapter2/chapter}
-\include{texs/Part1/chapter3/chapter}
-\include{texs/Part1/chapter4/chapter}
-\include{texs/Part1/chapter0/chapter}
+\begin{sloppypar}
 
-\part{GUI Development}
-\setcounter{chapter}{0}
-\include{texs/Part2/chapter0/chapter}
+    \include{texs/Part0/chapter1/chapter}
+    \part{Prototype Development}
+    \setcounter{chapter}{0}
+    \include{texs/Part1/chapter1/chapter}
+    \include{texs/Part1/chapter2/chapter}
+    \include{texs/Part1/chapter3/chapter}
+    \include{texs/Part1/chapter4/chapter}
+    \include{texs/Part1/chapter0/chapter}
 
-\part{Indexes and Appendix}
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
+    \part{GUI Development}
+    \setcounter{chapter}{0}
+    \include{texs/Part2/chapter0/chapter}
 
-\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
+    \part{Indexes and Appendix}
+    \addcontentsline{toc}{chapter}{\listfigurename}
+    \listoffigures
 
-\addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{geralpha}
-\bibliography{bibs/literatur}
+    \addcontentsline{toc}{chapter}{\listtablename}
+    \listoftables
 
-\appendix
-\include{texs/appendix/appendix}
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \bibliographystyle{geralpha}
+    \bibliography{bibs/literatur}
+
+    \appendix
+    \include{texs/appendix/appendix}
 
 
-%table of figures
-%\clearpage
-%\listoffigures
-%\clearpage
+    %table of figures
+    %\clearpage
+    %\listoffigures
+    %\clearpage
 
-%empty page 
-% \thispagestyle{empty}
-% \cleardoublepage
+    %empty page 
+    % \thispagestyle{empty}
+    % \cleardoublepage
+\end{sloppypar}
 
 \end{document}
