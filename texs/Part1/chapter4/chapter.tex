@@ -1,28 +1,85 @@
 \chapter{Embodiment Design}
+The next phase in the design methodology is embodiment design. This phase, as defined by Pahl and Beitz \cite{Pahl07t}, involves starting with the fundamental solution or concept for a technical product and then advancing the design in alignment with technical and economic criteria, taking into account further information. The ultimate objective is to reach a stage where the subsequent detailed design can smoothly progress into the production phase.
+Figure \ref{fig:embodiment_design} shows the steps involved in this phase.
 
-bla bla \dots
-
-intro
+\begin{figure}
+    \centering
+    \includegraphics[width=0.92\linewidth]{texs/Part1/chapter4/image/embodiment.png}
+    \caption{Steps in Embodiment Design \cite{Pahl07u}}
+    \label{fig:embodiment_design}
+\end{figure}
 
 \section{Basic Rules of Embodiment Design}
+When it comes to product design, there are some basic rules that must be followed. As defined by Pahl and Beitz \cite{Pahl07v}, they include clarity, simplicity, and safety. Neglecting these rules can potentially result in issues and accidents. Subsequent sections will provide a comprehensive exploration of these guidelines.
+
+\subsection{Clarity}
+Clarity, as described by Pahl and Beitz \cite{Pahl07w}, entails establishing clear and unambiguous connections within a design. This involves ensuring straightforward relationships between subfunctions, inputs, and outputs to prevent any confusion or misinterpretation. It also extends to the selection of a working principle, where designers should choose principles that clarify cause-and-effect dynamics, align with the product's purpose, and optimize its layout by eliminating unnecessary complexity.
+
+Additionally, clarity applies to the broader design structure, whether it involves multiple working principles or component combinations. It mandates that the design facilitates the orderly flow of energy, materials, and signals, preventing adverse effects like excessive forces or wear. This commitment to clarity ultimately enhances the product's reliability and durability.
+
+\subsection{Simplicity}
+Simplicity \cite{Pahl07x} in design is epitomized by an uncomplicated and easily comprehensible approach, often achievable by using fewer components. Such simplicity can lead to cost savings, reduced wear and tear, and minimized maintenance requirements. Nonetheless, it's crucial to strike a balance, as certain functions inherently demand a minimum number of components.
+
+Designers should, therefore, strive for a minimalist approach by employing the fewest components possible while maintaining straightforward shapes, as this promotes efficiency and practicality in the design process. The choice between numerous components with simple shapes, albeit potentially increasing production effort, and a single, more affordable cast component should be made while considering the specific problem and constraints.
+
+\subsection{Safety}
+Safety \cite{Pahl07y} considerations are crucial in ensuring both the effective performance of technical functions and the protection of people and the environment. Designers rely on a safety methodology outlined in the German industry standard DIN 31 000, which encompasses three levels: direct safety, indirect safety, and warnings. In general, designers should prioritize direct safety measures, seeking solutions that inherently eliminate potential dangers. Only when this is not feasible should they resort to indirect safety measures, involving the construction of specialized protective systems.
+
+Warnings, which serve to highlight dangers and hazard zones, are best utilized in conjunction with direct and indirect safety measures, clarifying specific risks. As designers address technical challenges, they encounter various constraints, not all of which can be simultaneously overcome. However, their objective remains to develop solutions that come as close as possible to meeting all requirements. It's important to note that exceptionally high safety demands can complicate design, potentially diminishing clarity and economic viability, and even leading to project abandonment in some cases.
+
+\section{Guideline of Embodiment Design}
+In addition the the basic rules of embodiment design, Pahl and Beitz \cite{Pahl07z} also stress the importance of following a set of design guidelines to help designers meet the specific requirements and constraints. For this project, the following design guidelines are considered:
+
 \begin{itemize}
-    \item Clarity
-    \item Simplicity
-    \item Safety
+    \item Design for production
+    \item Design for ergonomics
 \end{itemize}
 
-\section{Guideline of embodiment design}
-\begin{itemize}
-    \item Design for ergonomics
-    \item Design for production
-\end{itemize}
+\subsection{Design for Production}
+Design for production \cite{Pahl07aa} is a design guideline that emphasizes the importance of considering the production process during the design phase. This approach enables designers to optimize the production cost and times while ensuring the product's functionality and quality. By following the basic rules of clarity and simplicity, designers are already on the right track to achieving this goal.
+
+\subsubsection{Appropriate Overall Layout Design}
+Overall layout design, derived from the function structure, influences product division into assemblies and components, including sourcing decisions (in-house, bought-out, standard parts), production procedures, dimensions, batch sizes, joining methods, and quality control.
+
+The layout can lead to differential, integral, composite, or building-block construction methods. Differential Construction involves breaking down components into easily produced parts, facilitating adaptability, increased component batch sizes, and easier quality assurance. However, it demands greater machining and assembly costs and may have functional limitations due to joints.
+
+Integral Construction combines multiple parts into a single component, reducing costs due to integration but can be complex and sensitive to market conditions. Composite Construction involves connecting different parts requiring further work, applying multiple joining methods or using various materials for optimal property utilization.
+
+Building Block Construction results from splitting components so that the parts or assemblies can be used in other products or variants, offering flexibility and cost savings. These construction methods offer specific advantages and disadvantages, depending on the context and design requirements.
+
+\subsubsection{Appropriate Form Design of Components}
+During component form design, designers significantly impact production costs, times, and product quality by choosing shapes, dimensions, surface finishes, tolerances, and fits. These choices influence production procedures, machine types, in-house vs. bought-out components, materials, and quality control procedures.
+
+Conversely, production facilities influence design features, which may include dimension limitations necessitating component division or the acquisition of bought-out components. Many guidelines exist for appropriate component form design, and tolerances are crucial.
+Figure \ref{fig:guideline} shows the design guidelines for designing components specifically for 3D printing.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.92\linewidth]{texs/Part1/chapter4/image/guidelines.png}
+    \caption{Design guidelines for 3D printing \cite{DDDimension_22}}
+    \label{fig:guideline}
+\end{figure}
+
+\subsection{Design for Ergonomics}
+Ergonomics \cite{Pahl07ab} is vital in designing technical products, aiming to align them with human characteristics, needs, and interfaces. It covers a broad range of items, including everyday household products and human-machine interfaces. Recent focus has shifted to user-friendly interfaces and ergonomic workplace assessment tools.
+
+Ergonomic design considers various factors, starting with biomechanics, which addresses how body postures and movements interact with product design. Physiological aspects, such as muscle action, circulation, and temperature regulation, are crucial. Sensory factors like light and noise must also be taken into account. Psychological aspects guide design to minimize cognitive load and enhance user-friendliness.
+
+Ergonomics extends to active and passive user involvement. Active involvement necessitates careful planning, assessing if human interaction is necessary and effective. Passive involvement addresses how users are affected by products, considering factors like energy flows, vibrations, light, climate, and noise.
+
+Identifying ergonomic requirements can follow two approaches. The object-based approach is used when designing predefined systems or products, employing checklists tailored to specific items. The effect-based approach applies to new situations, analyzing the effects of energy, material, and signal flows, ensuring they meet ergonomic requirements. Both aim to prioritize user comfort, safety, and efficiency while minimizing discomfort and errors.
+
+
 
 % https://www.ddd-imension.com/en/post/complete-design-guide-for-3d-printing
 
 % https://www.hubs.com/get/3d-printing-design-rules/
 
+\section{Preliminary Design}
+In this section, we will explore the preliminary design of the device. The preliminary design is detailed 3D model of the device that will be used to evaluate the design and determine its feasibility. The preliminary design will be based on the selected solution from the previous phase. Along with the model, the production cost will be also presented in this section. For a more detailed calculation of the production cost, please refer to Appendix \ref{appendix:production_cost}.
 
-\section{Preliminary Design Variant 2}
+
+\subsection{Preliminary Design Variant 2}
 This section delves into a detailed exploration of Solution Variant 2. Figure \ref{fig:preliminary_design_variant_2} shows the preliminary design variant 2 and different views and body measurement are shown in Figure \ref{fig:variant2_views}. The main attraction of this design is the emphasis on ergonomic form and user-friendly features. The device incorporates a sleek and aesthetically pleasing design with rounded edges and a lightweight build, making it easily portable and comfortable to hold for extended periods. With a thickness of 46 mm (Figure \ref{fig:variant2_right_view}), the device strikes a balance between being slim and accommodating the necessary components for optimal functionality .
 
 \begin{figure}[h!]
@@ -145,13 +202,13 @@ Solution Variant 2 will employ a hybrid input method, combining both touch scree
 
 In Figure \ref{fig:variant2_quick_release_plate}, we can observe the quick release plate designed to be affixed to the tripod stand. For enhanced stability during usage, Solution Variant 2 can utilize the quick release plate which can be conveniently mounted on a tripod stand.
 
-\subsection{Cost Calculation}
+\subsubsection{Cost Calculation}
 In this section, we will perform a cost analysis for producing Solution Variant 2. It is essential to emphasize that the cost calculation for the 3D printed parts solely considers the material cost and the estimated energy consumption during the printing process. Other expenses, such as the cost of the 3D printer itself, labor, and maintenance, are not factored into the calculation. Additionally, for better comparability with other variants, the costs of the Raspberry Pi, camera module, touch screen, and battery will not be included in the calculation. The formula used to calculate the cost of the 3D printed parts is as follows:
 
 \dots
 
 
-\section{Preliminary Design Variant 3}
+\subsection{Preliminary Design Variant 3}
 
 
 Figure \ref{} presents an insightful glimpse into the conceptualization of preliminary design variant 3. Much akin to variant 2, the arrangement of components exhibits striking resemblances, wherein the screen adorns the frontal expanse, while the camera, Raspberry Pi, and battery find their abode at the rear. However, a notable deviation takes form in variant 3, as the screen's orientation transforms into portrait mode, and a fascinating alteration emerges in the positioning of the computational unit and battery—they are now artfully stacked atop one another.
@@ -166,9 +223,9 @@ The input methodology undergoes a streamlining, harnessing the prowess of the to
 
 The harmonious integration of the chassis with the tripod stand unfolds through a direct union. The tripod stand's mounting point affixes itself with grace to the underbelly of the main body. Meticulous scrutiny of the quick release plate's design yields an intriguing revelation—the focal point of attachment between the plate and the tripod stand rests upon the trapezoidal contour. Ingeniously, this prism becomes an organic extension of the main body, seamlessly embracing the tripod stand. The net result is an effortlessly achieved amalgamation, ushering the device into a realm of enhanced stability and versatile usage scenarios.
 
-\subsection{Cost Calculation}
+\subsubsection{Cost Calculation}
 
-\section{Preliminary Design Variant 6}
+\subsection{Preliminary Design Variant 6}
 
 The unveiling of Figure \ref{} offers an illuminating exposition of the preliminary design variant 6. This iteration boldly forges a distinctive path, setting itself apart by orchestrating its internal components in a configuration reminiscent of the point-of-service (POS) system. A prominent departure from previous renditions, this design choice strategically aligns the screen at an angle, fostering effortless user interaction. This ingenious placement optimizes screen visibility, facilitating seamless engagement for the user. Furthermore, a striking juxtaposition of the battery and Raspberry Pi unfolds on the device's frontal landscape, one atop the other. To ensure structural integrity, the attachment of these components is meticulously executed through the use of screws and threaded inserts, as previously elucidated.
 
@@ -178,10 +235,10 @@ The realm of user experience is skillfully curated through the seamless integrat
 
 A familiar melody resonates in the input methodology and battery placement of this variant, akin to the orchestrations observed in variant 3. The touch screen takes center stage as the primary input mechanism, offering an intuitive and streamlined interaction experience. Similarly, the battery finds its abode within a specially crafted slot on the back cover, securely fastened in place by the steadfast embrace of screws and threaded inserts. This ergonomic battery placement facilitates easy removal and replacement, underscoring the design's practicality and user-centric ethos.
 
-\subsection{Cost Calculation}
+\subsubsection{Cost Calculation}
 
 
-\section{Preliminary Design Variant 7}
+\subsection{Preliminary Design Variant 7}
 
 The unveiling of Figure \ref{} offers a captivating insight into the preliminary design variant 7, a configuration ingeniously influenced by the handheld PC paradigm. In this rendition, the raspberry pi stakes its claim on the rear side of the screen, creating an integrated and compact composition. Concurrently, the battery aligns itself in symphony, gracefully nestling alongside the screen in a harmonious juxtaposition.
 
@@ -194,7 +251,7 @@ The control mechanisms of this variant mirror those observed in variant 2, embra
 In a fitting culmination, akin to the design philosophy of variant 3, the integration of the device with a tripod stand materializes through a direct symbiosis. A trapezoidal prism, an architectural marvel in its own right, becomes an extension of the device's body, facilitating a straightforward alliance with the tripod stand. This elegant integration underscores the design's commitment to stability and adaptability, transforming the device into a versatile tool suited for a spectrum of scenarios.
 
 
-\subsection{Cost Calculation}
+\subsubsection{Cost Calculation}
 
 \section{Evaluation of Preliminary Design Variants}
 VDI 2225
