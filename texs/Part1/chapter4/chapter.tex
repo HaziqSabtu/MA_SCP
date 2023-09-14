@@ -345,14 +345,17 @@ Similar to variants 2 and 6, this variant also utilized the quick release plate 
 
 \subsubsection{Cost Calculation}
 
-\section{Evaluation of Preliminary Design Variants}
-VDI 2225
+\section{Evaluation with VDI 2225}
+In this section, we will evaluate the preliminary design variants by utiliting the guideline VDI 2225 \cite{Pahl07ac}. This guideline is a comprehensive framework for evaluating technical solutions based on a balanced consideration of various aspects.
 
-\subsection{Evaluation Criteria}
+To achieve this, the guideline advocates for methods that provide a holistic evaluation, covering both task-specific requirements and general constraints. These methods aim to not only quantify but also qualitatively assess the properties of different variants, even in the early conceptual phase where information is limited.
 
-The technical evaluation criteria are primarily derived from the list of requirements but can also be established from general conditions. The property dimensions can be captured through specific metrics as well as qualitative statements. When establishing the evaluation criteria, it must be noted that the individual goals to be evaluated are largely independent from each other. The identified criteria must be formulated positively, as this enables better alignment with the corresponding value concepts.37 The following evaluation criteria are used for the technical assessment of the various variants:
+The evaluation process, as discussed by Pahl and Beitz \cite{Pahl07ac}, outlined in the guideline involves several key steps:
 
-\textbf{Ergonomics:} The ergonomics of the variants are evaluated based on the following criteria: \textit{handling, weight, and dimensions}. The handling is assessed based on the ease of use and the intuitive operation of the variants. The weight is evaluated based on the weight of the variants and the weight distribution. The dimensions are assessed based on the size of the variants and the size of the individual components.
+\subsubsection{Identifying Evaluation Criteria}
+This initial step involves defining a set of objectives from which specific evaluation criteria can be derived. These objectives should comprehensively cover decision-relevant requirements and general constraints, ensuring that no crucial criteria are overlooked. The objectives should also be as independent of each other as possible, and expressed in either quantitative or qualitative terms.
+
+Followings are the evaluation criteria for the preliminary design variants:
 
 \textbf{Weight Distribution:} The weight distribution is evaluated based on the weight distribution of the variants and the weight distribution of the individual components. The value for weight distribution is retrieved from Computer-Aided Design (CAD) models through detailed analysis of the device's structural layout and component placement.
 
@@ -360,11 +363,211 @@ The technical evaluation criteria are primarily derived from the list of require
 
 \textbf{Device Size:} The size criterion considers the physical dimensions of the device, assessing its compactness and portability. An optimal device size allows for convenient storage, transportation, and operation in various environments without compromising functionality. The evaluation of device size involves measuring key dimensions such as length, width, height, and any protrusions or extensions.
 
-\textbf{Ease of Assembly:} This criterion focuses on the simplicity and efficiency of assembling and disassembling the device. A design that enables quick and hassle-free assembly and disassembly not only saves time but also enhances user convenience and reduces the risk of errors. Evaluation is conducted by assessing the number of components involved in the assembly and disassembly processes. A lower count of components often indicates a simpler and more user-friendly design. Additionally, the type and quantity of fasteners, such as screws or connectors, required for assembly are taken into account. A reduced reliance on intricate fastening mechanisms contributes to smoother handling and maintenance. By quantifying these factors, designers can gauge the ease of assembly and disassembly, enabling them to refine the design to optimize user-friendliness and operational efficiency.
+\textbf{Ease of Assembly:} This criterion evaluates the ease of assembling and disassembling the device. Quick and easy assembly and disassembly saves time and increases user convenience, reducing the risk of errors. Evaluation is done by counting the components used in assembly and disassembly. Fewer components often mean a simpler and more user-friendly design. The type and number of fasteners, such as screws or connectors, needed for assembly are also considered.
 
-\textbf{Swappable Parts:} Swappable parts assess the ease with which components or parts of the device can be interchanged or replaced. A design that facilitates swappable parts enhances flexibility, maintenance, and adaptability to different tasks or conditions. Swappable parts promote component modularity, enabling efficient repairs and upgrades. The evaluation of swappable parts is based on the number of interchangeable components and their compatibility across the device. A higher number of swappable parts indicates a design that encourages versatility and minimizes downtime during maintenance or repairs. This modularity simplifies troubleshooting and allows users to adapt the device to evolving needs or specialized requirements. By quantifying the availability of swappable parts, designers can ensure a design that empowers users to swiftly and effectively manage the device's functionality, enhancing its overall usability and lifespan.
+\textbf{Swappable Parts:} Swappable components refer to the ease with which parts can be interchanged or substituted. This design enhances flexibility, maintenance, and adaptability. The presence of swappable parts encourages component modularity, enabling streamlined repairs and upgrades. Assessment of swappable parts is based on the quantity of interchangeable components and their compatibility. A higher number of swappable parts signifies a design that supports versatility and minimizes downtime for maintenance or repairs.
 
-\textbf{Durability to External Factors:} Durability to external factors evaluates how well the device can withstand exposure to various environmental conditions, such as humidity, temperature fluctuations, dust, and impacts. A high level of durability ensures a longer lifespan and consistent performance under diverse circumstances. The assessment of durability is measured by estimating the number of openings in the device. More openings can lead to greater exposure of inner components, potentially making them susceptible to external elements. Therefore, a design with fewer openings is considered more resilient, as it reduces the likelihood of environmental factors affecting critical components. By quantifying the number of openings and assessing their placement, designers can enhance the device's ability to endure harsh conditions and maintain reliable functionality over time, ultimately extending its operational life and user satisfaction.
+\subsubsection{Weighting Evaluation Criteria}
+After establishing the evaluation criteria, their relative importance is assessed through weighting factors, $w$. This step is crucial in eliminating less significant criteria before the actual evaluation. Weightings should reflect the relative importance of each evaluation criterion.
+
+Guideline VDI 2225 aims to avoid weightings and instead relies on criteria of roughly equal importance. However, weightings (like 2x or 3x) are used when there are significant differences between criteria.
+Table \ref{tab:weighting} shows the weighting factors for the evaluation criteria.
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Criteria}   & \textbf{Weighting Factor, $w$} \\ \hline
+        Weight Distribution & 2x                             \\ \hline
+        Device Weight       & 3x                             \\ \hline
+        Device Size         & 1x                             \\ \hline
+        Ease of Assembly    & 1x                             \\ \hline
+        Swappable Parts     & 1x                             \\ \hline
+    \end{tabular}
+    \caption{Weighting Factors for Evaluation Criteria}
+    \label{tab:weighting}
+\end{table}
+
+\subsubsection{Assessing Values}
+This step involves assigning values, $v_{ij}$, to the variants based on the relative scale of the determined parameters. Guideline VDI 2225 suggests using a range from 0 to 4 for this purpose. Table \ref{tab:value_scale} shows the scale used for the evaluation of the preliminary design variants. \Cref{tab:value_scale_weight_distribution,tab:value_scale_device_weight,tab:value_scale_device_size,tab:value_scale_ease_of_assembly,tab:value_scale_swappable_parts} show the value scales for the individual evaluation criteria. Equation \ref{eq:weight_calculation} shows the formula used to calculate the weighted value, $wv_{ij}$, for each variant.
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Points, $v_{ij}$} & \textbf{Meaning}  \\ \hline
+        0                         & unsatisfactory    \\ \hline
+        1                         & just tolerable    \\ \hline
+        2                         & adequate          \\ \hline
+        3                         & good              \\ \hline
+        4                         & very good (ideal) \\ \hline
+    \end{tabular}
+    \caption{Value Scale for Evaluation \cite{Pahl07ad}}
+    \label{tab:value_scale}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Weight Distribution}} \\ \hline
+        \textbf{Range, mm} & \textbf{Point, $v_{ij}$}      \\ \hline
+        0-10               & 4                             \\ \hline
+        10-50              & 3                             \\ \hline
+        50-100             & 2                             \\ \hline
+        100-150            & 1                             \\ \hline
+        $\geq$ 150         & 0                             \\ \hline
+    \end{tabular}
+    \caption{Value Scale for Weight Distribution}
+    \label{tab:value_scale_weight_distribution}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Device Weight}} \\ \hline
+        \textbf{Range, g} & \textbf{Point, $v_{ij}$} \\ \hline
+        0-500             & 4                        \\ \hline
+        500-1000          & 3                        \\ \hline
+        1000-1500         & 2                        \\ \hline
+        1500-2000         & 1                        \\ \hline
+        $\geq$ 2000       & 0                        \\ \hline
+    \end{tabular}
+    \caption{Value Scale for Device Weight}
+    \label{tab:value_scale_device_weight}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Device Size}}    \\ \hline
+        \textbf{Range, mm} & \textbf{Point, $v_{ij}$} \\ \hline
+        0-100              & 4                        \\ \hline
+        100-200            & 3                        \\ \hline
+        200-300            & 2                        \\ \hline
+        300-400            & 1                        \\ \hline
+        $\geq$ 400         & 0                        \\ \hline
+    \end{tabular}
+    \caption{Value Scale for Device Size}
+    \label{tab:value_scale_device_size}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Ease of Assembly}} \\ \hline
+        \textbf{Range} & \textbf{Point, $v_{ij}$}       \\ \hline
+        0-25           & 4                              \\ \hline
+        25-50          & 3                              \\ \hline
+        50-75          & 2                              \\ \hline
+        75-100         & 1                              \\ \hline
+        $\geq$ 100     & 0                              \\ \hline
+    \end{tabular}
+    \caption{Value Scale for Ease of Assembly}
+    \label{tab:value_scale_ease_of_assembly}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Swappable Parts}} \\ \hline
+        \textbf{Range} & \textbf{Point, $v_{ij}$}      \\ \hline
+        $\geq$ 4       & 4                             \\ \hline
+        3              & 3                             \\ \hline
+        2              & 2                             \\ \hline
+        1              & 1                             \\ \hline
+        0              & 0                             \\ \hline
+    \end{tabular}
+    \caption{Value Scale for Swappable Parts}
+    \label{tab:value_scale_swappable_parts}
+\end{table}
+
+\begin{equation}
+    wv_{ij} = w_{i} \cdot v_{ij}
+    \label{eq:weight_calculation}
+\end{equation}
+
+
+\subsubsection{Determining the Overall Value}
+The overall value of each variant, $OWV_{j}$, is calculated by summing the weighted values, $wv_{ij}$, of all evaluation criteria (see Equation \ref{eq:weighted_sum}).
+
+\begin{equation}
+    OWV_{j}=\sum_{i=1}^{n}wv_{ij}
+    \label{eq:weighted_sum}
+\end{equation}
+
+\subsubsection{Comparing Concept Variants}
+With the overall values, $OWV_{j}$, of the concept variants, the variants can be compared and evaluated based on thier rating, $R$, which is calculated using Equation \ref{eq:total_rating}. The technical rating, $R_{t}$, is calculated using Equation \ref{eq:technical_rating}, where $v_{max}$ is the maximum value of the value scale, and $n$ is the number of evaluation criteria.
+
+The economic rating, $R_{e}$, is calculated using Equation \ref{eq:economic_rating}, where $C_{o}$ is the comparative cost, and $C_{variant}$ is the cost of the variant. For this project, the comparative cost, $C_{o}$, is set to be 60\% of the cost of the least expensive variant (see Equation \ref{eq:comparative_cost}).
+
+The best variant is determined by comparing the total rating, $R$, of each variant. The variant with the highest total rating is considered the best variant.
+
+\begin{equation}
+    R=\frac{R_{t}+R_{e}}{2}
+    \label{eq:total_rating}
+\end{equation}
+
+\begin{equation}
+    R=\frac{OWV_{j}}{v_{max}\cdot\sum_{i=1}^{n}w_{i}}
+    \label{eq:technical_rating}
+\end{equation}
+
+\begin{equation}
+    R=\frac{C_{o}}{C_{variant}}
+    \label{eq:economic_rating}
+\end{equation}
+
+\begin{equation}
+    C_{o}=0.6\cdot C_{minimum}
+    \label{eq:comparative_cost}
+\end{equation}
+
+\subsection{Evaluation of Preliminary Design Variant}
+In this section, the result of the evaluation of the preliminary design variants will be presented. Table \ref{tab:tech_eval} shows the technical evaluation of the preliminary design variants, while Table \ref{tab:economic_eval} shows the economic evaluation of the variants. The total rating of the variants is shown in Table \ref{tab:total_rating}. Based on the total rating, Variant 6 is the best variant, followed by Variant 7, Variant 3, and Variant 2.
+
+For a more detailed calculation, please refer to Appendix \ref{appendix:technical_evaluation}.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{\textbf{Production Cost}}                                  \\ \hline
+        \textbf{Variant} & \textbf{Cost, \texteuro} & \textbf{Economic Rating, $R_{e}$} \\ \hline
+        Variant 2        & 74.95                    & 0.33                              \\ \hline
+        Variant 3        & 47.97                    & 0.52                              \\ \hline
+        Variant 6        & 44.14                    & 0.56                              \\ \hline
+        Variant 7        & 41.25                    & 0.60                              \\ \hline
+    \end{tabular}
+    \caption{Economic Evaluation of Preliminary Design Variants}
+    \label{tab:economic_eval}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Variant} & \textbf{Technical Rating, $R_{t}$} & \textbf{Economic Rating, $R_{e}$} & \textbf{Total Rating, $R$} \\ \hline
+        Variant 2        & 0.65                               & 0.33                              & 0.4901                     \\ \hline
+        Variant 3        & 0.60                               & 0.52                              & 0.5580                     \\ \hline
+        Variant 6        & 0.70                               & 0.56                              & 0.6304                     \\ \hline
+        Variant 7        & 0.65                               & 0.60                              & 0.6250                     \\ \hline
+    \end{tabular}
+    \caption{Total Rating of Preliminary Design Variants}
+    \label{tab:total_rating}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \includegraphics[angle=90,origin=c, width=0.5\linewidth]{texs/Part1/chapter4/image/tech_eval.png}
+    \caption{Technical Evaluation of Preliminary Design Variants}
+    \label{tab:tech_eval}
+\end{table}
 
 
 
