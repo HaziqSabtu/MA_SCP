@@ -537,12 +537,12 @@ For a more detailed calculation, please refer to Appendix \ref{appendix:technica
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
-        \multicolumn{3}{|c|}{\textbf{Production Cost}}                                  \\ \hline
-        \textbf{Variant} & \textbf{Cost, \texteuro} & \textbf{Economic Rating, $R_{e}$} \\ \hline
-        Variant 2        & 74.95                    & 0.33                              \\ \hline
-        Variant 3        & 47.97                    & 0.52                              \\ \hline
-        Variant 6        & 44.14                    & 0.56                              \\ \hline
-        Variant 7        & 41.25                    & 0.60                              \\ \hline
+        \multicolumn{3}{|c|}{\textbf{Production Cost}}                                                 \\ \hline
+        \textbf{Variant} & \textbf{Cost, $C_{variant}$(\texteuro)} & \textbf{Economic Rating, $R_{e}$} \\ \hline
+        Variant 2        & 74.95                                   & 0.33                              \\ \hline
+        Variant 3        & 47.97                                   & 0.52                              \\ \hline
+        Variant 6        & 44.14                                   & 0.56                              \\ \hline
+        Variant 7        & 41.25                                   & 0.60                              \\ \hline
     \end{tabular}
     \caption{Economic Evaluation of Preliminary Design Variants}
     \label{tab:economic_eval}
@@ -562,12 +562,145 @@ For a more detailed calculation, please refer to Appendix \ref{appendix:technica
     \label{tab:total_rating}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[H]
     \centering
     \includegraphics[angle=90,origin=c, width=0.5\linewidth]{texs/Part1/chapter4/image/tech_eval.png}
     \caption{Technical Evaluation of Preliminary Design Variants}
     \label{tab:tech_eval}
 \end{table}
 
+\section{Detail Design}
+\label{sec:detail_design}
+The result of the evaluation of the preliminary design variants shows that Variant 6 is the best variant. Hence, this variant will be used as the basis for the detail design. Any improvements will be added in the design, while any weaknesses will be addressed. The result of this process is the final design of the device.
+
+\subsubsection{Power Switch}
+
+This component plays a critical role in controlling the Raspberry Pi's power supply. It is imperative to have a reliable method for powering up and shutting down the Raspberry Pi to ensure smooth operation and prevent potential data corruption.
+
+One available method utilizes the GPIO (General Purpose Input/Output) pins to initiate a shutdown sequence for the Raspberry Pi \cite{Labidi21}. While effective in bringing the device to a hibernation state, it's important to note that this method doesn't completely cut off power. As a result, the Raspberry Pi still draws a minimal amount of power even in this low-power state \cite{jdb}.
+
+To achieve more efficient power management, a more straightforward approach is recommended. This involves the implementation of a simple physical switch (refer to Figure \ref{}). This switch functions by directly connecting and disconnecting the power supply to the Raspberry Pi. As a result, when the switch is in the "off" position, it completely severs the power supply, ensuring that the Raspberry Pi consumes no power whatsoever. This approach has been chosen as the preferred method for controlling the power supply in this project due to its effectiveness and simplicity in implementation.
+
+\subsubsection{Camera Protection}
+
+In the context of the device's design considerations, particular attention has been directed towards safeguarding the camera component. As illustrated in Figure \ref{fig:camera_position}, the current design accommodates the camera within the body of the device, with the lens extending slightly beyond its confines.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=5 cm]{texs/Part1/chapter4/image/d1.png}
+    \caption{Position of the camera component}
+    \label{fig:camera_position}
+\end{figure}
+
+While this configuration is essential for optimal functionality, it does pose a potential vulnerability. Specifically, there exists a risk of inadvertent damage to the camera lens if the device is mistakenly positioned with the lens side facing a surface. Such damage, if incurred, could have severe repercussions on the device's usability.
+
+To address this concern, a purposeful addition has been made in the form of a 3 mm high protective bump (see Figure \ref{fig:detail_camera_protect}). Strategically placed, this bump serves as a safeguard, effectively elevating the camera lens above surfaces and thus averting direct contact.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[c]{0.47\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=4 cm]{texs/Part1/chapter4/image/d12.png}
+        \end{minipage}
+        \caption{Left View}
+        \label{fig:detail_camera_left}
+    \end{subfigure}
+    \begin{subfigure}[c]{\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[width=0.75\linewidth]{texs/Part1/chapter4/image/d13.png}
+        \end{minipage}
+        \caption{Top View}
+        \label{fig:detail_camera_top}
+    \end{subfigure}
+    \caption{Protective bump for camera}
+    \label{fig:detail_camera_protect}
+\end{figure}
+
+\subsubsection{Screen Protection}
+In parallel to the considerations for camera protection, an analogous concern extends to safeguarding the device's screen. The design, as depicted in Figure, accommodates a screen that sits flush with the device's surface, rendering it susceptible to potential damage if placed on abrasive or uneven surfaces.
+
+Similar to the implementation for camera protection, a parallel measure has been applied to address concerns regarding screen protection. As depicted in Figure \ref{fig:detail_screen_protect}, the design integrates a protective bump around the screen perimeter, mirroring the approach taken for the camera.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[c]{0.47\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=3.5 cm]{texs/Part1/chapter4/image/d21.png}
+        \end{minipage}
+        \caption{Before}
+        \label{fig:detail_screen_before}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.47\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=3.5 cm]{texs/Part1/chapter4/image/d22.png}
+        \end{minipage}
+        \caption{After}
+        \label{fig:detail_screen_after}
+    \end{subfigure}
+    \caption{Protective bump for screen}
+    \label{fig:detail_screen_protect}
+\end{figure}
+
+\subsubsection{Column for Threaded Inserts}
+In accordance with the design specifications detailed in section \ref{}, threaded inserts have been employed as a critical element for securely fastening components within the body of the device.
+
+It is imperative to note that threaded inserts of varying sizes necessitate distinct minimum wall thicknesses for the columns, as well as specific hole depths to ensure proper engagement and stability. To address this requirement, a comprehensive sizing guide based on Ruthex threaded inserts has been compiled and is presented in Table \ref{tab:threaded_inserts_sizing_guide}.
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Thread Size} & \textbf{Hole size (mm)} & \textbf{Min. thickness (mm)} & \textbf{Min. height (mm)} \\ \hline
+        M2.5                 & 4                       & 1.6                          & 6.7                       \\ \hline
+        1/4"                 & 8                       & 3.3                          & 13.7                      \\ \hline
+    \end{tabular}
+    \caption{Sizing guide for threaded inserts \cite{ruthex1}\cite{ruthex2}}
+    \label{tab:threaded_inserts_sizing_guide}
+\end{table}
+
+
+\subsubsection{LAN Port}
+
+The inclusion of a LAN (Local Area Network) port in the device design serves as a crucial convenience feature for users seeking to perform maintenance on the Raspberry Pi without the need for disassembly. This strategic integration allows for seamless connectivity, enabling direct access to the Raspberry Pi's functionalities and resources over a local network. Figure \ref{fig:lan_port} shows the LAN port.
+
+Positioned on the side of the device body (see Figure \ref{fig:lan_port_position}), the LAN port offers a user-friendly interface, ensuring easy accessibility for maintenance tasks. This thoughtful placement not only enhances the overall user experience but also demonstrates a commitment to user-centric design, allowing for swift and efficient maintenance procedures while minimizing any potential disruption to the device's internal components.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=5 cm]{texs/Part1/chapter4/image/d31.png}
+    \caption{The LAN port}
+    \label{fig:lan_port}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=5 cm]{texs/Part1/chapter4/image/d32.png}
+    \caption{Position of the LAN port}
+    \label{fig:lan_port_position}
+\end{figure}
+
+\subsubsection{Color Scheme}
+
+The color scheme plays a crucial role in enhancing the product's appeal. Considering the target market is the police force, we drew inspiration from the Germany police logo, as can be seen in Figure \ref{fig:polizei_logo}. Blue, the dominant color in the logo, is used as the primary color for the device. Other color that is presented in the logo is yellow, which is used as the device's handle grip color and the color white, which is used as the color for the devices top cover.
+
+The result of the color scheme can be seen in Figure \ref{fig:color_scheme}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=5 cm]{texs/Part1/chapter4/image/polizei.jpg}
+    \caption{Germany Police Logo \cite{bundespolizei}}
+    \label{fig:polizei_logo}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=9 cm]{texs/Part1/chapter4/image/d41.png}
+    \caption{Result of recolor}
+    \label{fig:color_scheme}
+\end{figure}
 
 
