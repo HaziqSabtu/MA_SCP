@@ -1,6 +1,7 @@
 \chapter{Planning and Task Clarification}
+\label{ch:planning}
 
-This chapter delves into the process of planning and clarifying tasks for the prototype, as depicted in Figure \ref{fig:planning} following Pahl and Beitz's model. As mentioned previously in Chapter \ref{sec:methodicproductdevelopment} this step play a critical role in the product development process. They involve precisely defining and understanding the requirements and expectations related to a specific task or project. The aim is to remove any confusion and ensure that everyone involved has a shared understanding of what needs to be achieved.
+This chapter delves into planning and clarifying tasks for the prototype, as depicted in Figure \ref{fig:planning} following Pahl and Beitz's model. As mentioned previously in Chapter \ref{sec:methodicproductdevelopment}, this step plays a critical role in the product development process. They involve precisely defining and understanding the requirements and expectations related to a specific task or project. The goal is to eliminate confusion and ensure comprehension among all involved parties.
 
 \begin{figure}[ht!]
     \centering
@@ -9,28 +10,28 @@ This chapter delves into the process of planning and clarifying tasks for the pr
     \label{fig:planning}
 \end{figure}
 
-During this step, the specific goals, limitations, and things that need to be produced for the task are identified \cite{Pahl07a}. By clarifying and specifying tasks, engineers and designers set a strong foundation for the later stages of product development. This allows them to move forward with a clear sense of direction and focus. To achieve this, Pahl and Beitz formulated a series of questions that must be answered to ensure that the task is well-defined and understood \cite{Pahl07a}. These questions are:
+During this step, the task's specific goals, limitations, and required deliverables are identified \cite{Pahl07a}. By clarifying and specifying tasks, engineers and designers set a strong foundation for the later stages of product development, which allows the designers to move forward with a clear sense of direction and focus. To achieve this, Pahl and Beitz formulated a series of questions that must be answered to ensure that the task is well-defined and understood \cite{Pahl07a}. These questions are:
 
 \begin{itemize}
-    \item What is the objectives of the solution?
+    \item What is the objective of the solution?
     \item What characteristics should the solution have?
     \item What characteristics should the solution avoid?
 \end{itemize}
 
-By answering these questions, the requirements for the solution can be identified and spelled out. These requirements will serve as the basis for the subsequent phases of the product development process. The outcome of this step is a list of requirements that outline the needs, expectations, and restrictions tied to the task \cite{Pahl07a}.
+The requirements for the solution can be identified and spelled out by answering these questions. These requirements will serve as the basis for the subsequent phases of the product development process. The outcome of this step is a list of requirements that outline the needs, expectations, and restrictions tied to the task \cite{Pahl07a}.
 
 \section{Establishing the Prototype's Requirements}
-To properly establish the requirements for the prototype, it is suggested to propely define the objectives of the prototype and clearly divide them into demands and wishes \cite{Pahl07n}.
+To properly establish the requirements for the prototype, it is suggested to properly define the objectives of the prototype and classify them into demands and wishes \cite{Pahl07n}.
 
-Demands, as described by Pahl and Beitz \cite{Pahl07n}, are the essential and non-negotiable requirements that must be fulfilled for the product to be considered successful. They represent the core functionality and characteristics that the product must possess to meet its intended purpose and provide value to the users. Demands are typically based on objective criteria and are crucial for ensuring the product's basic functionality and compliance.
+Demands, as described by Pahl and Beitz \cite{Pahl07n}, are the essential and non-negotiable requirements that must be fulfilled for the product to be considered successful. They represent the core functionality and characteristics that the product must possess to meet its intended purpose and provide value to the users. Demands are typically based on objective criteria and are crucial for ensuring the product's functionality and compliance.
 
-On the other hand, wishes are defined as the desirable but non-essential requirements or features that stakeholders would like to see in the product. Wishes often involve additional functionalities, aesthetics, or user experience enhancements that would provide added value or differentiate the product in the market. While wishes may not be mandatory, they can contribute to customer satisfaction, competitive advantage, and overall product excellence.
+On the other hand, wishes, as defined by them, are defined as the desirable but non-essential requirements or features that clients or stakeholders would like to see in the product. Wishes often involve additional functionalities, aesthetics, or user experience enhancements that would provide added value or differentiate the product in the market. While wishes may not be mandatory, they can contribute to customer satisfaction, competitive advantage, and overall product excellence.
 
-In addition, all of the requirements defined is possible must be quantifiable. This means that the requirements must be measurable and testable. This is important for ensuring that the requirements are met and that the product is able to fulfill its intended purpose.
+In addition, if possible, all of the requirements defined must be quantifiable, which means that the requirements must be measurable and testable \cite{Pahl07n}. This specification is essential for ensuring that the requirements are met and that the product can fulfill its intended purpose.
 
 
 \section{Identifying the Prototype's Requirements}
-In this section, the requirements of the prototype will be established. The checklist (see Figure \ref{fig:checklist}) will be used as a guideline to ensure that all the requirements are properly identified and defined.
+In this section, the requirements of the prototype will be established. The checklist (see Figure \ref{fig:checklist}) will be used as a guideline to ensure that all the requirements are correctly identified and defined.
 
 \begin{figure}[ht!]
     \centering
@@ -39,66 +40,78 @@ In this section, the requirements of the prototype will be established. The chec
     \label{fig:checklist}
 \end{figure}
 
-\subsection{Geometry}
-When creating a prototype, it's crucial to get its size and shape right so that people can use it effectively. The size determines how big the prototype is and how well it functions. However, we need to be mindful not to make the prototype too large due to manufacturing limitations.
+\subsubsection{Geometry}
+When creating a prototype, adhering to specific size parameters is essential to ensure its functionality and usability for end-users or customers. The prototype must conform to a general size limit of 300 mm x 300 mm x 300 mm. Additionally, we must consider the limitations of the 3D printer's size capacity.
 
-For our prototype, we're utilizing a 3D printing service provided by TH Brandenburg. We're specifically using the Original Prusa i3 MK3S+ 3D printer, which has a maximum printing area of 210 mm by 210 mm by 250 mm \cite{Prusa}. This means we have to work within these size constraints.
+We have opted to employ the printer mentioned previously in Section \ref{subsec:prusa_slicer_mk3s}. This particular printer has a maximum printing area of 210 mm by 210 mm by 250 mm \cite{Prusa}, imposing certain constraints on the dimensions of our prototype.
 
-To ensure that our prototype fits within these limits, we've decided to slightly reduce its size. We're making it about 10\% smaller than the maximum printing area. This adjustment ensures that our prototype can be comfortably accommodated on the 3D printer at TH Brandenburg. Given these considerations, the largest dimensions we've chosen for the prototype are 190 mm by 190 mm by 220 mm.
+Ideally, each printed component should fall within the specified printing size range. However, should a component exceed these dimensions, it will be necessary to divide it into two or more parts to facilitate printing. This approach guarantees that each part can be accommodated within the printer's size constraints.
 
-\subsection{Energy}
-The energy needed for the prototype is really important because it affects how useful and convenient it is. We\'ve made a requirement that the prototype should be able to work on its own for at least 1 hour using the provided power supply. This rule is in place to make sure the prototype can work by itself and give users a smooth experience.
+\subsubsection{Energy}
+The energy required for the prototype is crucial because it determines its usefulness and convenience. We have set a requirement that the prototype should function independently for at least an hour using the provided power supply. This guideline is in place to ensure that the prototype can function autonomously and provide users with a seamless experience.
 
-By being able to work for at least 1 hour, the prototype shows that it can keep running for a reasonable amount of time without needing to be charged often or relying on outside power. This enables users to operate the device without concern for an extended period, offering more opportunities to explore its functionality and capabilities. It also provides users with the freedom to engage with the prototype in real-life scenarios, offering valuable insights into its performance and effectiveness.
+By meeting this requirement, the prototype demonstrates that it can operate reasonably without frequent charging or relying on external power sources. This feature enables users to use the device without any concerns for an extended period, giving them more opportunities to explore its functionality and capabilities.
 
-\subsection{Forces}
+\subsubsection{Forces}
 The force requirement for the prototype has two main aspects: ensuring it can handle the weight of its components while also adhering to a maximum weight limit.
 
-Firstly, it's crucial to verify that the prototype can effectively support the weight of its components without compromising its overall structure or functionality. This ensures the prototype's durability and ability to withstand the forces exerted by its components. Additionally, it guarantees that the prototype can be manipulated and operated without the risk of damage or malfunction.
+Firstly, it is crucial to verify that the prototype can effectively support the weight of its components without compromising its overall structure or functionality, which ensures the prototype's durability and ability to withstand the forces exerted by its components. Additionally, it guarantees that the prototype can be manipulated and operated without the risk of damage or malfunction.
 
-Furthermore, there is a specific constraint that the total weight of the prototype must not surpass 2 kg. This encompasses the collective weight of all internal components, including both the predefined components and any additional materials integrated during the design process. Adhering to this weight limit ensures the prototype remains lightweight and manageable, while still meeting the intended performance criteria.
+Furthermore, there is a specific constraint that the total weight of the prototype must not surpass 2 kg. This requirement encompasses the collective weight of all internal components, including predefined components and any additional materials integrated during the design process. Adhering to this weight limit ensures the prototype remains lightweight and manageable while meeting the intended performance criteria.
 
-\subsection{Materials}
-When crafting the prototype, it's crucial to carefully consider the specific materials and components that will be used. In this project, there are certain components that have already been chosen, and they must be included to meet the requirements. These components include the Raspberry Pi 4B, a 7-inch touch screen, the Raspberry Pi Camera V2, and the Veektomx 10000mAh power bank.
+\subsubsection{Materials}
+When developing the prototype, it is of utmost importance to thoughtfully consider the specific materials and elements that will be utilized. The client has already preselected specific components for this project, which are mandatory to meet the requirements. These components include the Raspberry Pi 4B, a 7-inch touch screen, and the Raspberry Pi Camera V2.
 
-These chosen components act as essential building blocks for the prototype's function and performance. The Raspberry Pi 4B, a versatile single-board computer, supplies computing power and functions as the core control unit for the prototype. The 7-inch touch screen enhances user interaction by providing a responsive and user-friendly interface for input and output.
+These elements are fundamental building blocks for the prototype's operation and efficiency. The Raspberry Pi 4B, functioning as a versatile single-board computer, furnishes computational power and acts as the central control unit for the prototype. The 7-inch touchscreen enhances user interaction by providing a responsive and user-friendly interface for both input and output. The Raspberry Pi Camera V2 facilitates the capturing of images and videos.
 
-The Raspberry Pi Camera V2 enables the capture of images and videos, allowing for a range of applications within the prototype. Lastly, the Veektomx 10000mAh power bank provides a dependable power source, ensuring continuous operation of the prototype.
+\subsubsection{Ergonomics}
+The prototype has specific ergonomics requirements regarding dimensions, weight, and handling. The main goal is to make the prototype compact and lightweight, making it easy to carry and maneuver, which makes it more comfortable and convenient for users to handle.
 
-\subsection{Ergonomics}
-When it comes to ergonomics, the prototype has specific demands concerning its dimensions, mass, and how users hold it. First and foremost, the prototype needs to be compact and lightweight. This guarantees that it's easy to carry around, making it simple to handle and move. By minimizing the prototype's size and weight, it enhances user comfort and convenience during use.
+Another crucial aspect of the ergonomics requirement is ensuring that users can comfortably hold the prototype. This requirement involves considering the prototype's shape, grip, and balance to ensure it is easy and secure. The design should fit naturally into the user's hand, providing a stable and ergonomic grip.
 
-Furthermore, a vital aspect of the ergonomics requirement is that users should be able to hold the prototype comfortably. This involves thinking about the prototype's shape, grip, and balance to ensure it's easy and secure to hold. The design should fit naturally into the contours of the user's hand, ensuring a stable and ergonomic grip. By optimizing the prototype's shape and considering user ergonomics, it can deliver a smooth and user-friendly experience.
+\subsubsection{Production}
+The client has specified the fabrication of the prototype components to utilize the 3D Printing technology. Furthermore, the design of the prototype must accommodate the use of PLA filament. This material, known for its widespread availability and well-rounded combination of strength and flexibility, aligns with the requirements of the prototype.
 
-\subsection{Production}
-The production requirement for the prototype focuses on the manufacturing process and the materials used. The prototype must be designed to be manufactured using 3D printing technology. This ensures that the prototype can be produced using the available resources and capabilities. In addition, the prototype must be designed to be manufactured using PLA filament. This material is readily available and offers a good balance of strength and flexibility, making it suitable for the prototype's requirements.
+\subsubsection{Operation}
+The prototype must fulfill two essential requirements: easy to use freehand without additional support and compatible with a tripod to ensure stability.
 
-\subsection{Operation}
-The operation requirement for the prototype encompasses two key aspects: the ability to be used freehand and the capability to integrate with a tripod for improved stability.
+The prototype design should allow freehand operation to achieve the first requirement. The design should be ergonomic, with a comfortable grip and easy-to-use controls, making it intuitive for users to use the prototype.
 
-Firstly, the prototype must be designed to facilitate freehand operation. This means that users should be able to interact with and operate the prototype comfortably and conveniently without the need for additional support or mounting. The design should consider ergonomic factors such as grip, button placement, and user-friendly controls, ensuring that users can manipulate the prototype easily and intuitively.
+The second requirement is that the prototype should be able to integrate with a tripod to offer better stability when needed. This feature lets users securely attach the prototype to a tripod, ensuring a stationary and stable setup. With tripod compatibility, the prototype can cater to scenarios where steady and controlled operation or positioning is necessary.
 
-Secondly, the prototype should be capable of integrating with a tripod for enhanced stability when necessary. This feature allows users to attach the prototype securely to a tripod, providing a stable and stationary setup. By integrating tripod compatibility, the prototype can cater to scenarios where steady and controlled operation or positioning is required, such as capturing images or conducting experiments that demand minimal movement.
-
-\subsection{Assembly}
+\subsubsection{Assembly}
 The assembly requirement for the prototype emphasizes the importance of considering the ease of assembly and disassembly of its components. This design consideration enables users to access the inner components easily, facilitating maintenance and repair tasks.
 
-By designing the prototype with ease of assembly in mind, it becomes simpler for users to put the components together without requiring complex tools or specialized knowledge. This promotes user-friendliness and reduces the time and effort required for initial assembly or subsequent modifications. Similarly, easy disassembly allows users to access the internal components when needed, simplifying troubleshooting, repairs, or component replacements.
+By designing the prototype with ease of assembly in mind, it becomes simpler for users to put the components together without requiring complex tools or specialized knowledge. This requirement promotes user-friendliness and reduces the time and effort required for initial assembly or subsequent modifications. Similarly, easy disassembly allows users to access the internal components when needed, simplifying troubleshooting, repairs, or component replacements.
 
-Additionally, if feasible, the parts of the prototype should be designed with swappable properties. This means that individual components or modules can be easily removed and replaced, without the need to disassemble the entire prototype. Swappable parts enhance modularity, flexibility, and cost-effectiveness, as users can upgrade or replace specific components as needed, rather than replacing the entire prototype.
+The prototype's design should have swappable properties so individual components or modules can be easily removed and replaced without disassembling the entire prototype. Swappable parts enhance modularity, flexibility, and cost-effectiveness, as users can upgrade or replace specific components as needed rather than replace the entire prototype.
 
-\subsection{Costs}
-The cost requirement for the prototype focuses on the total cost of production. The prototype must be designed to be manufactured within a budget of 100 euros excluding the cost of the predefined components. This budget encompasses the cost of all materials and components used in the production process. By adhering to this cost limitation, the prototype can be produced within the available resources and capabilities.
+\subsubsection{Costs}
+The cost requirement for the prototype focuses on the total cost of production. The manufacturing of the prototype must be within a budget of 100 €, excluding the cost of the predefined components. This budget encompasses the cost of all materials and components used in the production process.
 
-\subsection{Schedules}
-The schedule requirement for the prototype focuses on the time required for production. The prototype must be designed to be manufactured within a time frame of 2 weeks. This time frame encompasses the entire production process, from design to assembly. By adhering to this schedule, the prototype can be produced within the available resources and capabilities.
+\subsubsection{Schedules}
+The schedule requirement for the prototype focuses on the time required for the design and production phase. The prototype's design must allow for manufacturing within a 2-month window, covering the entire production process, from design to assembly.
 
-\subsection{Durability}
-The durability requirement for the prototype includes considerations for resistance to dust and water, if feasible. While it may not always be possible to achieve complete resistance, efforts should be made to enhance the prototype's durability in these aspects.
+\subsubsection{Durability}
+The durability standard for the prototype encompasses considerations for its ability to withstand dust and water, if possible. While achieving complete resistance may only sometimes be attainable, efforts should be directed toward enhancing the prototype's durability in these aspects.
 
-Regarding dust resistance, the prototype should be designed to minimize the ingress of dust particles into its internal components and sensitive areas. This involves employing appropriate seals, filters, or protective enclosures to prevent dust from adversely affecting the prototype's performance or functionality. By reducing the risk of dust accumulation, the prototype can maintain its optimal operation and extend its lifespan.
+Concerning dust resistance, the prototype's design should minimize the entry of dust particles into its internal components and sensitive areas. This requirement entails using appropriate seals, filters, or protective enclosures to prevent dust from negatively impacting the prototype's performance or functionality.
 
-In terms of water resistance, if feasible and relevant to the intended use, the prototype should exhibit a level of protection against water ingress. This can involve incorporating waterproof or water-resistant materials, seals, or coatings to shield the internal components from moisture. Ensuring water resistance enhances the prototype's durability and enables usage in environments where exposure to water or humidity is likely.
+In terms of water resistance, if relevant to the intended use, the prototype should demonstrate a level of protection against water penetration. This specification may incorporate waterproof or water-resistant materials, seals, or coatings to shield the internal components from moisture.
 
 \section{Requirement List}
-Table 1 and Table 2 on the following pages show the requirements list which included the requirements described in this chapter.
+Table \ref{tab:req1} and Table \ref{tab:req2} shows the list of requirements for the prototype, including the demands and wishes. The demands are marked with a D, while the wishes are marked with a W.
+
+\begin{table}[H]
+    \centering
+    \includegraphics[width= 0.9\linewidth]{texs/Part1/chapter2/image/req1.png}
+    \caption{Requirement List (1)}
+    \label{tab:req1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \includegraphics[width= 0.9\linewidth]{texs/Part1/chapter2/image/req2.png}
+    \caption{Requirement List (2)}
+    \label{tab:req2}
+\end{table}
