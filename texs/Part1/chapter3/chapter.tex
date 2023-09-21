@@ -1,9 +1,9 @@
 \chapter{Conceptual Design}
 Following the clarification of the task is the conceptual design, where in this section of the product development process, designers engage in creative exploration and evaluation of various design ideas and concepts.
 
-Pahl and Beitz describe conceptual design as the phase of the design process where the essential problems are identified through abstraction, function structures are established, appropriate working principles are sought, and these elements are combined to form a working structure. This process lays down the foundation for the solution path by elaborating on a solution principle, ultimately specifying the principle solution. \cite{Pahl07d}
+According to Pahl and Beitz, conceptual design is the stage of the design process where important issues are pinpointed through abstraction  \cite{Pahl07d}. The process involves establishing function structures, searching for suitable working principles, and ultimately combining these elements to create a working structure.
 
-Figure \ref{fig:steps-conceptual-design} shows the steps involved in the conceptual design phase.
+Figure \ref{fig:steps-conceptual-design} shows the steps involved in this phase.
 
 \begin{figure}[ht!]
     \centering
@@ -14,7 +14,7 @@ Figure \ref{fig:steps-conceptual-design} shows the steps involved in the concept
 
 
 \section{Abstraction}
-Traditional solution principles or designs may not provide optimal answers in the presence of new technologies, procedures, materials, and scientific discoveries. Preconceptions, conventions, and risk aversion often hinder unconventional but better and more cost-effective solutions. To overcome fixation on conventional ideas, designers utilize abstraction, focusing on the general and essential aspects rather than particular details. By formulating the task appropriately, the overall function and essential constraints become clear, enabling objective solution selection. \cite{Pahl07b}
+Due to new technologies, procedures, materials, and scientific discoveries, traditional solution principles or designs may not be able to provide optimal answers, and to overcome fixation on conventional ideas, designers utilize abstraction, focusing on the general and essential aspects rather than particular details \cite{Pahl07b}.
 
 To help in identification of the essential problems, following abstraction techniques are used \cite{Pahl07c}:
 
@@ -22,7 +22,7 @@ To help in identification of the essential problems, following abstraction techn
     \item \textbf{Step 1:} Eliminate personal preferences.
     \item \textbf{Step 2:} Omit requirements that have no direct bearing on the function and the essential constraints.
     \item \textbf{Step 3:} Transform quantitative into qualitative data and reduce them to essential statements.
-    \item \textbf{Step 4:} Generalise the results of the previous step.
+    \item \textbf{Step 4:} Generalise the previous step's results.
     \item \textbf{Step 5:} Formulate the problem in solution-neutral terms.
 \end{itemize}
 
@@ -30,14 +30,14 @@ Figure \ref{fig:result-abstraction-process} shows the result of the abstraction 
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.8\linewidth]{texs/Part1/chapter3/image/abstractionresult.png}
+    \includegraphics[width=0.4\linewidth]{texs/Part1/chapter3/image/abstractionresult.png}
     \caption{Result of Abstraction Process}
     \label{fig:result-abstraction-process}
 \end{figure}
 
 
 \section{Function Structures}
-Pahl and Beitz \cite{Pahl07e} define function structures as a graphical representation of the functions of a system and their interrelationships. It is a hierarchical representation of the functions of a system, starting with the overall function and breaking it down into sub-functions. The function structure is a useful tool for identifying the essential functions of a system and for identifying the relationships between the functions.
+Pahl and Beitz \cite{Pahl07e} define function structures as a graphical representation of the functions of a system and their interrelationships. It is a hierarchical representation of the functions of a system, starting with the overall function and breaking it down into sub-functions. The function structure is a helpful tool for identifying a system's essential functions and the relationships between the functions.
 
 Figure \ref{fig:subfunction-break} shows the representation of the function structure and the process of breaking down the overall function into sub-functions.
 
@@ -50,9 +50,9 @@ Figure \ref{fig:subfunction-break} shows the representation of the function stru
 
 
 \subsection{Overall Function}
-Based on the result of abstraction, the overall function of the system can be represented and visualized using a function structure diagram. This diagram, as shown in Figure \ref{fig:overall-function}, shows the overall function.
+Based on the result of abstraction, the system's overall function can be represented and visualized using a function structure diagram, as shown in Figure \ref{fig:overall-function}.
 
-In this overall function, the components of the prototype are defined as an input, while the prototype itself is defined as the output. The overall function will then be further decomposed into sub-functions on the next section.
+In this overall function, the prototype's components are defined as an input, while the prototype itself is defined as the output. The overall function is decomposed into sub-functions in the next section.
 
 \begin{figure}[ht!]
     \centering
@@ -65,7 +65,7 @@ In this overall function, the components of the prototype are defined as an inpu
 \subsection{Sub-Functions}
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=\linewidth]{texs/Part1/chapter3/image/subfunction1.png}
+    \includegraphics[width=0.8\linewidth]{texs/Part1/chapter3/image/subfunction1.png}
     \caption{Sub-Functions of the System}
     \label{fig:sub-functions}
 \end{figure}
@@ -77,21 +77,19 @@ In this overall function, the components of the prototype are defined as an inpu
     \label{fig:sub-functions-final}
 \end{figure}
 
-The decomposition of the overall function into sub-functions is a crucial step in the conceptual design process. As described by Pahl and Beitz \cite{Pahl07r} the purpose of this decomposition is to reduce the complexity of the overall system and facilitate the identification of suitable solution principles that can fulfill the required functions.
+Decomposing the overall function into sub-functions is crucial in the conceptual design process, and as described by Pahl and Beitz \cite{Pahl07r}, the purpose of this decomposition is to reduce the complexity of the overall system and facilitate the identification of suitable solution principles that can fulfill the required functions.
 
-From the overarching function outlined in the preceding section, we establish the constituent subfunctions. Figure \ref{fig:sub-functions} illustrates the subsystems of the setup. Deriving from the main function, labeled as \textit{Prototype Design}, it breaks down into three subfunctions, specifically \textit{Structural Support}, \textit{Body Design}, and \textit{Operation}.
+Figure \ref{fig:sub-functions} illustrates the sub-functions of the prototype. Deriving from the overall function, labeled as \textit{Prototype Design}, it breaks down into three subfunctions, specifically \textit{Structural Support}, \textit{Body Design}, and \textit{Operation}. The function is then further decomposed into more detailed sub-functions in Figure \ref{fig:sub-functions-final}.
 
-\textit{Structural Support} delineates the subsidiary functions associated with providing structural stability to the prototype. This encompasses the manner in which internal components receive support and are fastened within the prototype. Consequently, this subsidiary function is further deconstructed into \textit{Component Placement}, which explicates the arrangement of internal components, and \textit{Component Orientation}, which describes the alignment of internal components, along with \textit{Component Type}, which characterizes the nature of internal components.
+The term \textit{Structural Support} refers to the measures taken to ensure the structural integrity of the prototype. This sub-function encompasses activities such as securing and stabilizing the internal components within the prototype. To simplify the function, it decomposed into three sub-functions:  \textit{Component Placement}, which specifies the positioning of internal components; \textit{Component Orientation}, which details the alignment of internal components; and \textit{Component Type}, which is the type of component itself.
 
-\textit{Body Design} elucidates the subordinate functions concerning the shaping of the prototype's physical structure. This encompasses the design of the prototype's framework, defining its physical configuration. Thus, this subsidiary function is additionally disintegrated into \textit{Body Type}, which defines the outline of the structure, and \textit{Handling}, which details the method by which the prototype is maneuvered.
+\textit{Body Design} describe the sub-functions involving the prototype's physical structure. To further simplify the task, this sub-function is decomposed into \textit{Body Type}, which defines the outline of the structure, and \textit{Handling}, which describes the handling of the prototype.
 
-\textit{Operation} outlines the subsidiary functions associated with the functioning of the prototype. This incorporates the operation of the prototype's constituents and details the approach to operating the prototype. Hence, this subsidiary function is subsequently subdivided into \textit{Control Mechanism}, which delineates the means by which the prototype is managed, and \textit{Integration with External Mounting}, which explains the process of affixing the prototype to an external tripod stand.
+\textit{Operation} deals with how the prototype works. It describes the device's usage and the components involved during operation. This function is then divided into \textit{Control Mechanism}, which describes the component involved during operation, and \textit{Integration with External Mounting}, which refers to the integration of the prototype with the tripod stand.
 
 \section{Developing Working Principles}
 
-In the process of developing working structures, one crucial step is to search for working principles. Working principles refer to the physical effects and characteristics that fulfill specific functions of the structure being designed. These principles are combined to create the working structure, and they encompass both the physical processes and the form design features.
-
-The search for working principles aims to generate several potential solution variants, creating what is known as a solution field. This can be achieved by varying the physical effects and form design features. Often, multiple physical effects are involved in fulfilling a single subfunction or even multiple function carriers. \cite{Pahl07f}
+In developing working structures, one crucial step is to search for working principles. As defined by Pahl and Beitz, working principles refer to the physical effects and characteristics that fulfill specific functions of the designed structure \cite{Pahl07f}. These principles are combined to create the working structure, encompassing physical processes and the form design features. Several potential working structures can be generated by varying the physical effects and form design features, known as the solution field.
 
 In developing working principles, there are multiple available methods in idea generation. These methods are categorized into three groups:
 
@@ -101,16 +99,18 @@ In developing working principles, there are multiple available methods in idea g
     \item Discursive methods
 \end{itemize}
 
-Pahl and Beitz \cite{Pahl07g} describe the \textit{Conventional Methods} as a systematic and data-driven approach. Designers gather information from various sources, such as literature, trade publications, and competitor catalogs, to stay informed about advancements and best practices. They analyze natural systems and existing technical systems to draw inspiration and identify opportunities for improvement. Analogies are used to substitute analogous problems or systems, leading to fresh perspectives. Additionally, empirical studies, such as measurements and model tests, provide tangible data for validating designs and predicting real-world performance.
+Pahl and Beitz \cite{Pahl07g} describe the \textit{Conventional Methods} as a systematic and data-driven approach. Designers gather information from various sources, such as literature, trade publications, and competitor catalogs, to stay informed about advancements and best practices. They analyze natural systems and existing technical systems to draw inspiration and identify opportunities for improvement. Analogies substitute analogous problems or systems, leading to fresh perspectives. Additionally, empirical studies, such as measurements and model tests, provide tangible data for validating designs and predicting real-world performance.
 
-On the other hand, the \textit{Intuitive Methods}, as described by them \cite{Pahl07h}, tap into creativity and associative thinking. \textit{Brainstorming} fosters a collaborative environment where diverse perspectives generate a wide range of ideas without judgment. \textit{Method 635} adds structure to brainstorming, allowing for systematic idea development within a group. The \textit{Gallery Method} combines individual work with group discussions, using sketches or drawings to explore solution proposals visually. \textit{Synectics} involves combining apparently unrelated concepts to trigger new and fruitful ideas.
+On the other hand, the \textit{Intuitive Methods}, as described by them \cite{Pahl07h}, tap into creativity and associative thinking. \textit{Brainstorming} fosters a collaborative environment where diverse perspectives generate a wide range of ideas without judgment. \textit{Method 635} adds structure to Brainstorming, allowing for systematic idea development within a group. The \textit{Gallery Method} combines individual work with group discussions, using sketches or drawings to explore solution proposals visually.
 
-Additionally, Pahl and Beitz \cite{Pahl07i} introduce \textit{Discursive methods}, which amalgamate systematic, step-by-step procedures with elements of intuition and creativity. They involve deliberate analysis of physical processes, leading to multiple solution variants derived from the relationships between variables. This approach fosters a deeper understanding of the problem space, encouraging the discovery of novel solutions while maintaining a level of systematic rigor, making them effective for communication and collaboration among design teams.
+Additionally, Pahl and Beitz \cite{Pahl07i} introduce \textit{Discursive methods}, which combines systematic, step-by-step procedures with elements of intuition and creativity. They involve deliberate analysis of physical processes, leading to multiple solution variants derived from the relationships between variables. This approach fosters a deeper understanding of the problem space.
 
 \subsection{Searching for Working Principles}
 In the process of searching for working principles, a combination of methods are used, namely the \textit{Brainstorming} and \textit{Analysis of Existing Technical Systems}. The brainstorming method is used to generate ideas and concepts, while the analysis of existing technical systems is used to analyze and evaluate the ideas and concepts generated.
 
-Table \ref{tab:classification-scheme-working-principles} shows the result of idea generation. For a more detailed sketches of the working principles, please refer to Appendix \ref{appendix:sketches-of-working-principles}.
+We utilize multiple techniques, including \textit{Brainstorming} and \textit{Analysis of Existing Technical Systems}, to establish working principles for this project. Brainstorming helps to generate ideas and concepts, while Analysis of Existing Technical Systems enables us to scrutinize and assess the ideas and concepts generated.
+
+Table \ref{tab:classification-scheme-working-principles} shows the result of idea generation. For more detailed sketches of the working principles, please refer to Appendix \ref{appendix:sketches-of-working-principles}.
 
 \begin{table}[H]
     \centering
@@ -121,12 +121,11 @@ Table \ref{tab:classification-scheme-working-principles} shows the result of ide
 
 
 \section{Combination of Working Structures}
+In this step, we will combine the working principles assigned to the sub-functions to create potential working structures. To achieve this, the identified working principles must be linked following the functional structure to fulfill the overall function.
 
-In this step, we will connect the working principles assigned to the sub-functions to create potential functional structures. To achieve this, the identified working principles need to be linked in accordance with the functional structure to fulfill the overall function.
+The method we will employ for systematic combination is Zwicky's morphological box \cite{Kushahrin22}. In this approach, the potential principles are represented in a table for better clarity and connected to form functional structures using connecting lines.
 
-The method we will employ for systematic combination is known as Zwicky's morphological box or morphological chart, which is particularly suitable for this purpose. In this approach, the potential principles are represented in a table for better clarity and connected to form functional structures using connecting lines. It is crucial to ensure that only compatible elements are combined.
-
-Figure \ref{fig:morphological-chart-with-solution-variants} shows the morphological chart with the generated solution variants. The solution variants are labeled as S1 to S9. with each color representing a different solution variant.
+Figure \ref{fig:morphological-chart-with-solution-variants} shows the morphological chart with the generated solution variants. The solution variants are labeled S1 to S9, with each color representing a different solution variant.
 
 \begin{figure}[ht!]
     \centering
@@ -136,12 +135,12 @@ Figure \ref{fig:morphological-chart-with-solution-variants} shows the morphologi
 \end{figure}
 
 \section{Firming Up into Principle Solution Variants}
-In this section, we take the functional structures we've identified and transform them into tangible solution options, which are then illustrated in scaled hand-drawn sketches. The text that accompanies these sketches offers a concise description of how they work, including their potential pros and cons. This information forms the foundation for the upcoming decision-making process.
+In this section, we showcase hand-drawn sketches of identified functional structures that have been transformed into practical solution alternatives. Each sketch is accompanied by a brief description of its operations, highlighting its potential strengths and weaknesses.
 
 \subsection{Solution Variant 1}
-In Solution Variant 1, we encounter a tablet-like design that closely resembles a typical tablet device. The key components, including the Raspberry Pi, Battery, Camera, and Screen, are arranged in a manner reminiscent of a tablet. Notably, the screen orientation is in landscape mode, offering a broader display view for enhanced visual clarity. This orientation is particularly beneficial when the device is used for tasks that require a wider viewing area.
+In Solution Variant 1, we encounter a tablet-like design that closely resembles a typical tablet device. The key components, including the Raspberry Pi, Battery, Camera, and Screen, are arranged in a manner reminiscent of a tablet. The screen orientation is in landscape mode, offering a broader display view for enhanced visual clarity. This orientation is particularly beneficial when the device is used for tasks that require a wider viewing area.
 
-The design is thoughtfully optimized for handheld use, featuring a body grip that ensures comfortable handling. The internal battery integration contributes to a seamless and integrated appearance. To provide robust protection for the internal components, a sandwich-type chassis structure is employed, comprising a top cover, main body, and bottom cover.
+The design is thoughtfully optimized for handheld use, featuring a body grip that ensures comfortable handling. The internal battery integration contributes to a seamless and integrated appearance. A sandwich-type body provides robust protection for the internal components, comprising a top cover, main body, and bottom cover.
 
 For mounting purposes, Solution Variant 1 utilizes a detachable plate tripod system, offering the convenience of easy attachment and removal from a tripod stand. The primary control mechanism for this variant is a touch screen, allowing for intuitive and user-friendly interactions with the device's functionalities.
 
@@ -154,11 +153,11 @@ For mounting purposes, Solution Variant 1 utilizes a detachable plate tripod sys
 
 
 \subsection{Solution Variant 2}
-Much like its predecessor, Solution Variant 2 maintains a tablet-like design, with components arranged akin to a tablet device. It, too, adheres to a landscape screen orientation for an expansive display view. The device is designed to be comfortably held with a body grip.
+Like its predecessor, Solution Variant 2 maintains a tablet-like design, with components arranged like a tablet device. It, too, adheres to a landscape screen orientation for an expansive display view. The device is designed to be comfortably held with a body grip.
 
-One significant difference lies in the battery arrangement. Instead of being integrated, Solution Variant 2 opts for a battery pack, potentially offering the advantages of easier replacement and extended usage periods. Like Solution Variant 1, it employs a sandwich-type chassis structure for sturdy protection of internal components.
+One significant difference lies in the battery arrangement. Instead of being integrated, Solution Variant 2 opts for a battery pack, potentially offering the advantages of easier replacement and extended usage periods. Like Solution Variant 1, it employs a sandwich-type body structure for sturdy protection of internal components.
 
-In terms of mounting, the detachable plate tripod system is retained, ensuring compatibility with tripod stands. What sets Solution Variant 2 apart is the inclusion of physical buttons alongside the touch screen as the primary control mechanism. This addition enhances versatility and usability in various scenarios, as users can choose between touch-based and tactile input.
+The detachable plate tripod system is retained in terms of mounting, ensuring compatibility with tripod stands. What sets Solution Variant 2 apart is the inclusion of physical buttons alongside the touch screen as the primary control mechanism. This addition enhances versatility and usability in various scenarios, as users can choose between touch-based and tactile input.
 
 \begin{figure}[H]
     \centering
@@ -168,11 +167,11 @@ In terms of mounting, the detachable plate tripod system is retained, ensuring c
 \end{figure}
 
 \subsection{Solution Variant 3}
-While Solution Variant 3 maintains the tablet-like component placement found in the previous variants, it introduces a significant departure by adopting a portrait screen orientation. This shift opens up new possibilities for the device's usage, particularly in scenarios where vertical screen space is more advantageous.
+While Solution Variant 3 maintains the tablet-like component placement found in the previous variants, it introduces a significant change by adopting a portrait screen orientation. This shift opens up new possibilities for the device's usage, particularly in scenarios where vertical screen space is more advantageous than horizontal layout.
 
-The design includes a bump grip for secure and comfortable handling in a vertical position. Notably, the battery is positioned externally in this variant, offering the potential advantage of easier access and replacement. The chassis structure remains a sandwich-type, providing robust protection for the internal components.
+The design includes a bump grip for secure and comfortable handling in a vertical position. Notably, the battery is positioned externally in this variant, offering the potential advantage of easier access and replacement. The body structure remains a sandwich-type, providing robust protection for the internal components.
 
-For mounting, the detachable plate tripod system is still utilized, ensuring compatibility with tripod stands. Similar to the earlier variants, Solution Variant 3 relies on a touch screen as the primary control mechanism, facilitating intuitive and user-friendly interactions.
+A fixed mounting plate is employed, ensuring a stable attachment to a tripod stand. Similar to the earlier variants, Solution Variant 3 relies on a touch screen as the primary control mechanism, facilitating intuitive and user-friendly interactions.
 
 One notable advantage of the portrait screen orientation is the improved stability of the device, as the center of gravity is aligned with the device's center. This alignment enhances balance and control when using the device in various orientations, thus enhancing overall usability and versatility.
 
@@ -184,11 +183,7 @@ One notable advantage of the portrait screen orientation is the improved stabili
 \end{figure}
 
 \subsection{Solution Variant 4}
-In Solution Variant 4, we encounter yet another tablet-like design with a portrait screen orientation. Like Solution Variant 3, this orientation offers advantages in certain use cases where a vertical display is preferred.
-
-For handling, the bump grip is employed, providing a secure and ergonomic hold. In terms of battery placement, Solution Variant 4 distinguishes itself by utilizing an external power bank as the power source. This design decision allows for convenient battery replacement or charging when needed.
-
-Unlike the previous variants with sandwich-type chassis structures, Solution Variant 4 opts for a more minimalistic skeleton design. This choice results in a lightweight yet adequately supportive chassis for the internal components. For mounting, a fixed mounting plate is employed, ensuring a stable attachment to a tripod stand.
+Solution Variant 4 copies many features from Solution Variant 3, but with one significant change in the body type. Solution Variant 4 opts for a more minimalistic skeleton design, which results in a lightweight yet adequately supportive body for the internal components.
 
 As with its predecessors, the primary control mechanism remains the touch screen, providing an intuitive and user-friendly interface for operating the device.
 
@@ -202,9 +197,9 @@ As with its predecessors, the primary control mechanism remains the touch screen
 \subsection{Solution Variant 5}
 Solution Variant 5 introduces a unique design approach, deviating from the tablet-like structure seen in previous solutions. Instead, it adopts a Point of Service-like component placement, where the Raspberry Pi, Battery, Camera, and Screen are configured in a distinctive layout. The screen is positioned at an angle, differentiating it from the previous variants.
 
-In terms of screen orientation, Solution Variant 5 retains a portrait mode, which can be advantageous in scenarios requiring vertical displays. The device is designed for body grip handling, offering a secure way to hold and interact with the device.
+Regarding screen orientation, Solution Variant 5 retains a portrait mode, which can be advantageous in scenarios requiring vertical displays. The device is designed for body grip handling, offering a secure way to hold and interact with the device.
 
-A notable difference is the external AAA battery setup, which enhances convenience by offering easy battery replacement and compatibility with standard batteries. The chassis structure follows the familiar sandwich-type design, providing robust protection for the internal components.
+A notable difference is the external AAA battery setup, which enhances convenience by offering easy battery replacement and compatibility with standard batteries. The body structure follows the familiar sandwich-type design, providing robust protection for the internal components.
 
 For mounting purposes, Solution Variant 5 utilizes the detachable tripod system, enabling seamless attachment and detachment from a tripod stand. Like its predecessors, it relies on a touch screen as the primary control mechanism, ensuring intuitive user interactions.
 
@@ -216,11 +211,11 @@ For mounting purposes, Solution Variant 5 utilizes the detachable tripod system,
 \end{figure}
 
 \subsection{Solution Variant 6}
-Solution Variant 6 closely mirrors Solution Variant 5 in terms of component placement and screen orientation. This variant, too, adopts the Point of Service-like layout with a portrait screen orientation. However, it introduces a pistol handle for handling, providing a firm and ergonomic grip for users.
+Solution Variant 6 closely mirrors Solution Variant 5 regarding component placement and screen orientation. This variant, too, adopts the Point of Service-like layout with a portrait screen orientation. However, it introduces a pistol handle for handling, providing a firm and ergonomic grip for users.
 
-The battery is positioned externally and takes the form of a power bank, offering the same benefits of easy battery replacement and extended usage periods. In terms of chassis design, Solution Variant 6 employs a bowl-like structure, where all components are attached to the main body. This design choice provides protection and enclosure while reducing overall weight.
+The battery is positioned externally, offering the same benefits of easy battery replacement and extended usage periods. Regarding body design, Solution Variant 6 employs a bowl-like structure with all components attached to the main body. This design choice provides protection and enclosure while reducing overall weight.
 
-For mounting, the detachable tripod system is employed, ensuring compatibility with tripod stands. As with previous variants, the control mechanism relies on the touch screen for user interactions.
+The detachable tripod system is employed for mounting, ensuring compatibility with tripod stands. As with previous variants, the control mechanism relies on the touch screen for user interactions.
 
 \begin{figure}[H]
     \centering
@@ -232,11 +227,11 @@ For mounting, the detachable tripod system is employed, ensuring compatibility w
 \subsection{Solution Variant 7}
 In Solution Variant 7, we see a distinct design approach with a Handheld PC-like component placement. This configuration aligns the screen and battery, positioning the Raspberry Pi behind the screen.
 
-The screen orientation is set in landscape mode, offering a wider horizontal display view. The device is designed with a bump grip for secure and comfortable handling. Notably, the battery is placed internally and utilizes a battery pack, contributing to an integrated and seamless appearance.
+The screen orientation is in landscape mode, offering a broader horizontal display view. The device is designed with a bump grip for secure and comfortable handling. Notably, the battery is placed internally and utilizes a battery pack, contributing to an integrated and seamless appearance.
 
-The chassis structure adopts a bowl-like design, ensuring secure enclosure and protection for all components. For mounting, the device incorporates a built in tripod system, providing a stable attachment to a tripod stand.
+The chassis structure adopts a bowl-like design, ensuring secure enclosure and protection for all components. The device incorporates a built-in tripod system for mounting, providing a stable attachment to a tripod stand.
 
-Solution Variant 7 stands out by combining both a touch screen and physical buttons as the control mechanism. This dual-input approach provides users with multiple options for interacting with the device's functionalities, enhancing versatility and usability in various scenarios.
+Solution Variant 7 combines a touch screen and physical buttons as the control mechanism. This dual-input approach provides users multiple options for interacting with the device's functionalities, enhancing versatility and usability in various scenarios.
 
 \begin{figure}[H]
     \centering
@@ -248,11 +243,11 @@ Solution Variant 7 stands out by combining both a touch screen and physical butt
 \subsection{Solution Variant 8}
 Lastly, Solution Variant 8 features a Camcorder-like component placement. The Raspberry Pi, Battery, Camera, and Screen are arranged similarly to a camcorder, with the screen positioned at a hinge, allowing it to change angles for flexible viewing.
 
-The screen orientation remains in landscape mode, providing a wide horizontal display view. The device is designed with a body grip for secure and comfortable handling. The battery is placed internally, and a power bank is used to provide a reliable power source for the device.
+The screen orientation remains landscape, providing a broad horizontal display view. The device is designed with a body grip for secure and comfortable handling. The battery is placed internally, and a power bank is used to provide a reliable power source.
 
-The chassis structure follows a bowl-like design, offering protection and sturdiness for the internal components. For mounting purposes, a fixed mount tripod system is employed, providing stability and ease of use when attaching the device to a tripod stand.
+The chassis structure follows a bowl-like design, offering protection and sturdiness for the internal components. A fixed-mount tripod system is employed for mounting purposes, providing stability and ease of use when attaching the device to a tripod stand.
 
-As with some of the previous variants, Solution Variant 8 combines both a touch screen and physical buttons as the control mechanism, offering users the flexibility to interact
+As with some of the previous variants, Solution Variant 8 combines both a touch screen and physical buttons as the control mechanism, offering users the flexibility to interact.
 
 \begin{figure}[H]
     \centering
@@ -262,9 +257,9 @@ As with some of the previous variants, Solution Variant 8 combines both a touch 
 \end{figure}
 
 \section{Filtering of Solution Variants}
-As can be seen in Figure \ref{fig:morphological-chart-with-solution-variants}, multiple solution variants were generated. However, not all of these solutions are feasible and practical. As mentioned by Pahl and Beitz \cite{Pahl07s}, it is necessary to reduce the vast number of theoretically possible but practically unachievable solutions as early as possible. However, caution should be exercised not to discard valuable working principles, as they often play a crucial role in forming a favorable and effective working structure when combined with others.
+As shown in Figure \ref{fig:morphological-chart-with-solution-variants}, multiple solution variants were generated. However, not all of these solutions are feasible and practical. As advised by Pahl and Beitz \cite{Pahl07s}, it is necessary to reduce the vast number of theoretically possible but practically unachievable solutions as early as possible. However, caution should be exercised not to discard valuable working principles, as they often play a crucial role in forming a favorable and effective working structure when combined with others.
 
-Additionally, Pahl and Beitz \cite{Pahl07s} suggest a method which can be used to filter the solution variants. This method is known as the selection chart, which consists of two steps: elimination and preference. Initially, all clearly unsuitable proposals are removed. If a substantial number of solutions still remain, preference is given to those that stand out as markedly superior. Only these preferred solutions are evaluated during the final stages of the conceptual design phase.
+Additionally, Pahl and Beitz \cite{Pahl07s} suggest a method that can be used to filter the solution variants. This method is known as the selection chart, which consists of two steps: elimination and preference. Initially, all clearly unsuitable proposals are removed. If a substantial number of solutions remain, preference is given to those who stand out as markedly superior. Only these preferred solutions are evaluated during the final stages of the conceptual design phase.
 
 Pahl and Beitz suggest the following criteria for eliminating unsuitable solutions:
 \begin{itemize}
@@ -274,15 +269,14 @@ Pahl and Beitz suggest the following criteria for eliminating unsuitable solutio
     \item \textbf{Criteria D:} Within permissible cost
 \end{itemize}
 
-These criteria are applied step by step to examine each solution. If any of the exclusion criteria are not met, the solution is rejected, and further criteria are not assessed. Additionally to the exclusion criteria, the following preference criteria are used to prioritize the remaining solutions:
+These criteria are applied step by step to examine each Solution. If any of the exclusion criteria are not met, the Solution is rejected, and further criteria are not assessed. Additionally to the exclusion criteria, the following preference criteria are used to prioritize the remaining solutions:
 
 \begin{itemize}
     \item \textbf{Criteria E:} Incorporates direct safety measures
     \item \textbf{Criteria F:} Preferred by the designer
 \end{itemize}
 
-Criteria E and F are then used to prioritize solutions if there are still too many options after the initial screening. The remarks column provides explanations for excluding or favoring each solution. The final assessment of the functional principles is recorded in the rightmost column of the selection list.
-
+Criteria E and F are then used to prioritize solutions if there are still too many options after the initial screening. The remarks column provides explanations for excluding or favoring each Solution. The final assessment of the functional principles is recorded in the rightmost column of the selection list.
 
 \begin{figure}[ht!]
     \centering
@@ -291,6 +285,5 @@ Criteria E and F are then used to prioritize solutions if there are still too ma
     \label{fig:selection-chart-solution-variants}
 \end{figure}
 
-% TODO: Fix S9 -> S8
 The result of the selection chart, as shown in Figure \ref{fig:selection-chart-solution-variants}, indicates that solutions S1, S4, S5, and S8 have been eliminated and will not be considered for the next stage of the design process.
 
