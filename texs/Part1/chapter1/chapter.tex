@@ -19,10 +19,10 @@ At the core of the Pahl and Beitz methodology is the understanding that effectiv
 Figure \ref{fig:pahlprocess} shows the stages involved in Pahl and Beitz's design process.
 
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=0.75\textwidth]{texs/Part1/chapter1/image/pahlprocess.png}
-    \caption{Pahl and Beitz's Design Process \cite{Pahl07l}}
-    \label{fig:pahlprocess}
+  \centering
+  \includegraphics[width=0.75\textwidth]{texs/Part1/chapter1/image/pahlprocess.png}
+  \caption{Pahl and Beitz's Design Process \cite{Pahl07l}}
+  \label{fig:pahlprocess}
 \end{figure}
 
 \section{Fused Deposition Modeling}
@@ -44,10 +44,10 @@ The Original Prusa i3 MK3S+ is an FDM 3D printer designed for desktop use, ideal
 This 3D printer is accessible to students and faculty at the University of Applied Sciences Brandenburg and will play a pivotal role in the prototype development process. Figure \ref{fig:prusa_slicer_mk3} visually represents the Original Prusa i3 MK3S+, located within the University of Applied Sciences Brandenburg Workshop.
 
 \begin{figure}
-    \centering
-    \includegraphics[height=8cm]{texs/Part1/chapter1/image/prusa.jpg}
-    \caption{Original Prusa i3 MK3S+}
-    \label{fig:prusa_slicer_mk3}
+  \centering
+  \includegraphics[height=8cm]{texs/Part1/chapter1/image/prusa.jpg}
+  \caption{Original Prusa i3 MK3S+}
+  \label{fig:prusa_slicer_mk3}
 \end{figure}
 
 \subsection{PrusaSlicer}
@@ -62,10 +62,10 @@ PrusaSlicer offers an essential function of adding support to the 3D prints. Sup
 This software can also generate a preview of the printed object, which lets users visualize the result. Additionally, PrusaSlicer provides an estimate of the amount of filament required for the printing process and the duration of the printing process. Figure \ref{fig:prusa_slicer} shows a screenshot of PrusaSlicer.
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{texs/Part1/chapter1/image/prusaslicer.png}
-    \caption{Example View of PrusaSlicer}
-    \label{fig:prusa_slicer}
+  \centering
+  \includegraphics[width=0.8\linewidth]{texs/Part1/chapter1/image/prusaslicer.png}
+  \caption{Example View of PrusaSlicer}
+  \label{fig:prusa_slicer}
 \end{figure}
 
 
@@ -75,8 +75,8 @@ This software can also generate a preview of the printed object, which lets user
 To perform a cost analysis of the 3D printing process, we will consider the following parameters:
 
 \begin{itemize}
-    \item Material Cost ($C_m$)
-    \item Energy Cost ($C_e$)
+  \item Material Cost ($C_m$)
+  \item Energy Cost ($C_e$)
 \end{itemize}
 
 Equation \ref{eq:material_cost} shows the formula used to calculate the material cost. This formula involves multiplying the mass of filament used ($m_{fil}$) by the cost of filament per kilogram($C_{fil}$). The cost of the filament is dependent on the type of material used. We will use PLA for this project, which costs 29.99 €/kg \cite{PrusaCost}.
@@ -86,18 +86,19 @@ Energy cost refers to the electricity cost of the printing process and is calcul
 Equation \ref{eq:printing_cost} shows the formula for calculating the cost of 3D printing.
 
 \begin{equation}
-    \label{eq:material_cost}
-    C_{m} = m_{fil}\cdot C_{fil}
+  \label{eq:material_cost}
+  C_{m} = m_{fil}\cdot C_{fil}
 \end{equation}
 
 \begin{equation}
-    \label{eq:energy_cost}
-    C_{e} = t_{p}\cdot C_{el}\cdot P
+  \label{eq:energy_cost}
+  C_{e} = t_{p}\cdot C_{el}\cdot P
 \end{equation}
 
 \begin{equation}
-    \label{eq:printing_cost}
-    C_{print} = C_{m} + C_{e}
+  \label{eq:printing_cost}
+  C_{print} = C_{m} + C_{e}
 \end{equation}
+
 
 
