@@ -4,10 +4,15 @@
 \usepackage{a4wide}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+% \usepackage[ngerman]{babel}
 \usepackage[english]{babel}
 \usepackage{ae,aecompl}
 \usepackage{ae}
 \usepackage{graphicx}
+% \usepackage[
+% 	backend=biber,
+% 	style=alphabetic,
+% ]{biblatex}
 \usepackage{bibgerm}
 % \usepackage{mathptmx} %Schriftart Times New Roman
 
@@ -56,33 +61,35 @@
 
 % \usepackage[style=chicago-authordate,natbib=true,backend=biber]{biblatex}
 
+
+
 \hypersetup{
-	% bookmarks=true,								% Lesezeichen erzeugen
-	bookmarksopen=false,					% Lesezeichen ausgeklappt
-	bookmarksnumbered=true,				% Anzeige der Kapitelzahlen am Anfang der Namen der Lesezeichen
-	pdfstartpage=1,							% Seite, welche automatisch ge�ffnet werden soll
-	pdftitle={Titel},
-	% Titel des PDF-Dokuments
-	pdfauthor={Autor},	% Autor(Innen) des PDF-Dokuments
-	pdfsubject={Betreff},	% Inhaltsbeschreibung des
-	pdfkeywords={Schl�sselw�rter},
-	% Stichwortangabe zum PDF-Dokument
-	breaklinks=true,							% erm�glicht einen Umbruch von URLs
-	colorlinks=true,							% Einf�rbung von Links
-	linkcolor=myBlue,							% Linkfarbe: blau
-	anchorcolor=blue,						% Ankerfarbe: schwarz
-	citecolor=myRed, 							% Literaturlinks: schwarz
-	filecolor=black,							% Links zu lokalen Dateien: schwarz
-	menucolor=black, 							% Acrobat Men� Eintr�ge: schwarz
-	% pagecolor=myBlue, 							% Links zu anderen Seiten im Text: schwarz
-	urlcolor=myBlue,							% URL-Farbe: blau
-	%backref=true,
-	% pagebackref=false,
-	pdfcenterwindow=true,
-	pdfnewwindow=true,
-	pdffitwindow=true,
-	pdfstartview=FitH,
-	pdfpagemode=UseOutlines
+    % bookmarks=true,								% Lesezeichen erzeugen
+    bookmarksopen=false,					% Lesezeichen ausgeklappt
+    bookmarksnumbered=true,				% Anzeige der Kapitelzahlen am Anfang der Namen der Lesezeichen
+    pdfstartpage=1,							% Seite, welche automatisch ge�ffnet werden soll
+    pdftitle={Titel},
+    % Titel des PDF-Dokuments
+    pdfauthor={Autor},	% Autor(Innen) des PDF-Dokuments
+    pdfsubject={Betreff},	% Inhaltsbeschreibung des
+    pdfkeywords={Schl�sselw�rter},
+    % Stichwortangabe zum PDF-Dokument
+    breaklinks=true,							% erm�glicht einen Umbruch von URLs
+    colorlinks=true,							% Einf�rbung von Links
+    linkcolor=myBlue,							% Linkfarbe: blau
+    anchorcolor=blue,						% Ankerfarbe: schwarz
+    citecolor=myRed, 							% Literaturlinks: schwarz
+    filecolor=black,							% Links zu lokalen Dateien: schwarz
+    menucolor=black, 							% Acrobat Men� Eintr�ge: schwarz
+    % pagecolor=myBlue, 							% Links zu anderen Seiten im Text: schwarz
+    urlcolor=myBlue,							% URL-Farbe: blau
+    %backref=true,
+    % pagebackref=false,
+    pdfcenterwindow=true,
+    pdfnewwindow=true,
+    pdffitwindow=true,
+    pdfstartview=FitH,
+    pdfpagemode=UseOutlines
 }
 
 \definecolor{myBlue} {rgb}{0.423529412,0.388235294,0.725490196}
@@ -105,3 +112,5 @@
 \usepackage{cleveref}
 \usepackage{pdflscape}
 \usepackage{pdfpages}
+
+\def\UrlBreaks{\do\/\do-}
