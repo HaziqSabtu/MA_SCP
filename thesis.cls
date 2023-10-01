@@ -13,7 +13,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}
-\LoadClass[a4paper,english,ngerman,12pt,oneside, openright]{report} % Base class
+\LoadClass[a4paper,english,12pt,oneside, openright]{report} % Base class
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PACKAGES REQUIRED FOR CLASS LAYOUT
