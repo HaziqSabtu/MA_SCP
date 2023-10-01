@@ -3,25 +3,24 @@
 
 \section{Methodic Product Development}
 \label{sec:methodicproductdevelopment}
+Methodic Product Development, by Pahl and Beitz, stress the importance of systematic design in product development \cite[9]{Pahl2007}. They differentiate between design science and methodology, with the latter being a practical approach based on scientific analysis and practical experience.
 
-Methodic product development, as mentioned by Pahl and Beitz \cite{Pahl07j}, underscores the necessity of a structured design procedure that fosters creativity and inventiveness and ensures objective evaluation of outcomes. Their method combines knowledge from design science, psychology, and practical know-how. This systematic approach helps designers handle complex technical systems, shifting from instinctive to deliberate decision-making, resulting in more effective and understandable designs.
+Pahl and Beitz describe the product development process as a series of stages, each with defined objectives and activities \cite[128-133]{Pahl2007}. The four main stages are:
 
-At the core of the Pahl and Beitz methodology is the understanding that effective product development involves well-defined and interconnected stages \cite{Pahl07k}. They describe the product development process as a series of stages, each with defined objectives and activities. The four main stages are:
+\textbf{Planning and Task Clarification:} The process starts with planning and defining tasks, often in collaboration with the marketing or dedicated planning team. It is essential to thoroughly understand the task, whether from a product proposal or a customer request. This step involves gaining detailed insights into requirements, constraints, and their importance, forming a solid foundation for the next steps.
 
-\textbf{Planning and Task Definition:} The process starts with careful planning and defining tasks, often in collaboration with the marketing or dedicated planning team. It is essential to thoroughly understand the task, whether from a product proposal or a customer request. This step involves gaining detailed insights into requirements, constraints, and their importance, forming a solid foundation for the next steps.
+\textbf{Conceptual Design:} This phase involves defining the necessary functions, establishing working principles, and integrating them into a working structure. Ultimately, this leads to creating a fundamental solution that embodies the core of the design vision.
 
-\textbf{Conceptual Design:} Once the project goals are crystal clear, the conceptual design phase takes center stage. This phase entails pinpointing the necessary functions, establishing operational principles, and integrating them into a unified structure. Ultimately, this leads to creating a fundamental solution that embodies the core of the design vision.
+\textbf{Embodiment Design:} Guided by technical and economic considerations, the physical structure is defined. Various initial layouts are assessed to identify design strengths and weaknesses, ultimately leading to selecting the most promising version.
 
-\textbf{Embodiment Design:} Moving towards tangible realization, the embodiment design phase becomes pivotal. Guided by technical and economic considerations, designers mold the physical structure. Various initial layouts are assessed to identify design strengths and weaknesses, ultimately leading to selecting the most promising version.
-
-\textbf{Detail Design:} The pinnacle of the methodology lies in the detail design phase, which focuses on individual components. Precise arrangements, dimensions, materials, and other aspects are meticulously defined. Thoroughly assessing production capabilities and costs results in comprehensive production documentation, highlighting the phase's critical role in shaping the overall outcome.
+\textbf{Detail Design:} In this phase, precise arrangements, dimensions, materials, and other aspects are defined. Product documentation is created, including drawings, parts lists, and assembly instructions.
 
 Figure \ref{fig:pahlprocess} shows the stages involved in Pahl and Beitz's design process.
 
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=0.75\textwidth]{texs/Part1/chapter1/image/pahlprocess.png}
-  \caption{Pahl and Beitz's Design Process \cite{Pahl07l}}
+  \caption{Pahl and Beitz's Design Process \cite[130]{Pahl2007}}
   \label{fig:pahlprocess}
 \end{figure}
 
@@ -34,14 +33,11 @@ This method makes it suitable for creating intricate and customized designs that
 
 Common plastics used in FDM include acrylonitrile butadiene styrene (ABS), polylactic acid (PLA), and polyethylene terephthalate (PET) \cite{Teamm17}. These materials have different mechanical properties, advantages, and disadvantages, making them suitable for different applications.
 
-Takahashi et al. \cite{Takahashi17} mentioned that achieving a high-quality printing result necessitates considering various parameters. They classified these factors into four groups: (1) operation parameters, (2) machine parameters, (3) machine parameters, and (4) geometry-specified parameters.
-
 \subsection{Original Prusa i3 MK3S+}
 \label{subsec:prusa_slicer_mk3s}
+The Original Prusa i3 MK3S+ is an FDM 3D printer designed for desktop use, ideal for tasks such as rapid prototyping and small-scale production. With a build volume of 250 mm x 210 mm x 200 mm, it can achieve layer heights ranging from 0.05 mm to 0.35 mm \cite{Prusa}. This printer has a heated bed and is compatible with various materials such as PLA, ABS, PETG, and nylon \cite{Prusa}. The default nozzle size is 0.4 mm, although alternate sizes can be utilized based on specific printing needs.
 
-The Original Prusa i3 MK3S+ is an FDM 3D printer designed for desktop use, ideal for tasks like rapid prototyping and small-scale production. With a build volume of 250 x 210 x 200 mm, it can achieve layer heights ranging from 0.05 mm to 0.35 mm \cite{Prusa}. This printer has a heated bed and is compatible with various materials such as PLA, ABS, PETG, and nylon \cite{Prusa}. The default nozzle size is 0.4 mm, although alternate sizes can be utilized based on specific printing needs.
-
-This 3D printer is accessible to students and faculty at the University of Applied Sciences Brandenburg and will play a pivotal role in the prototype development process. Figure \ref{fig:prusa_slicer_mk3} visually represents the Original Prusa i3 MK3S+, located within the University of Applied Sciences Brandenburg Workshop.
+This 3D printer is accessible to students and faculty at the University of Applied Sciences Brandenburg and will play a pivotal role in producing the prototype for this work. Figure \ref{fig:prusa_slicer_mk3} visually represents the Original Prusa i3 MK3S+, located within the University of Applied Sciences Brandenburg Workshop.
 
 \begin{figure}
   \centering
@@ -55,11 +51,11 @@ This 3D printer is accessible to students and faculty at the University of Appli
 
 PrusaSlicer is a free and open-source slicing software that converts 3D models into G-code, a language instructing the 3D printer on printing the object. It is compatible with a wide range of 3D printers and supports a variety of filament materials. PrusaSlicer offers many features that allow users to customize the printing process to suit their needs.
 
-One of the most essential features of PrusaSlicer is the ability to adjust the printing parameters. These parameters include layer height, infill density, and print speed. The layer height refers to the thickness of each layer of the printed object. The infill density refers to the amount of material used to fill the inside of the object. The print speed refers to the speed at which the printer moves while printing the object. These parameters can be adjusted to achieve the desired quality of the final product.
+PrusaSlicer's ability to adjust printing parameters is crucial. These parameters include layer height, infill density, and print speed. Layer height determines the thickness of each layer of the printed object. Infill density refers to the material used to fill the object's inside. Print speed is the rate at which the printer moves while printing the object. Adjusting these parameters can help achieve the desired quality of the final product.
 
 PrusaSlicer offers an essential function of adding support to the 3D prints. Supports are structures that print alongside the object to provide extra stability during printing. They prevent any potential collapse or deformation of the object while printing. Supports can be added manually or automatically depending on the complexity of the printed object.
 
-This software can also generate a preview of the printed object, which lets users visualize the result. Additionally, PrusaSlicer provides an estimate of the amount of filament required for the printing process and the duration of the printing process. Figure \ref{fig:prusa_slicer} shows a screenshot of PrusaSlicer.
+This software can also generate a preview of the printed object, which lets users visualize the result. Additionally, PrusaSlicer provides an estimate of the amount of filament required for the printing process and the duration of the printing process. Figure \ref{fig:prusa_slicer} shows a screenshot of PrusaSlicer. The left side of the window shows the 3D model of the object, while the right side shows the various parameters that can be adjusted.
 
 \begin{figure}
   \centering
