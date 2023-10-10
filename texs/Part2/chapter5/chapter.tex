@@ -1,0 +1,51 @@
+\chapter{Testing and Maintenance}
+\label{chapter:testing_and_maintenance}
+
+Software testing and maintenance are essential activities in the software development cycle. Software testing is the process of verifying and validating that a software is funtioning correctly and meeting its requirements and specifications \cite{ibm} \cite{Hamilton_2023}.
+
+This phase enables the early detection and resolution of bugs and errors, ensuring a smoother and more efficient delivery of the final product \cite{Hamilton_2023}. Additionally, thorough testing guarantees the reliability and security of the software, particularly in applications handling sensitive data or with critical functionalities \cite{Hamilton_2023}.
+
+In software testing, there are numerous available methods and techniques to ensure the quality of the software. Some of the most common ones are unit testing, integration testing, system testing, and acceptance testing \cite{ibm}. For this project, we will utilize unit testing, which will be discussed in detail in Section \ref{section:unit_testing}.
+
+\section{Unit Testing}
+\label{section:unit_testing}
+
+Unit testing is a type of software testing that focuses on individual units or components of a software system and the purpose of performing this test is to validate that each unit of the software works as intended and meets the requirements \cite{geeksforgeeks_2023}.
+
+They are designed to validate the smallest possible unit of code, such as a function or a method, and test it in isolation from the rest of the system,which will allows developers to quickly identify and fix any issues early in the development process, improving the overall quality of the software and reducing the time required for later testing \cite{geeksforgeeks_2023}.
+
+In writing unit test, it is advised to include multiple number of scenarios to ensure that the code is working as expected. This includes testing the code with valid and invalid inputs, as well as edge cases \cite{Vartanian_2022}. Additionally, to further simplify the process of testing, it is recommended to use a unit testing framework, which provides a set of tools and utilities to automate the process of writing and executing unit tests \cite{Vartanian_2022}. For this project, we will be using the GTest framework, which is a C++ unit testing framework developed by Google.
+
+\subsection{Example of Good Unit Test}
+\label{subsection:example_of_good_unit_test}
+
+An example of a good unit test can be found in the Appendix \ref{appendix:unit-tests}. This unit test is written in C++ using the GTest framework. The code  demonstrates a simple bank account management system, encapsulated within the \textit{BankAccount} class. This class offers functionalities like depositing (\textit{deposit()}), withdrawing (\textit{withdraw()}), and checking the account balance (\textit{getBalance()}).
+
+To ensure robustness, the code has been augmented with exception handling mechanisms. Specifically, when an attempt is made to deposit a negative amount or withdraw more than the available balance, the methods will throw appropriate exceptions, either std::invalid\_argument or std::runtime\_error.
+
+The unit tests will thoroughly examine the behavior of these functionalities. The \textit{BankAccountTest.Deposit} case validates that funds are successfully deposited, asserting that the balance matches the expected value. Similarly, \textit{{BankAccountTest.Withdraw}} verifies correct withdrawal behavior by comparing the resultant balance after a withdrawal operation.
+
+In \textit{BankAccountTest.WithdrawTooMuch}, an attempt to withdraw an excessive amount triggers an exception. The test checks whether this exception is properly thrown, ensuring the balance remains unchanged. Lastly, \textit{BankAccountTest.DepositNegative} evaluates the system's response when attempting to deposit a negative amount. This test expects a std::invalid\_argument exception to be raised. The subsequent assertion checks that the account balance remains unaffected.
+
+\section{Maintenance}
+
+Software maintenance can be described as the modification of a software product after it has been delivered, which includes correcting faults, enhancing performance, and adapting the product to a modified environment \cite{Bhatt04}. This phase includes tasks like bug fixing, adding new features, improving performance, and ensuring compatibility with new hardware or software \cite{geeksforgeeks_2023b}.
+
+Software maintenance can be categorized into four types \cite{Bhatt04}\cite{geeksforgeeks_2023b}:
+
+\textbf{Corrective Maintenance}: This addresses errors or bugs in the software, ensuring it functions properly. Swift resolution of issues enhances the software's reliability and user satisfaction.
+
+\textbf{Preventive Maintenance}: This involves making changes, upgrades, or adaptations to prevent potential problems in the future. It helps identify and correct latent errors before they lead to disruptions.
+
+\textbf{Perfective Maintenance}: After a software is introduced, user needs evolve, prompting the addition of new features or the improvement of existing ones. This ensures the software remains relevant and efficient.
+
+\textbf{Adaptive Maintenance}: This focuses on adapting the software to changes in technology, policies, and regulations. It includes adjustments for new hardware, operating systems, and compliance requirements.
+
+For our project, following maintenance activities will be performed:
+
+\textbf{Bug Fixing}: This involves correcting any errors or bugs in the software, ensuring it functions properly. Swift resolution of issues enhances the software's reliability and user satisfaction.
+
+\textbf{Adding New Features}: This involves adding new features to the software to improve its functionality and user experience. We are interested to explore other algorithms which can improve either the accuracy of the calculation, or the ease of use of the software.
+
+\textbf{User Interface Improvements}: This involves improving the user interface of the software to improve its usability and user experience. To developed a more user-friendly interface, numerous iteration based on user feedback will be performed.
+

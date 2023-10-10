@@ -410,3 +410,89 @@
 \end{itemize}
 
 \section{Code snippets}
+
+\section{C++ Unit Tests for Bank Account Management}
+\label{appendix:unit-tests}
+
+\subsection*{Bank Account Class}
+
+\begin{lstlisting}[language=C++]
+class BankAccount {
+private:
+    double balance;
+
+public:
+    BankAccount() : balance(0.0) {}
+
+    void deposit(double amount) {
+        if (amount < 0) {
+            throw std::invalid_argument("Deposit amount must be positive");
+        }
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if (amount < 0) {
+            throw std::invalid_argument("Withdrawal amount must be positive");
+        }
+        if (amount > balance) {
+            throw std::runtime_error("Insufficient funds for withdrawal");
+        }
+        balance -= amount;
+    }
+
+    double getBalance() const {
+        return balance;
+    }
+};
+\end{lstlisting}
+
+\subsection*{Unit Tests}
+
+\subsubsection*{Test Case: Deposit}
+\begin{lstlisting}[language=C++]
+TEST(BankAccountTest, Deposit) {
+    BankAccount account;
+    account.deposit(100.0);
+    EXPECT_EQ(account.getBalance(), 100.0);
+}
+\end{lstlisting}
+
+\textbf{Explanation:} This test verifies that funds can be successfully deposited into the account. It creates an instance of \texttt{BankAccount}, deposits $100.0$ units, and then checks if the balance matches the expected value of $100.0$.
+
+\subsubsection*{Test Case: Withdraw}
+\begin{lstlisting}[language=C++]
+TEST(BankAccountTest, Withdraw) {
+    BankAccount account;
+    account.deposit(100.0);
+    account.withdraw(50.0);
+    EXPECT_EQ(account.getBalance(), 50.0);
+}
+\end{lstlisting}
+
+\textbf{Explanation:} This test ensures that withdrawals are processed correctly. It first deposits $100.0$ units into the account, then attempts to withdraw $50.0$ units. The test verifies if the balance is now $50.0$ units.
+
+\subsubsection*{Test Case: Withdraw Too Much}
+\begin{lstlisting}[language=C++]
+TEST(BankAccountTest, WithdrawTooMuch) {
+    BankAccount account;
+    account.deposit(100.0);
+
+    EXPECT_THROW(account.withdraw(150.0), std::runtime_error);
+    EXPECT_EQ(account.getBalance(), 100.0);
+}
+\end{lstlisting}
+
+\textbf{Explanation:} This test examines the scenario where an attempt is made to withdraw an amount greater than the available balance. It first deposits $100.0$ units and then tries to withdraw $150.0$ units. The test expects a \texttt{std::runtime\_error} to be thrown, and ensures that the balance remains unchanged.
+
+\subsubsection*{Test Case: Deposit Negative}
+\begin{lstlisting}[language=C++]
+TEST(BankAccountTest, DepositNegative) {
+    BankAccount account;
+
+    EXPECT_THROW(account.deposit(-50.0), std::invalid_argument);
+    EXPECT_EQ(account.getBalance(), 0.0);
+}
+\end{lstlisting}
+
+\textbf{Explanation:} This test handles the scenario where an attempt is made to deposit a negative amount. It expects a \texttt{std::invalid\_argument} exception to be thrown. The test also verifies that the account balance remains unaffected.

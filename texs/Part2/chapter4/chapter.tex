@@ -240,12 +240,41 @@ With this example, the request starts by pressing a button. This action will tri
 \section{Algorithm Improvement}
 \label{sec:algorithm_improvement}
 
-\subsection{Image Allignment}
+\subsection{Image Alignment}
+Based on previous work \cite{Sabtu_2023}, the image alignment process is done by using a combination of feature detection algorithm and feature matching algorithm. The feature detection algorithm is utilized to detect features or keypoints between two images, the result are matched with each other and the matching result is used to calculate the transformation matrix, which are then used to align the images. Figure \ref{} shows the overall process of image alignment process.
+
+However as stated by the author, the overall process can be time consuming, especially when large image size is involved. To further understands which part is causing the process to be time consuming, each steps of the process is timed. The result is shown in Table \ref{table:time_taken}. From the result, it can be seen that the feature detection process is the most time consuming process, which takes up to 90\% of the overall process.
+
+Since the process of aligning an array of images, require the first image to be used for each iteration, we can somehow compute feature detection on the first image once, and cache the result, to be used for subsequent iterations. This will reduce the time taken for the feature detection process, and hence reduce the overall time taken for the process.
+
+Figure \ref{} shows the overall process of image alignment process with caching.
+Table \ref{table:time_taken_with_cache} shows the result of the process with caching. From the result, it can be seen that the time taken for the feature detection process is reduced by 90\%, which in turn reduce the overall time taken for the process by 90\%.
+
+Furthermore, with the implementatio of Threadpool as stated in \ref{}, the process can be further improved by utilizing parallel execution. Table \ref{table:time_taken_with_cache_and_threadpool} shows the result of the process with caching and threadpool. From the result, it can be seen that the time taken for the feature detection process is reduced by 90\%, which in turn reduce the overall time taken for the process by 90\%.
 
 \subsection{Custom lane}
+\label{subsec:custom_lane}
+Previous work \cite{Sabtu_2023}, stated that in measurement of object distance from camera, the distance between the two lane is required, and in Germany the distance is usually 3.5 m. However in real world scenario, the distance between the two lane can vary, and thus reducing the accuracy of the measurement. The author also mentioned the importance of selecting the right lane that represent the actual distance between the two lane. A small error in selecting the lane can result in a large error in the measurement.
+
+Therefore, to further simplify the process of selecting the correct line, a much simpler approch is implemented. A custom object of known dimension is placed within the camera view and will act as a reference object (see Figure \ref{}). With this alternative, it is now easier for user to compute the distance between the two lane, as the user only need to select the lane that is closest to the reference object.
+
 
 \subsection{Distance Measurement}
+\label{subsec:distance_measurement}
 
+Distance measurement, is based on the work of Javadi et al. \cite{Javadi2019}, will act as an alternative speed calculation method to the lane measurement which is discussed previously on Section \ref{}. This method of measurement will act as a redundant method, which is one of the patterns in fault tolerance implementation.
+
+The process of measurement is almost similar, to lane measurement, as shown in Figure \ref{}. The process involved first the selection of two lines which represents the start and end point of the measurement. Hoewver, the real world distance between the lines must known beforhand, and to simplify this step, an object of known length, is placed within the camera view, and will act as a reference object (see Figure \ref{}).
+
+With the result of tracking, we can analyze at what frame, the object cross the start line and the end line. With this information, the time it crossed the start line ($t_{start}$) and the time it crossed the end line ($t_{end}$) can be calculated. With known object length ($l_{object}$), the speed estimation can be done by using the following formula:
+
+\begin{equation}
+    Speed = \frac{l_{object}}{t_{end} - t_{start}}
+\end{equation}
+
+This method is a much straightforward approach compared to the lane measurement method, however as stated by Javadi et al. \cite{Javadi2019}, this method can cause inaccuracy within calculation, as the time taken the object cross the start line and the end line cannot be exactly determined.
+
+This measurement method is implemented in \textit{DistSpeedMeasurement} class. For more information please refer the project documentation on \ref{appendix:documentation}.
 
 
 
