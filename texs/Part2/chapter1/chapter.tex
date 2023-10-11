@@ -10,15 +10,15 @@ The original waterfall model, as outlined by Royce, consisted of seven phases: S
 
 One advantage of the waterfall model is its simplicity and ease of understanding and implementation \cite{Sunardi2020}. It provides a clear structure and allows for a step-by-step progression through the development process \cite{Sunardi2020}. Rachma and Muhlas \cite{Rachma2022} argue that the waterfall model is particularly well-suited for projects that involve generic software or systems that provide services to buyers.
 
-However, the waterfall model has also been criticized for its limitations. One issue is that it is best suited for hardware production and may neglect the unique characteristics of software development \cite{Zahia14}. Yahya and Maidin \cite{Yahya2023} stated that the waterfall model does not allow for flexibility or adaptability during the development process, which means that, once a stage is completed, it is difficult to make changes or go back to a previous stage. This lack of flexibility can be problematic when uncertainties arise or when there is a need for iterative development.
+However, the waterfall model has also been criticized for its limitations. Zahia et. al \cite{Zahia14} argues that, this model is best suited for hardware production and may neglect the unique characteristics of software development . Yahya and Maidin \cite{Yahya2023} stated that the waterfall model does not allow for flexibility or adaptability during the development process, which means that, once a stage is completed, it is difficult to make changes or go back to a previous stage. This lack of flexibility can be problematic when uncertainties arise or when there is a need for iterative development.
 
 Figure \ref{fig:waterfall-model} shows the waterfall model that will be utilized for this project.
 
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.65\textwidth]{texs/Part2/chapter1/image/waterfall.png}
-	\caption{Waterfall Model}
-	\label{fig:waterfall-model}
+    \centering
+    \includegraphics[width=0.65\textwidth]{texs/Part2/chapter1/image/waterfall.png}
+    \caption{Waterfall Model}
+    \label{fig:waterfall-model}
 \end{figure}
 
 
@@ -34,26 +34,8 @@ Another major advantage of MVC is that it allows for seperation of concerns \cit
 Figure \ref{fig:mvc} shows the MVC architecture that will be utilized for this project.
 
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.65\textwidth]{texs/Part2/chapter1/image/mvc.png}
-	\caption{Model-View-Controller Architecture \cite[46]{Garca2023}}
-	\label{fig:mvc}
-\end{figure}
-
-\section{Thread Pool}
-\label{sec:thread-pool}
-
-A thread pool is a collection of worker threads that efficiently execute asynchronous callbacks on behalf of the application \cite{Karl-Bridge-Microsoft}. It is primarily used to reduce the number of application threads and provide management of the worker threads \cite{Karl-Bridge-Microsoft}.
-
-The working principles of thread pool is relatively simple. It begins by initializing a pool of threads, or sometimes referred to as worker or executor. The number of threads in the pool is usually dependent on the number of cores in the CPU \cite{GeekforGeek_2020}. Too large thread pool size can results in resource trashing, where time is wasted in context switching between threads \cite{GeekforGeek_2020}.
-
-When threads creation is completed, they are now ready for execution , while task can now be created and placed inside a queue \cite{GeekforGeek_2020}. Threads that are idle will then be assigned to the task in the queue and once the task is completed, the thread will be returned to the pool for reuse \cite{GeekforGeek_2020}. If all threads are busy, the task will be placed in the queue and wait for an available thread to be assigned to it \cite{GeekforGeek_2020}.
-
-Figure \ref{fig:thread-pool} shows an overview on thread pool architecture.
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.65\textwidth]{texs/Part2/chapter1/image/threadpool.png}
-	\caption{Thread Pool Architecture \cite{Paraschiv_2023}}
-	\label{fig:thread-pool}
+    \centering
+    \includegraphics[width=0.65\textwidth]{texs/Part2/chapter1/image/mvc.png}
+    \caption{Model-View-Controller Architecture \cite[46]{Garca2023}}
+    \label{fig:mvc}
 \end{figure}

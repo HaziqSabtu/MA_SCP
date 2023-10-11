@@ -1,10 +1,21 @@
 \chapter{Design}
 \label{chapter:design}
 
+The design focuses on the development of both hardware and software architecture, which addresses aspects like performance, security, and data structure \cite{Hausen}. Furthermore, alongside technical considerations, attention is given to the user interface, ensuring it is user-friendly and navigable \cite{Hausen}.
+
+This section covers the project's software architecture, emphasizing the MVC model and the integration of a Thread Pool for efficiency. It then delves into user interface design, highlighting principles like familiarity and simplicity. The wireframe and color scheme choices are introduced, along with the font selection. The concept of user flow is explained through task flows and wireflows.
+
 \section{Software Architechture}
 \label{sec:software-architechture}
 
-In this section we will discuss the software architecture of the system. We will present the MVC architecture that will be used for the system. The interaction between the components will be discussed in detail. Figure \ref{fig:architechture} shows an overview of the software architecture of the system.
+
+% \subsection{Model-View-Controller}
+% \label{subsec:model-view-controller}
+
+
+The design of the MVC architecture fot this project is shown in Figure \ref{fig:architechture}. Within the figure, the seperation between each MVC components are clearly shown. The view and the model component are completely decoupled from each other, and the controller component is responsible for mediating the interaction between the view and the model.
+
+Another feature that is shown in Figure \ref{fig:architechture} is the implementation of multiple views and controllers. This implementation ensures the scalability of the system, which is an important project requirement, as defined previously in Section \ref{section:project-requirements}. By doing so, the functionality within the project can easily be expanded in the future.
 
 \begin{figure}[!ht]
     \centering
@@ -13,23 +24,32 @@ In this section we will discuss the software architecture of the system. We will
     \label{fig:architechture}
 \end{figure}
 
-\subsection{Model-View-Controller}
-\label{subsec:model-view-controller}
-
-The implementation of the Model-View-Controller (MVC) architecture in this system is depicted in the accompanying figure. One key aspect to highlight is the complete decoupling of the model and view, both of which are under the strict control of the controller. When an input is provided to View 1, Controller 1 takes charge, handling the request and orchestrating interactions with the model. The resulting response is then seamlessly relayed back to the view, conveying the status of the request, be it success, failure, or otherwise.
+% TODO find src;
+Additionally, the decision to implement multiple controllers is also to prevent the "Giant Controller" problem. This problem is defined as a controller that handles too many responsibilities, which can cause the controller to become bloated and difficult to maintain. By seperating the controllers, it ensures that each controller only handles a specific set of responsibilities, which makes the system easier to maintain.
 
 Notably, the view components are meticulously separated from one another. This deliberate segregation prevents any unintended mixing of view elements. For instance, View 1 might necessitate specific UI components, while View 2 might require an entirely different set. This simplifies the implementation process and renders it more comprehensible.
 
-Furthermore, the controller components are also discretely compartmentalized. As illustrated, Controller 1 and Controller 2 are each affixed to their respective views. Additionally, there exists a shared resource component that interfaces with the controllers. This design strategy aims to circumvent the predicament of a "Giant Controller" problem, as discussed earlier. Consequently, developers can more readily discern the controller's core responsibility, which is to mediate the flow of requests and responses between the model and view. Any other pertinent business logic is appropriately handled within the shared resource area, as expounded upon in the subsequent section.
-
-For this system, a conscious decision was made to adopt a shared model approach, in contrast to isolating controllers or views as distinct entities. This shared model approach facilitates the seamless exchange of data among various components. By doing so, it is anticipated that data management will be more straightforward and cohesive. The paramount consideration is ensuring that robust data handling procedures are in place, guaranteeing that the data remains consistently updated.
-
-This design philosophy is underpinned by a commitment to scalability. By vertically stacking views and controllers, the addition of new views becomes a streamlined process. To accommodate a new view, a corresponding controller is introduced and connected to the model, thus fortifying the system's scalability and adaptability.
+Within the model components, there are two major subcomponents, which are the Shared Resource and Session Data. Both of these components are responsible for managing the data within the application. The child components within the Shared Resource component will be discussed in detail in the later section.
 
 \subsection{Thread Pool}
 \label{subsec:thread-pool}
 
-For this project, the thread pool object will play a pivotal role in improving the efficiency of the system. The thread pool object will be responsible for managing the threads that are used to execute the tasks, as discussed previously in Chapter \ref{sec:thread-pool}. It solve one of the problem mentioned in \cite{Sabtu_2023}, where some computer vision algorithms are computationally expensive and can take a long time to execute.
+A thread pool is a collection of worker threads that efficiently execute asynchronous callbacks on behalf of the application \cite{Karl-Bridge-Microsoft}. It is primarily used to reduce the number of application threads and provide management of the worker threads \cite{Karl-Bridge-Microsoft}.
+
+The working principles of thread pool is relatively simple. It begins by initializing a pool of threads, or sometimes referred to as worker or executor. The number of threads in the pool is usually dependent on the number of cores in the CPU \cite{GeekforGeek_2020}. Too large thread pool size can results in resource trashing, where time is wasted in context switching between threads \cite{GeekforGeek_2020}.
+
+When workers creation is completed, they are now ready for execution. Task can now be created and placed inside a queue \cite{GeekforGeek_2020}. Idle workers will then be assigned to a task in the queue and once the task is completed, the worker will be assigned a new task until the queue is empty \cite{GeekforGeek_2020}. If all workers are busy, the task will be placed inside the queue and wait for an available worker to be assigned to it \cite{GeekforGeek_2020}.
+
+Figure \ref{fig:thread-pool} shows an overview on thread pool architecture.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.65\textwidth]{texs/Part2/chapter1/image/threadpool.png}
+    \caption{Thread Pool Architecture \cite{Paraschiv_2023}}
+    \label{fig:thread-pool}
+\end{figure}
+
+For this project, the thread pool object will play a pivotal role in improving the efficiency of the system. It is one of the required features for this project, as defined in Section \ref{section:project-requirements}. It solve one of the problem mentioned in \cite{Sabtu_2023}, where some computer vision algorithms are computationally expensive and can take a long time to execute.
 
 If these tasks are to be run in single threaded execution, the user will have to wait for a long period of time before the task is completed. This is not ideal for a user interface application, as it will cause the application to be unresponsive. However, if multiple of this instances are to be run in parallel, it will cause the system to be overloaded and can cause the system to crash.
 
@@ -60,7 +80,8 @@ In GUI design, feedback is as important as consistency and simplicity. It comes 
 \subsection{Wireframe}
 \label{subsec:wireframe}
 
-Wireframing is the first step in UI design \cite{Gupta_2023} \cite{Chen2020} \cite{Rahmadi2020}. A wireframe is a basic, simplified layout of a digital interface that outlines content placement and page components \cite{White_2023}. It serves as a quick way to present a concept or idea without extensive time or resources \cite{White_2023}.
+% Wireframing is the first step in UI design \cite{Gupta_2023} \cite{Chen2020} \cite{Rahmadi2020}. 
+A wireframe is a basic, simplified layout of a digital interface that outlines content placement and page components \cite{White_2023}. It serves as a quick way to present a concept or idea without extensive time or resources \cite{White_2023}.
 
 Gupta \cite{Gupta_2023} stated that, a good wireframe abstains from including elements that could divert attention from decisions pertaining to the site's structure, but it instead prioritizes the functional purpose over visual aesthetics, presenting a straightforward, unadorned portrayal of the website's features in monochrome. The  author also stated that, designers should provide annotations to explain and elaborate on specific features, providing clarity and context.
 
@@ -79,17 +100,13 @@ The image panel is purposed to display images to user. It will be used to displa
 
 The button panel will be used to display the buttons that the user can interact with. In this panel, buttons will be grouped into its own categories, depending on its functionality. There will be two types of buttons in this panel, which are the bitmap button and the text button.
 
-\subsection{Mockup}
+\subsection{Color Scheme}
 
-something something
-
-\subsubsection{Color Scheme}
-
-Color is a pivotal element in UI design, playing a vital role in evoking emotions, establishing hierarchy, and distinguishing design components \cite{M._2023}. When employed adeptly, color can greatly improve the usability and overall user experience of your website or mobile application \cite{M._2023}.
+Color is a pivotal element in UI design, playing a vital role in evoking emotions, establishing hierarchy, and distinguishing design components \cite{M._2023}. With correct implementation, color can greatly improve the usability and overall user experience of your website or mobile application \cite{M._2023}.
 
 Ou et al. \cite{Ou04} emphasized the strong correlation between color and emotion, highlighting how different colors evoke specific emotional responses. Their research underscores the significant impact that color choices can have on the emotional experience of users.
 
-Lewandowska and Olejnik-Krugly \cite{Lewandowska2021} emphasized that color is a significant aspect of visual communication, playing a vital role in conveying information. It is integral in identifying products, indicating quality, and influencing user interfaces.
+Lewandowska and Olejnik-Krugly \cite{Lewandowska2021} stated that, color is a significant aspect of visual communication. It plays a crucial role in conveying information. It is integral in identifying products, indicating quality, and influencing user interfaces.
 
 They also stated that, colors can evoke diverse visual sensations, and their impact is often experienced in combination rather than in isolation, at which it underscores the intricate role of color in human perception and communication.
 
@@ -113,10 +130,10 @@ Figure \ref{fig:color-combination} shows the color combination that will be used
     \label{fig:color-combination}
 \end{figure}
 
-\subsubsection{Typography}
-Typography is a critical element in UX design, as over 90\% of online information is presented in text form \cite{Fitz-Patrick_2022}. It involves more than just selecting attractive fonts and other factors such as typeface, font, character, baseline, and height are important \cite{Fitz-Patrick_2022}.
+\subsection{Typography}
+Typography is a critical element in UI design, as over 90\% of online information is presented in text form \cite{Fitz-Patrick_2022}. It involves more than just selecting attractive fonts and other factors such as typeface, font, character, baseline, and height are important \cite{Fitz-Patrick_2022}.
 
-Sawyer \cite{Sawyer2020} stated that, picking the right font is really important. It affects how things look and how easy they are to read. This is especially true for quick glances on screens. Recent studies found that different fonts can make a big difference in how easy things are to read in real-life situations.
+Sawyer et al. \cite{Sawyer2020} stated that, picking the right font is really important. It affects how things look and how easy they are to read. This is especially true for quick glances on screens. The authors also stated that, recent studies found that different fonts can make a big difference in how easy things are to read in real-life situations.
 
 For this project, the font that will be used is Roboto. Roboto is a sans-serif typeface family developed by Google as the system font for its mobile operating system Android \cite{Mott_2022}. According to Google, this font is optimized to provide optimal reading experience across various devices \cite{Mott_2022}. Figure \ref{fig:roboto} shows the Roboto font that will be used for this project.
 
@@ -125,6 +142,31 @@ For this project, the font that will be used is Roboto. Roboto is a sans-serif t
     \includegraphics[width=0.4\textwidth]{texs/Part2/chapter3/image/roboto.png}
     \caption{Roboto Font}
     \label{fig:roboto}
+\end{figure}
+
+\subsection{User Flow}
+\label{subsec:user-flow}
+
+User flow in UI design refers to the path a user takes to complete a specific task within an application or website. It includes each step, from the starting point to the endpoint \cite{Dai_2022}. User flows are typically represented as diagrams that display the complete path a user takes when using a product \cite{Browne_2023}. They help designers understand and anticipate the cognitive patterns of users in order to create products that enable a state of flow \cite{Browne_2023}.
+
+For this project, we will utilize two types of user flow to help describe the user interaction with the system. The first type is the Task Flow, which is used to illustrates a linear process for completing a particular task \cite{Trigo_2023}. Task flows use natural language and do not contain any design elements \cite{Trigo_2023}. They are typically linear and represent the high-level actions that a user would take to arrive at a particular objective or endpoint \cite{Rahul_2022}.
+
+The other type of is wireflow, which is a visual representation of the screens and interactions a user follows to complete specific tasks \cite{Trigo_2023}. It combines aspects of a basic wireframe, task flow, and flowchart to advanced screen flows that depict multiple navigation paths in one diagram \cite{Trigo_2023}. Arrows and annotations between wireframes are added on a single canvas to indicate the paths a user may take while using the product \cite{Angeles}.
+
+Figure \ref{fig:task-flow} shows the task flow of the application, showing the task required, from start to finish, to succesfully measure the speed of moving object. The wireflow of the application is shown in Figure \ref{fig:wireflow}, showing available panels that user can navigate to.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{texs/Part2/chapter3/image/taskflow.png}
+    \caption{Task Flow}
+    \label{fig:task-flow}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{texs/Part2/chapter3/image/wireflow.png}
+    \caption{Wireflow}
+    \label{fig:wireflow}
 \end{figure}
 
 
