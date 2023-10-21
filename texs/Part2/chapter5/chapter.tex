@@ -19,13 +19,15 @@ In writing unit test, it is advised to include multiple number of scenarios to e
 \subsection{Example of Good Unit Test}
 \label{subsection:example_of_good_unit_test}
 
-An example of a good unit test can be found in the Appendix \ref{appendix:unit-tests}. This unit test is written in C++ using the GTest framework. The code  demonstrates a simple bank account management system, encapsulated within the \textit{BankAccount} class. This class offers functionalities like depositing (\textit{deposit()}), withdrawing (\textit{withdraw()}), and checking the account balance (\textit{getBalance()}).
+An example of a good unit test can be found in the Appendix \ref{appendix:unit-tests}. This unit test is written in C++ using the GTest framework. The code  demonstrates a simple bank account management system, encapsulated within the \texttt{BankAccount} class. This class offers functionalities like depositing (\texttt{deposit()}), withdrawing (\texttt{withdraw()}), and checking the account balance (\texttt{getBalance()}).
 
-To ensure robustness, the code has been augmented with exception handling mechanisms. Specifically, when an attempt is made to deposit a negative amount or withdraw more than the available balance, the methods will throw appropriate exceptions, either std::invalid\_argument or std::runtime\_error.
+To ensure robustness, the code has been augmented with exception handling mechanisms. Specifically, when an attempt is made to deposit a negative amount or withdraw more than the available balance, the methods will throw appropriate exceptions, either \texttt{std::invalid\_argument} or \texttt{std::runtime\_error}.
 
-The unit tests will thoroughly examine the behavior of these functionalities. The \textit{BankAccountTest.Deposit} case validates that funds are successfully deposited, asserting that the balance matches the expected value. Similarly, \textit{{BankAccountTest.Withdraw}} verifies correct withdrawal behavior by comparing the resultant balance after a withdrawal operation.
+The unit tests will thoroughly examine the behavior of these functionalities. The \texttt{BankAccountTest.Deposit} case validates that funds are successfully deposited, asserting that the balance matches the expected value. Similarly, \texttt{{BankAccountTest.Withdraw}} verifies correct withdrawal behavior by comparing the resultant balance after a withdrawal operation.
 
-In \textit{BankAccountTest.WithdrawTooMuch}, an attempt to withdraw an excessive amount triggers an exception. The test checks whether this exception is properly thrown, ensuring the balance remains unchanged. Lastly, \textit{BankAccountTest.DepositNegative} evaluates the system's response when attempting to deposit a negative amount. This test expects a std::invalid\_argument exception to be raised. The subsequent assertion checks that the account balance remains unaffected.
+In \texttt{BankAccountTest.WithdrawTooMuch}, an attempt to withdraw an excessive amount triggers an exception. The test checks whether this exception is properly thrown, ensuring the balance remains unchanged. Lastly, \texttt{BankAccountTest.DepositNegative} evaluates the system's response when attempting to deposit a negative amount. This test expects a \texttt{std::invalid\_argument} exception to be raised. The subsequent assertion checks that the account balance remains unaffected.
+
+Within this test cases, all of the possible scenarios are covered, ensuring that the code is working as expected, which will help to improve the overall quality of the software.
 
 \section{Maintenance}
 
@@ -33,19 +35,17 @@ Software maintenance can be described as the modification of a software product 
 
 Software maintenance can be categorized into four types \cite{Bhatt04}\cite{geeksforgeeks_2023b}:
 
-\textbf{Corrective Maintenance}: This addresses errors or bugs in the software, ensuring it functions properly. Swift resolution of issues enhances the software's reliability and user satisfaction.
-
-\textbf{Preventive Maintenance}: This involves making changes, upgrades, or adaptations to prevent potential problems in the future. It helps identify and correct latent errors before they lead to disruptions.
-
-\textbf{Perfective Maintenance}: After a software is introduced, user needs evolve, prompting the addition of new features or the improvement of existing ones. This ensures the software remains relevant and efficient.
-
-\textbf{Adaptive Maintenance}: This focuses on adapting the software to changes in technology, policies, and regulations. It includes adjustments for new hardware, operating systems, and compliance requirements.
+\begin{enumerate}
+    \item \textbf{Corrective Maintenance}: This addresses errors or bugs in the software, ensuring it functions properly. Swift resolution of issues enhances the software's reliability and user satisfaction.
+    \item \textbf{Preventive Maintenance}: This involves making changes, upgrades, or adaptations to prevent potential problems in the future. It helps identify and correct latent errors before they lead to disruptions.
+    \item \textbf{Perfective Maintenance}: After a software is introduced, user needs evolve, prompting the addition of new features or the improvement of existing ones. This ensures the software remains relevant and efficient.
+    \item \textbf{Adaptive Maintenance}: This focuses on adapting the software to changes in technology, policies, and regulations. It includes adjustments for new hardware, operating systems, and compliance requirements.
+\end{enumerate}
 
 For our project, following maintenance activities will be performed:
 
-\textbf{Bug Fixing}: This involves correcting any errors or bugs in the software, ensuring it functions properly. Swift resolution of issues enhances the software's reliability and user satisfaction.
-
-\textbf{Adding New Features}: This involves adding new features to the software to improve its functionality and user experience. We are interested to explore other algorithms which can improve either the accuracy of the calculation, or the ease of use of the software.
-
-\textbf{User Interface Improvements}: This involves improving the user interface of the software to improve its usability and user experience. To developed a more user-friendly interface, numerous iteration based on user feedback will be performed.
-
+\begin{enumerate}
+    \item \textbf{Bug Fixing}: This involves correcting any errors or bugs in the software, ensuring it functions properly. Swift resolution of issues enhances the software's reliability and user satisfaction.
+    \item \textbf{Adding New Features}: This involves adding new features to the software to improve its functionality and user experience. We are interested to explore other algorithms which can improve either the accuracy of the calculation, or the ease of use of the software.
+    \item \textbf{User Interface Improvements}: This involves improving the user interface of the software to improve its usability and user experience. To developed a more user-friendly interface, numerous iteration based on user feedback will be performed.
+\end{enumerate}

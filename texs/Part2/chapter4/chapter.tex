@@ -1,9 +1,7 @@
 \chapter{Coding}
 \label{chapter:coding}
 
-The third phase of the project involves the actual implementation of the application with the end goal is to produce a functional program that aligns with the established specifications \cite{Hausen}. This chapter will provide detail explanation on the implementation process of the application.
-
-Each of the component from MVC architechture will be explained. Examples will be given where necessary. Additionally, improvement to the algorithm will also be discussed. The application will be developed with the C++17 programming language. Following libraries are used throughout the development process:
+In the project's third phase, the application will be implemented as per the established specifications \cite{Hausen}. This chapter will provide a comprehensive overview of the implementation process of the application, explaining each component of the MVC architecture and providing relevant examples. Additionally, we will discuss improvements to the algorithm. The application is developed using the C++17 programming language and utilizes the following libraries throughout the development process:
 
 \begin{itemize}
     \item OpenCV v4.5.5
@@ -11,28 +9,32 @@ Each of the component from MVC architechture will be explained. Examples will be
     \item libcamera v0.0.4
 \end{itemize}
 
-\section{View Implementation}
-As discussed previously in Chapter \ref{sec:model-view-controller}, the view is responsible for displaying the data to the user, in other words,  it defines the user interface and displays the information from the model \cite{Krastev20}. In this section, the implementation of the view is discussed in detail.
+Additionally, the application is developed using Visual Studio Code and CMake. A cross-compilation setup speeds up the compilation process, which compiles the code on a separate machine and transfers the compiled code to the target machine. Appendix \ref{appendix:cross-compilation} provides a detailed explanation of correctly setting up the development environment and the required dependencies.
 
-To further streamline the development process of view, we have set up a set of guidelines that we have followed throughout the development process. These guidelines are as follows:
+\section{View Implementation}
+As discussed previously in Chapter \ref{sec:model-view-controller}, the View is responsible for displaying the data to the user. In other words,  it defines the user interface and displays the information from the model \cite{Krastev20}. In this section, the implementation of the View is discussed in detail.
+
+To further streamline the development process of View,  a set of guidelines has been set up to be followed throughout the development process. These guidelines are as follows:
 
 \subsubsection{Handling User Input}
 This guideline emphasizes that the View should be adept at managing and processing user interactions. It is responsible for capturing user inputs, such as mouse clicks, keyboard entries, or touch gestures, and conveying them to the Controller for further processing. This can involve events like form submissions, button clicks, or interactions with interactive elements on the user interface.
 
 \subsubsection{Avoid any business logic}
-This directive underscores the importance of maintaining a clear separation of concerns within the MVC architecture. The View should refrain from incorporating any form of business logic, which involves tasks like data validation, computation, or decision-making processes. Instead, these responsibilities are delegated to the Model and Controller components. By adhering to this guideline, the View remains focused on its core function of presenting data and interacting with the user interface.
+This directive underscores the importance of maintaining a clear separation of concerns within the MVC architecture. The View should refrain from incorporating any form of business logic that involves tasks like data validation, computation, or decision-making processes. Instead, these responsibilities are delegated to the Model and Controller components. By adhering to this guideline, the View remains focused on its core function of presenting data and interacting with the user interface.
 
 \subsubsection{Avoiding Direct Model Manipulation}
-This guideline reinforces the principle of ensuring that the View does not directly modify the state or data of the Model. Instead, any alterations to the underlying data should be orchestrated through the Controller. This establishes a controlled flow of data within the application, maintaining data integrity and adherence to the MVC architectural pattern.
+This guideline reinforces the principle of ensuring that the View does not directly modify the state or data of the Model. Instead, any alterations to the underlying data should be orchestrated through the Controller. This guideline establishes a controlled data flow within the application, maintaining data integrity and adherence to the MVC architectural pattern.
 
 \subsubsection{Utilizing Templates or Layouts}
-This recommendation advocates for the adoption of templating engines or layout systems in view development. These tools facilitate the creation of modular, reusable components that can be dynamically combined to construct the user interface. By employing templates or layouts, developers streamline the process of designing and rendering the View, resulting in a more maintainable and scalable codebase.
+In the development of the View component, it is recommended to use templating engines or layout systems. These tools enable the creation of modular and reusable components that can be combined dynamically to build the user interface. By utilizing templates or layouts, developers can simplify the design and rendering of the View, leading to a more scalable and maintainable codebase.
 
 \subsubsection{Error Handling and Feedback Mechanisms}
-This guideline emphasizes the necessity of implementing robust error handling mechanisms within the View. It is imperative to provide clear and informative feedback to the user in the event of errors or invalid inputs. This ensures that users are guided through the application's workflow, even in scenarios where unexpected events occur. Effective error handling contributes to a more user-friendly and reliable user experience.
+This guideline emphasizes implementing robust error-handling mechanisms within the View. It is imperative to provide clear and informative feedback to the user in case of errors or invalid inputs. This guideline guides users through the application's workflow, even when unexpected events occur. Effective error handling contributes to a more user-friendly and reliable user experience.
 
 \subsection {Main Layout}
-The implementation of the main layout is the first step in the development of the view. The main layout is the universal layout that is used throughout the application. The implementation is done based on the result of the wireframing process which is done in Section \ref{subsec:wireframe}.
+The implementation of the main layout is the first step in the development of the View. The main layout is the universal layout that is used throughout the application. The implementation is done based on the result of the wireframing process, which is done in Section \ref{subsec:wireframe}.
+
+The main layout is shown in Figure \ref{fig:main_layout}. The main layout consists of the title, image, status, and button panels. All components' functions are explained previously in Section \ref{subsec:wireframe}.
 
 \begin{figure}[!ht]
     \centering
@@ -41,12 +43,17 @@ The implementation of the main layout is the first step in the development of th
     \label{fig:main_layout}
 \end{figure}
 
-The main layout is shown in Figure \ref{fig:main_layout}. The main layout consists of a title panel, image panel, status panel and button panel. All of the function of the components are explained previously in Section \ref{subsec:wireframe}.
+Figure \ref{fig:otherlayouts} shows multiple other panels used within the application. As observed, these panels all have similar layouts, with the only difference being the components within the button panels. This similarity is intentional, as it helps to maintain consistency within the application. This layout is implemented by the base class \texttt{BasePanel} and \texttt{BasePanelWithTouch}. For more details, please refer to the project documentation in Appendix \ref{appendix:documentation}.
 
+\subsection{Button Panel}
 
+\subsubsection{Group Button}
 
-\subsection{Bitmap Button}
-Bitmap Button is a type of button that is mainly used within the application. It contain a bitmap image and a text lable positioned on below the image. Figure \ref{fig:bitmap_button} shows a couple of bitmap buttons that are used within the application.
+\subsubsection{Bitmap Button}
+Bitmap Button is a type of button that are used widely within the application. It contains a bitmap image and a text label positioned below the image. Figure \ref{fig:bitmap_button} shows an example of the bitmap buttons used within the application.
+
+Throughout the implementation process, three different types of
+bitmap buttons are implemented. They are Type 1, Type 2, and Type 3. Two types, Type 1 and Type 2, share a similar design concept but differ in their state handling.
 
 \begin{figure}[!ht]
     \centering
@@ -55,10 +62,7 @@ Bitmap Button is a type of button that is mainly used within the application. It
     \label{fig:bitmap_button}
 \end{figure}
 
-Throughout the implementation process, there are 3 different types of
-bitmap button implemented. They are Type 1, Type 2 and Type 3. Two of these types, Type 1 and Type 2, share a similar design concept, but it differ in its state handling.
-
-Figure \ref{fig:type1_state} shows  the button appearance on different states. This type of buttons are useful when the button is used to trigger a process that require a long time to complete.  For example, in the context of capturing an image, the button assumes a 'normal' state when no image has been captured. When pressed, the process commences, and the button transitions to an 'active' state, signifying that the process is underway. During this active state, the button is also 'disabled' to prevent any potential interruptions or inadvertent re-triggering of the process. Once the process is successfully completed, the button shifts to a 'disabled' state, indicating that the process cannot be re-initiated.
+Figure \ref{fig:type1_state} shows the button appearance in different states for the Type1 bitmap button. This type of button is proper when the button triggers a process that requires a long time to complete. For example, when capturing an image, the button assumes a \textit{NORMAL} state when no image has been captured. When pressed, the process commences, and the button transitions to an \textit{ACTIVE} state, signifying that the process is underway. During this active state, the button is also disabled to prevent any potential interruptions or inadvertent re-triggering of the process. Once the process is completed, the button shifts to a \textit{DISABLE} state, preventing the reinitiation of the process.
 
 \begin{figure}[!ht]
     \centering
@@ -74,8 +78,7 @@ Figure \ref{fig:type1_state} shows  the button appearance on different states. T
     \label{fig:type2_state}
 \end{figure}
 
-
-The states for Type 2 button are shown in Figure \ref{fig:type2_state}. This type of button is used when the button is used to trigger a process that require toggeling. For instance, in the context of turning on a camera, the button assumes an 'off' state when the process has not been initiated and is available for activation. Upon pressing the button, the process initiates, and the button transitions to an 'on' state, indicating that the process is actively running. If necessary, pressing the button again will revert the state back to 'off', effectively terminating the ongoing process.
+The states for the Type 2 button are shown in Figure \ref{fig:type2_state}. This type of button is used when the button is used to trigger a process that requires toggling. For instance, when turning on a camera, the button assumes an \textit{OFF} state when the process has not been initiated and is available for activation. Upon pressing the button, the process initiates, and the button transitions to an \textit{ON} state, indicating that the process is actively running. If necessary, pressing the button again will revert the state to \textit{OFF}, effectively terminating the ongoing process.
 
 \begin{figure}[!ht]
     \centering
@@ -84,53 +87,57 @@ The states for Type 2 button are shown in Figure \ref{fig:type2_state}. This typ
     \label{fig:type3_state}
 \end{figure}
 
-The last type of bitmap buttons is Type 3. In terms of appearance, it differs from the previous two types. This button contains only bitmap image, without the text label, and coloured backgrounds. It does not have states, and it is used to trigger a  very simple straightforward process, such as exiting the application or opening the settings panel.
-This type of buttons can be seen in the title panel (see Figure \ref{fig:type3_state}).
+The last type of bitmap button is Type 3. In terms of appearance, it differs from the previous two types. This button contains only a bitmap image without the text label. It does not have states and is used to handle a straightforward process, such as exiting the application or opening the settings panel. An example of a Type 3 bitmap button can be seen in the title panel (see Figure \ref{fig:type3_state}).
 
 \subsubsection{Handling Button Input}
 \label{subsubsec:handling_button_input}
-The process of handling button input is done by using event handling mechanism provided by wxWidgets. For a more detailed explanation on how the event handling mechanism works, please refer to wxWidgets Documentation \cite{wxWidgetsEvent}.
+The button input is handled using wxWidgets' provided event mechanism. For more details, refer to wxWidgets Documentation \cite{wxWidgetsEvent}.
 
-In general, the process of handling button input is done by binding the button to a function. By pressing the button, an event is triggered, and the function is executed. Depending on the implementation, different button can trigger different function. For example, the button to turn on the camera will trigger a function to turn on the camera, while the button to capture an image will trigger a function to capture an image.
+Handling button input involves binding the button to a specific function. When the button is pressed, an event is triggered, and the function is executed. Depending on the implementation, different buttons can trigger different functions. For instance, pressing the button to turn on the camera will trigger a function to activate the camera, while pressing the button to capture an image will trigger a function to take a picture.
 
-This process can be dony by assigning a unique ID to each button. By doing so the button can be identified and binded to a specific function. Following is a short example of how the button is binded to a function.
+To assign a specific function to a button, giving each button a unique ID is necessary. This unique identifier makes identifying and linking the button to a particular function easier. Detailed instructions on binding specific buttons to a function can be found in the project documentation (refer to Appendix {appendix:documentation}).
 
 \subsubsection{Updating Button State}
-A proper feedback mechanism is essential to ensure that the user is aware of the current state of the application. In the context of the application, the button state is used to provide feedback to the user on the current state of the application. For example, when the user interact with a button to turn on camera, the feedback to the user is the button state changes from 'off' to 'on'.
+A proper feedback mechanism is essential to ensure that the user is aware of the current state of the application. In the application context, the button state is used to provide feedback to the user on the current state of the application. For example, when the user interacts with a button to turn on the camera, the feedback to the user is that the button state changes from \textit{OFF} to \textit{ON}.
 
-The process of updating button state is done by using event handling similar to the process of handling button input. Whenever an update is required, for example, after a button pressed, or after a process is completed, an event is triggered, and the button state is updated accordingly. This process is usually done by the controller component, as it is responsible for handling the application logic.
+Updating the button state is done using event handling, similar to the process of handling button input. An event is triggered when an update is required, for example, after a button is pressed or a process is completed, and the button state is updated accordingly. The controller component usually does this process, as it handles the application logic.
 
-However it is also important to note that while updating component state is crucial, updating it too frequently can be detrimental to the application performance. Therefore, it is important to find a balance between the two.
-
-\subsection{Error Handling and Feedback Mechanisms}
-\label{subsec:error_handling_and_feedback_mechanisms}
-In real world scenarios, errors are inevitable. Therefore, it is important to implement a proper error handling mechanism to ensure that the user is guided through the application's workflow, even in scenarios where unexpected events occur. Effective error handling contributes to a more user-friendly and reliable user experience.
-
-In the context of the application, the error handling mechanism is implemented by using a message dialog. A message dialog is a dialog that displays a message to the user, along with buttons for the user to click.Figure \ref{fig:message_dialog} shows an example of a message dialog.
-
-The \textit{ErrorEvent} can be utilized to display an error message to the user. When an exception is thrown during a process, an \textit{ErrorEvent} will be created by the controller component and passed to the view component. The view component will then display the error message to the user by using a message dialog.
-
+However, it is also important to note that while updating the component state is crucial, updating it too frequently can harm the application's performance. Therefore, it is crucial to find a balance between the two.
 
 \subsection{Image Panel}
 \label{subsec:image_panel}
+The Image Panel component is a crucial element of the user interface. It is a dynamic component that provides visual feedback and interactive input to the user. Its value lies in its ability to convey important information in real time to the user, providing updates on the application's state. For example, during the image-capturing process, the Image Panel displays the captured image instantly, giving users immediate visual feedback.
+
+Moreover, the Image Panel also functions as a responsive input mechanism. Through proper event handling, users can interact with the Image Panel using various input methods, such as mouse interactions or touch-based inputs. This section focuses on the processes involved in presenting images to the user and enabling user interactions.
 
 \subsubsection{Displaying Image to the User}
-The image panel is the component that is responsible for displaying the image to the user. To display image to the user, the \textit{UpdatePreviewEvent} is used. For example, when turning on the camera, a thread controller will initialized a thread which responsible for the process of capturing image from camera. For each iteration, the thread will capture an image and create the \textit{UpdatePreviewEvent} and pass it to the view component. The image panel will catch the event and display the image to the user.
+The \texttt{UpdatePreviewEvent} is a specific type of \textit{Data Event} responsible for updating images on the image panel. In general, a \textit{Data Event} is an event that contains data, which is discussed in greater detail in Section \ref{subsec:event_as_feedback_mechanism}. This event is usually triggered by either the Controller or threads, including the image that needs to be updated.
+
+For instance, in displaying images from the camera within a thread's execution, every thread loop will create the \texttt{UpdatePreviewEvent} and the current camera image will also be included. The View will catch the submitted event, unpack the data, and display the information on the image panel.
 
 \subsubsection{Handling Touch Input}
 \label{subsubsec:handling_touch_input}
-touch input can be  used ad another method of user input. The process of handling touch input is similar to the process of handling button input. It can be done by binding the touch event to a function. By doing so, whenever a touch event is triggered, the function will be executed.
+Input from users can be achieved through the touch input, which shares similarities with the button input. It is possible to attach touch events to a function, which will be executed whenever a touch event occurs.
 
-The implementation via event by wxwidgets such as wxMouseEvent. Alternatively, the implementation can also be done by utilizing the \textit{BasePanelWithTouch} class when implementing the views. This class already contains the implementation of touch event handling, and  methods to handle the events are also included. For more information, please refer to project Documentation on \ref{appendix:documentation}.
+The \texttt{wxMouseEvent} from wxWidgets can be utilized to enable this functionality. Alternatively, the \texttt{BasePanelWithTouch} class can also be inherited during View implementation. This class already has implemented touch event handling, including methods to handle these events. For further details, kindly refer to the project documentation in \ref{appendix:documentation}.
+
+\subsection{Message Dialog}
+\label{subsec:message_dialog}
+
+A dialog is a user interface component commonly used in various libraries and frameworks. It is a modal window that appears on top of the application content to provide important information or ask for a decision \cite{Bay_2022}. When a dialog is open, all app functionality is disabled, and it persists on the screen until the user takes the required action, confirms it, or dismisses it \cite{Bay_2022}.
+
+This UI component is crucial, as it can provide users when immediate attention is necessary \cite{MaterialUI}. A simple use case for Dialog is with error handling. When an error occurs, a Dialog can inform the user about the error and provide options for the user to take action and resolve the problem.
+
+A dialog box typically includes a title, some text, and buttons for users to take action, according to Android Developers \cite{Android_Developers}. The title briefly describes the dialog's purpose, while the text provides more detailed information. Users can take action by clicking on the buttons. Figure \ref{fig:message_dialog} shows an example of the dialog component.
 
 \subsection{Navigating between different panel}
 \label{subsec:navigating_between_different_panel}
 
-For this application, multiple panels or views are implemented based on its functionality. For example, the capture panel is used to capture an image, while the calibration panel is used to perform camera calibration. Since multiple views are implemented, a proper method in displaying the views to the user is required.
+This application has multiple panels or views implemented based on its different functionalities. For instance, the capture panel helps capture an image, while the calibration panel helps perform camera calibration. Since there are multiple views, it is essential to have a proper method to display them to the user.
 
-Therefore to simplify the process, we have set that within the frame, only one view can be displayed, while others are kept hidden. This is done by using the \textit{Show()} and \textit{Hide()} method provided by wxWidgets. When navigating to a different view, the current view will be hidden, and the new view will be shown.
+To simplify the process, we have implemented a rule that only one View can be displayed within the frame while the others remain hidden. The implementation is done by using the \texttt{Show()} and \texttt{Hide()} methods provided by wxWidgets. The current active View will be hidden with the \texttt{Hide()} method during the navigation process, while the new View will be shown.
 
-Figure \ref{fig:show_panel} shows an example of navigating between different panel by using \textit{Show()} and \textit{Hide()} method.
+An example of navigating between different panels by using \texttt{Show()} and \texttt{Hide()} methods is shown in Figure \ref{fig:show_panel}.
 
 \begin{figure}[!ht]
     \centering
@@ -142,93 +149,74 @@ Figure \ref{fig:show_panel} shows an example of navigating between different pan
 \section{Model Implementation}
 \label{sec:model_implementation}
 
-\subsection{Model Overview}
-\label{subsec:model_overview}
-In this section, the overview of the model is provided. The model is responsible for storing the data and the application logic. Figure \ref{fig:model_overview} shows the overview of the model.
+\subsection{Session Data}
+\label{subsec:session_data}
+
+In this section, an overview of the Session Data is provided. This component is a part of the Model, which is responsible for storing the data and the application logic. Figure \ref{fig:sessiondata_overview} shows the overview of the Session Data.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.75\textwidth]{texs/Part2/chapter4/image/sessiondata.png}
-    \caption{Overview of Model}
-    \label{fig:model_overview}
+    \includegraphics[width=0.45\textwidth]{texs/Part2/chapter4/image/sessiondata.png}
+    \caption{Overview of Session Data}
+    \label{fig:sessiondata_overview}
 \end{figure}
 
-The model consists of 5 main components, which are \textit{SessionData}, \textit{captureData}, \textit{calibrationData}, \textit{trackingData} and \textit{resultData}. Each of these components is explained in detail in the following sections.
+The Session Data consists of four subcomponents, which are \texttt{CaptureData}, \texttt{CalibrationData}, \texttt{TrackingData}, and \texttt{ResultData}. Each of these components is explained in detail below.
 
-\textbf{SessionData:} Responsible for storing the current overall state of the application. The \textit{id} variable describe the current id of the session, while \textit{currentPanelID} provide information on current active panel to be rendered by the application. \textit{Mode} describe on which calculation mode is choosen by the user. For more information on \textit{mode}, please refer Section \ref{}.
+\textbf{CaptureData:} This data stores a vector of original images captured by the camera. Alongside the image, this data type is also responsible for storing the time the image is captured to be used for measurement purposes.
 
-\textbf{CaptureData:} This data stores a vector of original images captured by the camera. Alongside the image, this data type also responsible to store the time on which the image is captured, to be used for measurement purpose.
+\textbf{CalibrationData:} Contains the result of the calibration process, which are the variables \textit{line1} and \textit{line2}. Both of these \texttt{Line} objects represents the calibrated lines, which are required for the measurement process as mentioned in previous work \cite{Sabtu_2023}.
 
-\textbf{CalibrationData:} Contains the result of calibration process, which are the variables \textit{line1} and \textit{line2}. For more information on these variables, please refer to Section \ref{subsec:calibration_process}.
+\textbf{TrackingData:} This data stores the initial region of interest (ROI) on which the tracked object is located. This implementation helps to filter out unwanted objects during tracking, which will helps the optical flow algorithm to focus on the tracked object.
 
-\textbf{TrackingData:} This data stores the initial region of interest (ROI) on which the tracked object is located.
-
-\textbf{ResultData:} This data stores the result of the calculation process. Within this data, there are 3 variables, which are \textit{allignData}, \textit{trackedRoi} and \textit{speed}. \textit{allignData} stores the result of the allignment process, while \textit{trackedRoi} stores the result of the tracking process. \textit{Speed} variable is the value of the speed of the tracked object, which is calculated by using the result of the allignment process and the result of the tracking process.
+\textbf{ResultData:} The data contains the output of a calculation process, consisting of three variables: \texttt{allignData}, \texttt{trackedRoi}, and \texttt{speed}. The \texttt{allignData} variable stores the output of the alignment process, while the \texttt{trackedRoi}variable stores the ROIs on which the tracked object is located. The \texttt{speed} variable represents the speed of the tracked object, which is calculated using the outputs of both the alignment and tracking processes.
 
 \section{Controller Implementation}
 \label{sec:controller_implementation}
 
-\subsection{Individual Controller}
-\label{subsec:individual_controller}
+As mentioned previously in Section \ref{sec:software-architecture}, each View component will have its Controller associated with it. By doing so, each Controller will have specific responsibility for handling the application logic for the View. Furthermore, this design also helps in terms of application scaling. Having multiple controllers allows the application logic to be divided into smaller parts, making it easier to maintain and scale.
 
-As mentioned previously in Section \ref{}, each view will have its own controller associated to it. By doing so, each controller will each have its own responsibility, which is to handle the application logic for the view. Furthermore, this design also helps in terms of application scaling. By having multiple controllers, the application logic can be divided into smaller parts, which makes it easier to maintain and scale.
-
-However, a proper controller design guidelines are required to ensure that these controllers are implemented properly. Therefore, we have set up a set of guidelines that we have followed throughout the development process. These guidelines are as follows:
+However, proper controller design guidelines are required to implement these controllers properly. Therefore, we have set up a set of guidelines that we have followed throughout the development process. These guidelines are as follows:
 
 \subsubsection{Only handle request and response}
-This guideline emphasizes that the controller should only handle request and response. It should not contain any business logic. Instead, the business logic should be implemented in the threads, which will be discussed in Section \ref{subsec:thread_and_thread_controller}.
+This guideline emphasizes that the Controller should only focus on handling requests and responses between View and Model. It should not contain any business logic. Instead, the business logic should be implemented in the threads, which will be discussed in Section \ref{subsec:thread_and_thread_controller}.
 
 \subsubsection{Provide similar endpoints}
-To ensure proper communication between the controller and the view, it is important to provide similar endpoints for each controller. By doing so, developers can easily identify the methods that are responsible to communcate between the views and the controller. To properly implement this guideline, all methods which are responsible for communication between the view and the controller should be named with the prefix \textit{e\_}, which stands for \textit{endpoint}. For example \textit{e\_startCamera()}, \textit{e\_captureImage()} and \textit{e\_calibrate()}.
+To ensure proper communication between the Controller and the View, providing similar endpoints for each Controller is important. By doing so, developers can easily identify the communication methods between the View and the Controller. To properly implement this guideline, all methods responsible for communication between the View and the Controller should be named with the prefix \texttt{e\_}, which stands for an endpoint. For example \texttt{e\_startCamera()}, \texttt{e\_captureImage()} and \texttt{e\_calibrate()}.
 
 \subsubsection{Only handle one view}
-This guideline emphasizes that the controller should only handle one view. This is to ensure that the controller is not overloaded with too many responsibilities. By doing so, the controller can be easily maintained and scaled.
+This guideline emphasizes that each Controller should only handle one View. This guideline ensures that the Controller is manageable with a few responsibilities, which enables the Controller to be easily maintained and scaled.
 
 \subsubsection{Singular responsibility}
-Each endpoint should only handle one responsibility. For example \textit{e\_startCamera()} should only handle the process of starting the camera, and not other process such as capturing an image or calibrating the camera.
+Each endpoint should only handle one responsibility. For example, \texttt{e\_startCamera()} should only handle the process of starting the camera and not other processes, such as capturing an image or calibrating the camera.
 
 \subsubsection{Handle error}
-All endpoints should be wrapped with a try-catch block to handle any error that might occur during the process. If an error occurs, an \textit{ErrorEvent} will be created and passed to the view component. The view component will then display the error message to the user by using a message dialog. For more information on how the error handling mechanism works, please refer to Section \ref{subsec:error_handling_and_feedback_mechanisms}.
+All endpoints should be wrapped with a try-catch block to handle any error during the process. If an error occurs, an \texttt{ErrorEvent} will be created and passed to the view component. The View component will then display the error message to the user using a message dialog, as discussed previously in Section \ref{subsec:message_dialog}.
 
 \subsubsection{Prevent handling outside active panel}
 \label{subsec:prevent_handling_outside_active_panel}
-This guideline emphasizes that the controller should only handle request and response when the view is active. This strict rule is implemented to prevent any unwanted behaviour that might occur when the view is not active. The \textit{checkPrecondition()} provide method to check whether the view is active or not. If the view is not active, error message will be displayed to the user.
+This guideline emphasizes that the Controller should only handle requests and responses when the View is active. This strict rule is implemented to prevent any unwanted behavior that might occur when the View is not active. The \texttt{checkPrecondition()} provides a method to check whether the View is active. If the View is inactive, an error message will be displayed to the user.
+
+\subsection{Event as a Feedback Mechanism}
+\label{subsec:event_as_feedback_mechanism}
+
+As mentioned previously in Section \ref{sec:software-architecture}, the Controller is responsible for handling the application logic. This process involves handling requests, which is done via the endpoints, while the responses are handled via the events.
+
+Within this project, events play a huge role in the communication process between the View and the Controller. Events do not simply inform the View regarding the request status; they can also pass data between the View and the Controller. Hence, two types of Events are defined, which are \textit{Empty Event} and \textit{Data Event}.
+
+\textit{Empty Event} is an event that does not contain any data. It is used to inform the View regarding the status of the request. This type of event is usually utilized to inform the user of the current status of the requested process, such as when the process is started, completed, or failed.
+
+\textit{Data Event}, on the other hand, acts as a container to pass data between the View and the Controller. This type of event is used when the View requires data from the Controller, such as the captured image or the result of the calculation process. This type of event is also used to update the View with the latest data, such as the current camera image or application state.
+
+Creating and handling events is done using wxWidgets' provided event mechanism. For more details, refer to wxWidgets Documentation \cite{wxWidgetsEvent}. Alternatively, the Project Documentation in Appendix \ref{appendix:documentation} also explains how to create custom events.
 
 \subsection{Threads and Thread Controller}
 \label{subsec:thread_and_thread_controller}
-To reduce the responsibility of the controller, the process of handling the business logic is delegated to the \textit{threads}. By seperating the execution of business logic on different threads, it prevents the main thread or the GUI thread from being blocked. This is important to ensure that the application is responsive and does not freeze.
+To reduce the Controller's responsibility, handling the business logic is tasked to the \textit{threads}. Separating the execution of business logic on different threads prevents the main thread or the GUI thread from being blocked. This design decision is essential to ensure the application's responsiveness.
 
-Additionally the threads also has the access to the thread pool, to take leverage of parallel execution whenever required. The \textit{thread controller} is responsible to manage the threads by starting, stopping and joining the threads. Furthermore the thread controller also responsible to provide status on the current state of the threads, either it is running or not.
+When a process needs to be executed, the Controller handles the request and signals the Thread Controller to initiate the process. The process runs independently on different threads, and once the task is finished, the Thread Controller is informed to close the threads. The entire process is handled through the Controller endpoint and Event.
 
-Table \ref{table:thread_controller} shows the list of threads that are implemented within the application.
-
-% \begin{table}[!ht]
-%     \centering
-%     \begin{tabularx}{\textwidth}{|X|X|}
-%         \hline
-%         \textbf{Event}         & \textbf{Purpose}                      \\ \hline
-%         CalibrationEvent        & Signal status of calibration process  \\ \hline
-%         ChangePanelEvent        & Handle changing panel                 \\ \hline
-%         ErrorEvent              & Error Handling                        \\ \hline
-%         LoadImageEvent          & Use in capturing or load image data   \\ \hline
-%         PreviewEvent            & Display current calibration data      \\ \hline
-%         ProcessImageEvent       & Signal status of processing image     \\ \hline
-%         ReplayEvent             & Signal status of replay thread        \\ \hline
-%         RequestUpdateStateEvent & Request view to update state          \\ \hline
-%         RoiEvent                & Signal status of ROI selection thread \\ \hline
-%         SaveDataEvent           & Saving data to binary                 \\ \hline
-%         UpdatePreviewEvent      & Update image panel with new image     \\ \hline
-%         UpdateStateEvent        & Update state                          \\ \hline
-%         UpdateStatusEvent       & Update status panel                   \\ \hline
-%     \end{tabularx}
-%     \caption{List of Implemented Threads}
-%     \label{table:thread_controller}
-% \end{table}
-
-\subsection{Request Handling Example}
-\label{subsec:request_handling_example}
-
-In this section, an example of how the request is handled by the controller is provided. A sequence diagram is used to illustrate the process, as shown in Figure \ref{fig:sequence_diagram}.
+Figure \ref{fig:sequence_diagram} provides a sequence diagram illustrating the connections of the MVC components with the Thread Controller.
 
 \begin{figure}[!ht]
     \centering
@@ -237,46 +225,143 @@ In this section, an example of how the request is handled by the controller is p
     \label{fig:sequence_diagram}
 \end{figure}
 
-With this example, the request starts by pressing a button. This action will trigger an event, which will be handled by the \textit{View1}. The view will then request for an initialization of process or thread via the endpoint \textit{e\_CaptureImageStart()}. The request will be forwarded to the \textit{ThreadController} and a threads to capture image is spawned. The state is updated to signal the succession of the request. The thread will run on its own, and when it finished capturing image, the data is saved to the model via the \textit{save()} method. The state is once again updated and an event signaling the completion of the process is sent to the view. With this event, the view signal the controller to stop the thread via the endpoint \textit{e\_CaptureImageStop()}. The thread is then stopped and joined. The state is updated to signal the completion of the process.
+With this example, the request starts by pressing a button. This action will trigger an event, which will be handled by the \textit{View1}. The View will then request an initialization of process or thread via the endpoint \texttt{e\_CaptureImageStart()}. The request will be forwarded to the \textit{ThreadController}, and a thread to capture the image is initiated and run.
+
+The button state is updated to signal the succession of the request. The thread will run on its own, and when it is finished capturing the image, the data is saved to the Model via the \texttt{save()} method. Once again, The state is updated, and an event signaling the completion of the process is sent to the View.
+
+With this event, the View signals the Controller to stop the thread via the endpoint \texttt{e\_CaptureImageStop()}. The thread is then stopped and joined. The state is updated to signal the completion of the process.
 
 \section{Algorithm Improvement}
 \label{sec:algorithm_improvement}
 
+In this section, the improvement of the algorithm is discussed. Based on the previous work \cite{Sabtu_2023}, the algorithm is divided into three main processes: image alignment, object tracking, and distance measurement. Several improvements are made to the algorithm during the implementation process, which are discussed in detail below.
+
 \subsection{Image Alignment}
-Based on previous work \cite{Sabtu_2023}, the image alignment process is done by using a combination of feature detection algorithm and feature matching algorithm. The feature detection algorithm is utilized to detect features or keypoints between two images, the result are matched with each other and the matching result is used to calculate the transformation matrix, which are then used to align the images. Figure \ref{} shows the overall process of image alignment process.
+As per the previous research \cite{Sabtu_2023}, aligning images is carried out by combining feature detection and feature matching algorithms. The feature detection algorithm identifies key points or features between two images, and the matching results are used to calculate the transformation matrix, which aligns the images. The figure below (Figure \ref{fig:image_alignment_process}) illustrates the overall image alignment process.
 
-However as stated by the author, the overall process can be time consuming, especially when large image size is involved. To further understands which part is causing the process to be time consuming, each steps of the process is timed. The result is shown in Table \ref{table:time_taken}. From the result, it can be seen that the feature detection process is the most time consuming process, which takes up to 90\% of the overall process.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{texs/Part2/chapter4/image/ImageAllignmentAlgoDiagram.jpg}
+    \caption{Image Alignment Process}
+    \label{fig:image_alignment_process}
+\end{figure}
 
-Since the process of aligning an array of images, require the first image to be used for each iteration, we can somehow compute feature detection on the first image once, and cache the result, to be used for subsequent iterations. This will reduce the time taken for the feature detection process, and hence reduce the overall time taken for the process.
+The author has mentioned that the entire process can be pretty time-consuming, especially when dealing with large image sizes. Each step involved in aligning a vector of images of size 1280 x 960 pixels was analyzed to identify the factors contributing to this. Table \ref{table:time_taken} shows the average time taken for each process ($\overline{t_{proc}}$) and the percentage of total time taken ($\%_{total}$). The results indicate that the feature detection process on both reference and target image is the most time-consuming, accounting for up to 95\% of the overall process.
 
-Figure \ref{} shows the overall process of image alignment process with caching.
-Table \ref{table:time_taken_with_cache} shows the result of the process with caching. From the result, it can be seen that the time taken for the feature detection process is reduced by 90\%, which in turn reduce the overall time taken for the process by 90\%.
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|r|r|}
+        \hline
+        \textbf{Process}                     & \textbf{$\overline{t_{proc}}$ [ms]} & \textbf{$\%_{total}$ [\%]} \\ \hline
+        Feature detection on reference image & 1579.92                             & 47.827                     \\ \hline
+        Feature detection on targe image     & 1582.64                             & 47.909                     \\ \hline
+        Feaure Matching                      & 101.27                              & 3.066                      \\ \hline
+        Filter Keypoints                     & 0.30                                & 0.009                      \\ \hline
+        Homography                           & 2.27                                & 0.069                      \\ \hline
+        Transform                            & 37.01                               & 1.120                      \\ \hline
+    \end{tabular}
+    \caption{Time taken for each process}
+    \label{table:time_taken}
+\end{table}
 
-Furthermore, with the implementatio of Threadpool as stated in \ref{}, the process can be further improved by utilizing parallel execution. Table \ref{table:time_taken_with_cache_and_threadpool} shows the result of the process with caching and threadpool. From the result, it can be seen that the time taken for the feature detection process is reduced by 90\%, which in turn reduce the overall time taken for the process by 90\%.
 
-\subsection{Custom lane}
+After further analysis of the process, it has been determined that performing feature detection on the reference image is unnecessary for every iteration. In this context, the reference image refers to the first image to which we want to align the other images. Therefore, feature detection on the reference image only needs to be done once, and the resulting data can be cached and used for subsequent iterations. Implementing this approach will significantly reduce the time taken for the feature detection process and the overall processing time.
+
+Figure \ref{fig:image_alignment_process_with_caching} illustrates the image alignment process with caching. In this process, the output of feature detection on the reference image is stored in a cache and used in subsequent iterations. Table \ref{table:time_taken_improvement} presents the average time taken for aligning the image ($\overline{t_{align}}$) using different implementations. It also shows the percentage of improvement relative to the original implementation ($\%_{improve}$). As per the results, the improved implementation is approximately 93\% faster than the original implementation.
+
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[c]{0.8\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{texs/Part2/chapter4/image/fea1.jpg}
+        \end{minipage}
+        \caption{Caching the result of feature detection on reference image}
+        \label{fig:improve_cache}
+    \end{subfigure}
+    % \hfill
+    \begin{subfigure}[c]{0.8\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{texs/Part2/chapter4/image/fea2.jpg}
+        \end{minipage}
+        \caption{Aligning the image using cached result}
+        \label{fig:improve_align}
+    \end{subfigure}
+    \caption{Image Alignment Process with Caching}
+    \label{fig:image_alignment_process_with_caching}
+\end{figure}
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|r|r|}
+        \hline
+        \textbf{Implementation Type} & \textbf{$\overline{t_{align}}$ [ms]} & \textbf{$\%_{improve}$ [\%]} \\ \hline
+        Original                     & 3160                                 & 0                            \\ \hline
+        Cached                       & 1631                                 & 93.7                         \\ \hline
+        Cached + 2 Workers           & 1085                                 & 191.2                        \\ \hline
+        Cached + 3 Workers           & 941                                  & 235.8                        \\ \hline
+    \end{tabular}
+    \caption{Comparison of time taken for image alignment}
+    \label{table:time_taken_improvement}
+\end{table}
+
+In addition, by using a thread pool as described in section \ref{subsec:thread-pool}, the process can be enhanced even more by utilizing parallel execution. Table \ref{table:time_taken_improvement} illustrates that with 2 and 3 workers, the process can be improved by 191.2 \% and 235.8 \%, respectively.
+
+
+\subsection{Custom Lane}
 \label{subsec:custom_lane}
-Previous work \cite{Sabtu_2023}, stated that in measurement of object distance from camera, the distance between the two lane is required, and in Germany the distance is usually 3.5 m. However in real world scenario, the distance between the two lane can vary, and thus reducing the accuracy of the measurement. The author also mentioned the importance of selecting the right lane that represent the actual distance between the two lane. A small error in selecting the lane can result in a large error in the measurement.
+According to a previous study \cite{Sabtu_2023}, measuring the distance of an object from the camera requires knowledge of the distance between the two lanes on the road. Typically, in Germany, this distance is around 3.5 meters. However, in real-world situations, this distance may vary, leading to measurement inaccuracies. The study also highlights the importance of accurately selecting the lane representing the distance between the two lanes. Even a slight error in lane selection can result in a significant measurement error.
 
-Therefore, to further simplify the process of selecting the correct line, a much simpler approch is implemented. A custom object of known dimension is placed within the camera view and will act as a reference object (see Figure \ref{}). With this alternative, it is now easier for user to compute the distance between the two lane, as the user only need to select the lane that is closest to the reference object.
+A more straightforward approach has been implemented to simplify the process of selecting the correct line. A custom object of known dimensions is placed within the camera view, which acts as a reference object (as shown in Figure \ref{fig:custom_object}). The object has two lines that represent its width. Knowing the object's width makes lane selection easier, as the appropriate lane can be selected based on the object's width.
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{texs/Part2/chapter4/image/matdimension.png}
+    \caption{Custom Object}
+    \label{fig:custom_object}
+\end{figure}
 
 \subsection{Distance Measurement}
 \label{subsec:distance_measurement}
 
-Distance measurement, is based on the work of Javadi et al. \cite{Javadi2019}, will act as an alternative speed calculation method to the lane measurement which is discussed previously on Section \ref{}. This method of measurement will act as a redundant method, which is one of the patterns in fault tolerance implementation.
+Distance measurement is based on Javadi et al.'s work \cite{Javadi2019}. This type of speed measurement will serve as an alternative speed calculation method to lane measurement for this research.
 
-The process of measurement is almost similar, to lane measurement, as shown in Figure \ref{}. The process involved first the selection of two lines which represents the start and end point of the measurement. Hoewver, the real world distance between the lines must known beforhand, and to simplify this step, an object of known length, is placed within the camera view, and will act as a reference object (see Figure \ref{}).
+To accurately determine the speed of a tracked object, a series of steps must be taken. First, a known object of a specific length should be positioned within the camera's view to serve as a reference point. This reference object will aid in calculating the speed of the tracked object. Next, two lines should be drawn to mark the starting and ending points of the placed object. An illustration of this process can be observed in Figure \ref{fig:distance_measurement_process}.
 
-With the result of tracking, we can analyze at what frame, the object cross the start line and the end line. With this information, the time it crossed the start line ($t_{start}$) and the time it crossed the end line ($t_{end}$) can be calculated. With known object length ($l_{object}$), the speed estimation can be done by using the following formula:
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[c]{0.8\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{texs/Part2/chapter4/image/dist1.png}
+        \end{minipage}
+        \caption{Placement of reference object}
+        \label{fig:dist_placement}
+    \end{subfigure}
+    % \hfill
+    \begin{subfigure}[c]{0.8\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{texs/Part2/chapter4/image/dist2.png}
+        \end{minipage}
+        \caption{Calibration of Start and End Line}
+        \label{fig:dist_calibration}
+    \end{subfigure}
+    \caption{Distance Measurement Process}
+    \label{fig:distance_measurement_process}
+\end{figure}
+
+By tracking an object's movement, we can determine the frame at which it crosses both the start and end lines. This allows us to calculate the time it crossed the start line ($t_{start}$) and the time it crossed the end line ($t_{end}$). With the length of the object ($l_{object}$) already known, we can estimate its speed using the following formula:
 
 \begin{equation}
     Speed = \frac{l_{object}}{t_{end} - t_{start}}
 \end{equation}
 
-This method is a much straightforward approach compared to the lane measurement method, however as stated by Javadi et al. \cite{Javadi2019}, this method can cause inaccuracy within calculation, as the time taken the object cross the start line and the end line cannot be exactly determined.
+Compared to the lane measurement method, this method is more straightforward. However, as mentioned by Javadi et al. \cite{Javadi2019}, it may lead to inaccurate calculations as the exact time of the object crossing the start and end lines cannot be precisely determined.
 
-This measurement method is implemented in \textit{DistSpeedMeasurement} class. For more information please refer the project documentation on \ref{appendix:documentation}.
+This measurement method is implemented in \texttt{DistSpeedMeasurement} class. Please refer to the project documentation on \ref{appendix:documentation} for more information.
+
 
 
 
