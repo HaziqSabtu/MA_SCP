@@ -26,7 +26,7 @@ Another feature shown in Figure \ref{fig:architechture} is the implementation of
     \label{fig:reqres}
 \end{figure}
 
-Moreover, implementing multiple controllers is necessary to prevent the "Promiscuous Controller" problem \cite[2127]{Aniche2017}. This issue occurs when a single controller handles too many responsibilities, causing it to become bloated and difficult to maintain. By separating the controllers, each controller can efficiently handle specific responsibilities, making the system easier to maintain.
+Moreover, implementing multiple controllers is necessary to prevent the \textit{Promiscuous Controller} problem as mentioned in \cite[2127]{Aniche2017}. This issue occurs when a single controller handles too many responsibilities, causing it to become bloated and difficult to maintain. By separating the controllers, each controller can efficiently handle specific responsibilities, making the system easier to maintain.
 
 It is worth noting that the view components are carefully separated from each other. This intentional separation prevents any accidental mixing of view elements. For instance, View 1 may require specific UI components, while View 2 may need an entirely different set. This implementation simplifies the implementation process and makes it easier to understand.
 

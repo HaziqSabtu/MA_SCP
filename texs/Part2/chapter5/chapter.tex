@@ -12,7 +12,7 @@ In software testing, there are numerous available methods and techniques to ensu
 
 Unit testing is a type of software testing that focuses on individual units or components of a software system and the purpose of performing this test is to validate that each unit of the software works as intended and meets the requirements \cite{geeksforgeeks_2023}.
 
-They are designed to validate the smallest possible unit of code, such as a function or a method, and test it in isolation from the rest of the system,which will allows developers to quickly identify and fix any issues early in the development process, improving the overall quality of the software and reducing the time required for later testing \cite{geeksforgeeks_2023}.
+They are designed to validate the smallest possible unit of code, such as a function or a method, and test it in isolation from the rest of the system, which will allows developers to quickly identify and fix any issues early in the development process, improving the overall quality of the software and reducing the time required for later testing \cite{geeksforgeeks_2023}.
 
 In writing unit test, it is advised to include multiple number of scenarios to ensure that the code is working as expected. This includes testing the code with valid and invalid inputs, as well as edge cases \cite{Vartanian_2022}. Additionally, to further simplify the process of testing, it is recommended to use a unit testing framework, which provides a set of tools and utilities to automate the process of writing and executing unit tests \cite{Vartanian_2022}. For this project, we will be using the GTest framework, which is a C++ unit testing framework developed by Google.
 
@@ -21,7 +21,7 @@ In writing unit test, it is advised to include multiple number of scenarios to e
 
 An example of a good unit test can be found in the Appendix \ref{appendix:unit-tests}. This unit test is written in C++ using the GTest framework. The code  demonstrates a simple bank account management system, encapsulated within the \texttt{BankAccount} class. This class offers functionalities like depositing (\texttt{deposit()}), withdrawing (\texttt{withdraw()}), and checking the account balance (\texttt{getBalance()}).
 
-To ensure robustness, the code has been augmented with exception handling mechanisms. Specifically, when an attempt is made to deposit a negative amount or withdraw more than the available balance, the methods will throw appropriate exceptions, either \texttt{std::invalid\_argument} or \texttt{std::runtime\_error}.
+To ensure robustness, exception handling mechanisms are added to the code. Specifically, when an attempt is made to deposit a negative amount or withdraw more than the available balance, the methods will throw appropriate exceptions, either \texttt{std::invalid\_argument} or \texttt{std::runtime\_error}.
 
 The unit tests will thoroughly examine the behavior of these functionalities. The \texttt{BankAccountTest.Deposit} case validates that funds are successfully deposited, asserting that the balance matches the expected value. Similarly, \texttt{{BankAccountTest.Withdraw}} verifies correct withdrawal behavior by comparing the resultant balance after a withdrawal operation.
 

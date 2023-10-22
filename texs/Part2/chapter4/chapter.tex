@@ -29,7 +29,7 @@ This guideline reinforces the principle of ensuring that the View does not direc
 In the development of the View component, it is recommended to use templating engines or layout systems. These tools enable the creation of modular and reusable components that can be combined dynamically to build the user interface. By utilizing templates or layouts, developers can simplify the design and rendering of the View, leading to a more scalable and maintainable codebase.
 
 \subsubsection{Error Handling and Feedback Mechanisms}
-This guideline emphasizes implementing robust error-handling mechanisms within the View. It is imperative to provide clear and informative feedback to the user in case of errors or invalid inputs. This guideline guides users through the application's workflow, even when unexpected events occur. Effective error handling contributes to a more user-friendly and reliable user experience.
+This guideline emphasizes implementing robust error-handling mechanisms within the View. It is important to provide clear and informative feedback to the user in case of errors or invalid inputs. This guideline guides users through the application's workflow, even when unexpected events occur. Effective error handling contributes to a more user-friendly and reliable user experience.
 
 \subsection {Main Layout}
 The implementation of the main layout is the first step in the development of the View. The main layout is the universal layout that is used throughout the application. The implementation is done based on the result of the wireframing process, which is done in Section \ref{subsec:wireframe}.
@@ -43,11 +43,19 @@ The main layout is shown in Figure \ref{fig:main_layout}. The main layout consis
     \label{fig:main_layout}
 \end{figure}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{texs/Part2/chapter4/image/otherpanel.png}
+    \caption{Example of other implemented Panels}
+    \label{fig:otherlayouts}
+\end{figure}
+
 Figure \ref{fig:otherlayouts} shows multiple other panels used within the application. As observed, these panels all have similar layouts, with the only difference being the components within the button panels. This similarity is intentional, as it helps to maintain consistency within the application. This layout is implemented by the base class \texttt{BasePanel} and \texttt{BasePanelWithTouch}. For more details, please refer to the project documentation in Appendix \ref{appendix:documentation}.
 
 \subsection{Button Panel}
+\label{subsec:button_panel}
 
-\subsubsection{Group Button}
+This panel is responsible for displaying bitmap buttons that users can interact with. Bitmap buttons are buttons that have an image as their icon. They initiate specific processes within the application, such as capturing an image or calibrating the camera. During the implementation phase, multiple types of bitmap buttons are used. Within the panel also contains group boxes, which is used to group buttons with similar functionalities. The implementation of these components is discussed in detail below.
 
 \subsubsection{Bitmap Button}
 Bitmap Button is a type of button that are used widely within the application. It contains a bitmap image and a text label positioned below the image. Figure \ref{fig:bitmap_button} shows an example of the bitmap buttons used within the application.
@@ -62,7 +70,7 @@ bitmap buttons are implemented. They are Type 1, Type 2, and Type 3. Two types, 
     \label{fig:bitmap_button}
 \end{figure}
 
-Figure \ref{fig:type1_state} shows the button appearance in different states for the Type1 bitmap button. This type of button is proper when the button triggers a process that requires a long time to complete. For example, when capturing an image, the button assumes a \textit{NORMAL} state when no image has been captured. When pressed, the process commences, and the button transitions to an \textit{ACTIVE} state, signifying that the process is underway. During this active state, the button is also disabled to prevent any potential interruptions or inadvertent re-triggering of the process. Once the process is completed, the button shifts to a \textit{DISABLE} state, preventing the reinitiation of the process.
+Figure \ref{fig:type1_state} shows the button appearance in different states for the Type 1 bitmap button. This type of button is designed to be utilized for process that requires a long time to complete. For example, when capturing an image, the button assumes a \textit{NORMAL} state when no image has been captured. When pressed, the process started, and the button transitions to an \textit{ACTIVE} state, signifying that the process is underway. During this active state, the button is also disabled to prevent any potential interruptions or accidental re-triggering of the process. Once the process is completed, the button shifts to a \textit{DISABLE} state, preventing the reinitiation of the process.
 
 \begin{figure}[!ht]
     \centering
@@ -89,18 +97,54 @@ The states for the Type 2 button are shown in Figure \ref{fig:type2_state}. This
 
 The last type of bitmap button is Type 3. In terms of appearance, it differs from the previous two types. This button contains only a bitmap image without the text label. It does not have states and is used to handle a straightforward process, such as exiting the application or opening the settings panel. An example of a Type 3 bitmap button can be seen in the title panel (see Figure \ref{fig:type3_state}).
 
+\subsection{Group Box}
+
+Buttons with similar functions can be grouped using a Group Box. This component can provide a better user experience by grouping buttons that perform similar functions. For instance, the Capture Panel (refer to Figure \ref{fig:group_example}) contains three buttons: Capture, Calibration, and ROI.
+
+Furthermore, the Group Box can also display the state of the application. For example, the Capture Group Box shows the current state of the captured data, whether it is empty or already captured (refer to Figure \ref{fig:group_state}). When the data is empty, the Group Box will display \textit{NONE} text in red. On the other hand, if the data is captured, the Group Box will display the text \textit{CAPTURED} in green color.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.75\textwidth]{texs/Part2/chapter4/image/groupexample.png}
+    \caption{Groups within Capture Panel}
+    \label{fig:group_example}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{subfigure}[c]{0.8\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=2 cm]{texs/Part2/chapter4/image/ok10.png}
+        \end{minipage}
+        \caption{Data is Empty}
+        \label{fig:group_empty}
+    \end{subfigure}
+    % \hfill
+    \begin{subfigure}[c]{0.8\textwidth}
+        \begin{minipage}{\textwidth}
+            \centering
+            \includegraphics[height=2 cm]{texs/Part2/chapter4/image/ok11.png}
+        \end{minipage}
+        \caption{Data is Captured}
+        \label{fig:group_captured}
+    \end{subfigure}
+    \caption{Example of different states of Group Box}
+    \label{fig:group_state}
+\end{figure}
+
 \subsubsection{Handling Button Input}
 \label{subsubsec:handling_button_input}
 The button input is handled using wxWidgets' provided event mechanism. For more details, refer to wxWidgets Documentation \cite{wxWidgetsEvent}.
 
-Handling button input involves binding the button to a specific function. When the button is pressed, an event is triggered, and the function is executed. Depending on the implementation, different buttons can trigger different functions. For instance, pressing the button to turn on the camera will trigger a function to activate the camera, while pressing the button to capture an image will trigger a function to take a picture.
+Handling button input involves binding the button to a specific function. When the button is pressed, an event is captured, and the function is executed. Depending on the implementation, different buttons can trigger different functions. For instance, pressing the button to turn on the camera will trigger a function to activate the camera, while pressing the button to capture an image will trigger a function to take a picture.
 
 To assign a specific function to a button, giving each button a unique ID is necessary. This unique identifier makes identifying and linking the button to a particular function easier. Detailed instructions on binding specific buttons to a function can be found in the project documentation (refer to Appendix {appendix:documentation}).
 
 \subsubsection{Updating Button State}
 A proper feedback mechanism is essential to ensure that the user is aware of the current state of the application. In the application context, the button state is used to provide feedback to the user on the current state of the application. For example, when the user interacts with a button to turn on the camera, the feedback to the user is that the button state changes from \textit{OFF} to \textit{ON}.
 
-Updating the button state is done using event handling, similar to the process of handling button input. An event is triggered when an update is required, for example, after a button is pressed or a process is completed, and the button state is updated accordingly. The controller component usually does this process, as it handles the application logic.
+Updating the button state is done using event handling, similar to the process of handling button input. An event is created and captured when an update is required, for example, after a button is pressed or a process is completed, and the button state is updated accordingly. The controller component usually does this process, as it handles the application logic.
 
 However, it is also important to note that while updating the component state is crucial, updating it too frequently can harm the application's performance. Therefore, it is crucial to find a balance between the two.
 
@@ -111,7 +155,7 @@ The Image Panel component is a crucial element of the user interface. It is a dy
 Moreover, the Image Panel also functions as a responsive input mechanism. Through proper event handling, users can interact with the Image Panel using various input methods, such as mouse interactions or touch-based inputs. This section focuses on the processes involved in presenting images to the user and enabling user interactions.
 
 \subsubsection{Displaying Image to the User}
-The \texttt{UpdatePreviewEvent} is a specific type of \textit{Data Event} responsible for updating images on the image panel. In general, a \textit{Data Event} is an event that contains data, which is discussed in greater detail in Section \ref{subsec:event_as_feedback_mechanism}. This event is usually triggered by either the Controller or threads, including the image that needs to be updated.
+The \texttt{UpdatePreviewEvent} is a specific type of \textit{Data Event} responsible for updating images on the image panel. In general, a \textit{Data Event} is an event that contains data, which is discussed in greater detail in Section \ref{subsec:event_as_feedback_mechanism}. This event is usually created by either the Controller or threads, including the image that needs to be updated.
 
 For instance, in displaying images from the camera within a thread's execution, every thread loop will create the \texttt{UpdatePreviewEvent} and the current camera image will also be included. The View will catch the submitted event, unpack the data, and display the information on the image panel.
 
@@ -126,9 +170,16 @@ The \texttt{wxMouseEvent} from wxWidgets can be utilized to enable this function
 
 A dialog is a user interface component commonly used in various libraries and frameworks. It is a modal window that appears on top of the application content to provide important information or ask for a decision \cite{Bay_2022}. When a dialog is open, all app functionality is disabled, and it persists on the screen until the user takes the required action, confirms it, or dismisses it \cite{Bay_2022}.
 
-This UI component is crucial, as it can provide users when immediate attention is necessary \cite{MaterialUI}. A simple use case for Dialog is with error handling. When an error occurs, a Dialog can inform the user about the error and provide options for the user to take action and resolve the problem.
+This UI component is crucial, as it can provide users when immediate attention is necessary \cite{MaterialUI}. A simple use case for Dialog is with error handling. When an error occurs, a Dialog can inform the user about the error and provide options for the user to take action and resolve the problem. Another use case is when the user needs to make a decision. For example, when the user wants to exit the application, a Dialog can be used to confirm the user's decision.
 
 A dialog box typically includes a title, some text, and buttons for users to take action, according to Android Developers \cite{Android_Developers}. The title briefly describes the dialog's purpose, while the text provides more detailed information. Users can take action by clicking on the buttons. Figure \ref{fig:message_dialog} shows an example of the dialog component.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.65\textwidth]{texs/Part2/chapter4/image/dialog.png}
+    \caption{Example of Message Dialog}
+    \label{fig:message_dialog}
+\end{figure}
 
 \subsection{Navigating between different panel}
 \label{subsec:navigating_between_different_panel}
@@ -206,7 +257,7 @@ Within this project, events play a huge role in the communication process betwee
 
 \textit{Empty Event} is an event that does not contain any data. It is used to inform the View regarding the status of the request. This type of event is usually utilized to inform the user of the current status of the requested process, such as when the process is started, completed, or failed.
 
-\textit{Data Event}, on the other hand, acts as a container to pass data between the View and the Controller. This type of event is used when the View requires data from the Controller, such as the captured image or the result of the calculation process. This type of event is also used to update the View with the latest data, such as the current camera image or application state.
+\textit{Data Event}, on the other hand, acts as a container to pass data between the View and the Controller. This type of event is used when the View requires data from the Model, such as the captured image or the result of the calculation process. This type of event is also used to update the View with the latest data, such as the current camera image or application state.
 
 Creating and handling events is done using wxWidgets' provided event mechanism. For more details, refer to wxWidgets Documentation \cite{wxWidgetsEvent}. Alternatively, the Project Documentation in Appendix \ref{appendix:documentation} also explains how to create custom events.
 
@@ -313,13 +364,20 @@ In addition, by using a thread pool as described in section \ref{subsec:thread-p
 \label{subsec:custom_lane}
 According to a previous study \cite{Sabtu_2023}, measuring the distance of an object from the camera requires knowledge of the distance between the two lanes on the road. Typically, in Germany, this distance is around 3.5 meters. However, in real-world situations, this distance may vary, leading to measurement inaccuracies. The study also highlights the importance of accurately selecting the lane representing the distance between the two lanes. Even a slight error in lane selection can result in a significant measurement error.
 
-A more straightforward approach has been implemented to simplify the process of selecting the correct line. A custom object of known dimensions is placed within the camera view, which acts as a reference object (as shown in Figure \ref{fig:custom_object}). The object has two lines that represent its width. Knowing the object's width makes lane selection easier, as the appropriate lane can be selected based on the object's width.
+A more straightforward approach has been implemented to simplify the process of selecting the correct line. A custom object of known dimensions is placed within the camera view, which acts as a reference object (as shown in Figure \ref{fig:custom_object}). The object has two lines: blue and yellow. Both of these lines are parallel to each other and are exactly 420 mm apart. Both of these lines will be used as a reference for the measurement process. Figure \ref{fig:select_lines} shows example of selecting lines for measurement.
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.6\textwidth]{texs/Part2/chapter4/image/matdimension.png}
     \caption{Custom Object}
     \label{fig:custom_object}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{texs/Part2/chapter4/image/mat2.png}
+    \caption{Example of selecting lines for measurement}
+    \label{fig:select_lines}
 \end{figure}
 
 \subsection{Distance Measurement}

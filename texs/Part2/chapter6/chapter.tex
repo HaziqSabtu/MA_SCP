@@ -1,6 +1,53 @@
 \chapter{Conclusions and Future Work}
 
 \section{Conclusions}
+This thesis aimed to design software that utilizes computer vision to measure a moving object's velocity accurately. The development approach adopted for this project was the Waterfall model - a straightforward, sequential method of software development that is particularly suitable for projects with clear and well-defined requirements. The Waterfall model consists of five phases: requirements analysis, design, coding, testing, and maintenance. This model was selected for its simplicity and ease of comprehension.
 
+During the requirements analysis phase, the software requirements are collected and examined. The stakeholders, including the supervisor and the end user, provide these requirements. The collected requirements are then analyzed to ensure they are precise, comprehensive, and coherent. The outcome of this phase is a document containing the complete set of software requirements.
+
+Within the design phase of software development, two crucial components are designed - the architecture and the user interface. To ensure that the software is easy to maintain, the architecture is designed with the Model-View-Controller (MVC) pattern as the backbone of the application. This pattern is selected because it is well-suited for developing user interfaces and separates the business logic from the user interface. A thread pool is also implemented to enhance the software's performance. In this phase, wireframing is performed to design the software's user interface, along with other critical aspects such as color and typography. The user flow is also created to visualize the flow of the software, making it easier to understand and navigate.
+
+During the coding phase, the software is created based on the design from the previous phase. We use the C++ programming language, along with essential libraries like OpenCV, wxWidgets, and libcamera, for developing the software. In this section, we have explained the implementation of the MVC architecture, outlining the role of each component.
+
+Improvements to the algorithms from previous works are also made during the coding phase. We focused on enhancing critical processes such as image alignment and speed measurement. To achieve this, we strategically implemented caching mechanisms and parallel execution through a thread pool. We also integrated a custom reference object to simplify lane selection. Additionally, we implemented an alternative method to measure speed that gives users another option instead of lane measurement.
+
+The software undergoes strict examination throughout the testing phase to guarantee its proper functionality. The primary approach employed for this purpose is unit testing, which concentrates on the individual units or components of the software system. This testing aims to confirm that each unit of the software executes its intended function and complies with the requirements. The unit tests are drafted utilizing the GTest framework, a C++ unit testing framework created by Google.
+
+After delivering the software to the end user, it will be maintained through bug fixing, adding new features, and improving the user interface. The maintenance activities aim to ensure that the software remains efficient and up-to-date.
 
 \section{Future Work}
+
+Due to a lack of time, many adaptations, tests, and experiments have been left for the future. Future work concerns deeper analysis of the algorithms and the implementation of new features and improvements to the user interface.
+
+\subsection{Software Design}
+
+During the design process in Chapter \ref{chapter:design}, we focused heavily on the software architecture, aiming to realize the MVC concept. While the results are satisfactory, there are still areas for improvement. The following ideas can be explored in the future:
+
+\begin{enumerate}
+    \item \textbf{Asynchronous Programming}: Asynchronous programming is a technique that allows a program to start a potentially long-running task without having to wait for it to finish before responding to other events \cite{MozDevNet}. Instead, the program can remain responsive while the task runs in the background. Once the task has been completed, the program is presented with the result. Request and response handling is currently implemented via endpoints and events in the Controller class. While this approach is functional, it can be difficult to understand and appears complicated. Asynchronous programming can simplify the request and response handling process and should be explored as an alternative approach.
+    \item \textbf{Thread pool implementation}: The current thread pool implementation requires a custom task class. Exploring an implementation that accepts functions directly could streamline the process. An example can be seen here \cite{Mtrebi}.
+\end{enumerate}
+
+\subsection{User Interface}
+
+The current user interface is simple and user-friendly, yet there is room for enhancement. The following ideas can be explored in the future:
+
+\begin{enumerate}
+    \item \textbf{Iterations Based on User Feedback}: Due to time constraints, only a few iterations were made to improve the user interface. Future works could focus on gathering more user information and iterating the UI based on feedback.
+    \item \textbf{Complete Overhaul}: In user interface design, it is important to follow the familiarity concept. This means that the user interface should be designed to be familiar to the user by taking inspiration from popular applications such as Instagram, Facebook, and Twitter. Following the design concept of these popular mobile applications, the user interface can be redesigned to enhance user experience.
+\end{enumerate}
+
+\subsection{Algorithm Improvement}
+Some improvements to the algorithms can also be explored to either improve the accuracy of the calculation or the ease of use of the software. The following ideas are proposed for future works:
+
+\begin{enumerate}
+    \item \textbf{Process smaller image size}: The current software implementation processes the image in its original size. While this is not an issue for powerful computers, it can cause problems for low-end computers. To address this, the image can be resized to a smaller size before processing. However, this may impact the accuracy of the calculation. In such cases, experiments can be conducted to determine the cost tradeoff between accuracy and processing time.
+    \item \textbf{Increase Capture Rate}: To improve the accuracy of speed calculation, particularly in distance measurement, it is possible to increase the capture rate. However, the ability to do so is restricted by hardware limitations, which can result in the system shutting down due to low voltage. To address this issue, it is necessary to either analyze the power consumption of the hardware and find ways to reduce it or upgrade to more powerful hardware.
+    \item \textbf{Accuracy of Lane Selection:} In Section \ref{subsec:custom_lane}, it was noted that the accuracy of lane selection is crucial for accurate speed calculation. However, the current lane selection implementation is imperfect, and its accuracy can sometimes be off, even with user input. Two potential solutions are suggested to improve the accuracy. One solution is to implement the ability to zoom in and out of the image within the \texttt{ImagePanel} class. This idea would allow users to select the intended lane better and improve accuracy. Another solution is to explore alternative line detection algorithms. The Hough Transform, a popular method for line detection, can be explored, but it relies heavily on parameter tuning, which can be problematic.
+    \item \textbf{Machine Learning Approach}: With the advancement of technology, neural networks can be explored to improve accuracy in computer vision.
+    \item \textbf{Automation of Process}: The ultimate goal of this project is to enable the software to process videos automatically without requiring user input. However, more research and understanding of the algorithm are needed to achieve this goal, particularly in the calibration phase.
+\end{enumerate}
+
+\subsection{Hardware Consideration}
+
+The Raspberry Pi Foundation recently launched a new product, the Raspberry Pi 5, which is an upgraded version of the Raspberry Pi 4 \cite{RaspberryPi5}. The Raspberry Pi 5 comes with a more powerful processor than its predecessor. Additionally, the camera module 3 has been released, an upgrade over the camera module 2 currently in use \cite{picamera_2023}. These new products can potentially enhance the software's performance and should be considered.
