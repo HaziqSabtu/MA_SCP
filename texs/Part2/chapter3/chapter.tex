@@ -3,7 +3,7 @@
 
 The design phase focuses on developing hardware and software architecture, which addresses performance, security, and data structure \cite{Hausen}. Furthermore, alongside technical considerations, attention is given to the user interface, ensuring it is user-friendly and navigable \cite{Hausen}.
 
-This section offers an overview of the project's software architecture, highlighting the utilization of the MVC model and integrating a thread pool to enhance efficiency. Moreover, it delves into user interface design principles, emphasizing familiarity and simplicity. The wireframe, color scheme, and font selection are also discussed. The concept of user flow is explained through task flows and Wireflow.
+This section offers an overview of the project's software architecture, highlighting the utilization of the MVC model and integrating a thread pool to enhance efficiency. Moreover, it delves into user interface design principles, emphasizing familiarity and simplicity.
 
 \section{Software Architecture}
 \label{sec:software-architecture}
@@ -28,7 +28,7 @@ Another feature shown in Figure \ref{fig:architechture} is the implementation of
 
 Moreover, implementing multiple controllers is necessary to prevent the \textit{Promiscuous Controller} problem as mentioned in \cite[2127]{Aniche2017}. This issue occurs when a single controller handles too many responsibilities, causing it to become bloated and difficult to maintain. By separating the controllers, each controller can efficiently handle specific responsibilities, making the system easier to maintain.
 
-It is worth noting that the view components are carefully separated from each other. This intentional separation prevents any accidental mixing of view elements. For instance, View 1 may require specific UI components, while View 2 may need an entirely different set. This implementation simplifies the implementation process and makes it easier to understand.
+It is worth noting that the view components are carefully separated from each other. This intentional separation prevents any accidental mixing of view elements. For instance, View 1 may require specific UI components, while View 2 may need an entirely different set. This simplifies the implementation process and makes it easier to understand.
 
 The design of request and response cycles is shown in Figure \ref{fig:reqres}. This design is crucial because it enables the View and Controller to communicate with each other. The Controller will handle any request from View via provided endpoints, process it, and then send it back to the View as a response via event.
 
@@ -74,7 +74,7 @@ A user-friendly UI design is pivotal in enriching the user experience, boosting 
 
 Various design guidelines can be used to create a user-friendly UI design. Paun \cite{Paun_2020} stated that familiarity with UI design benefits both users and designers. It streamlines workflows, ensures a seamless experience, and efficiently uses established conventions. Adhering to standards and maintaining consistency is essential for a unified and positive user experience.
 
-Fleck \cite{Fleck_2021} argues that simplicity in design plays a crucial role in UI design. A simple design minimizes cognitive load and allows users to accomplish tasks efficiently. The author also emphasizes that it is essential to remember that simplicity does not mean sacrificing functionality; instead, it means prioritizing essential elements and removing any extraneous details that may cause confusion or overwhelm the user.
+Fleck \cite{Fleck_2021} argues that simplicity in design plays a crucial role in UI design. A simple design minimizes cognitive load and allows users to accomplish tasks efficiently. The author also emphasizes that it is essential to remember that simplicity does not mean sacrificing functionality; instead, it means prioritizing essential elements and removing any unnecessary details that may cause confusion or overwhelm the user.
 
 In GUI design, feedback is as important as consistency and simplicity. It comes in forms like visual cues and error messages, helping users understand the product's state and how to interact with it. This feedback lessens confusion, builds trust, and aids in learning how to use the product, even when errors occur. \cite{Florido_2022}
 

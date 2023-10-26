@@ -25,7 +25,7 @@ During the design process in Chapter \ref{chapter:design}, we focused heavily on
 
 \begin{enumerate}
     \item \textbf{Asynchronous Programming}: Asynchronous programming is a technique that allows a program to start a potentially long-running task without having to wait for it to finish before responding to other events \cite{MozDevNet}. Instead, the program can remain responsive while the task runs in the background. Once the task has been completed, the program is presented with the result. Request and response handling is currently implemented via endpoints and events in the Controller class. While this approach is functional, it can be difficult to understand and appears complicated. Asynchronous programming can simplify the request and response handling process and should be explored as an alternative approach.
-    \item \textbf{Thread pool implementation}: The current thread pool implementation requires a custom task class. Exploring an implementation that accepts functions directly could streamline the process. An example can be seen here \cite{Mtrebi}.
+    \item \textbf{Thread pool implementation}: The current thread pool implementation requires a custom task class. Exploring an implementation that accepts functions directly could simplify the process. An example can be seen here \cite{Mtrebi}.
 \end{enumerate}
 
 \subsection{User Interface}
