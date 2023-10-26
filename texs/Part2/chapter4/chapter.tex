@@ -20,7 +20,7 @@ To further streamline the development process of View,  a set of guidelines has 
 This guideline emphasizes that the View should be adept at managing and processing user interactions. It is responsible for capturing user inputs, such as mouse clicks, keyboard entries, or touch gestures, and conveying them to the Controller for further processing. This can involve events like form submissions, button clicks, or interactions with interactive elements on the user interface.
 
 \subsubsection{Avoid any business logic}
-This directive underscores the importance of maintaining a clear separation of concerns within the MVC architecture. The View should refrain from incorporating any form of business logic that involves tasks like data validation, computation, or decision-making processes. Instead, these responsibilities are delegated to the Model and Controller components. By adhering to this guideline, the View remains focused on its core function of presenting data and interacting with the user interface.
+This requirement underscores the importance of maintaining a clear separation of concerns within the MVC architecture. The View should refrain from incorporating any form of business logic that involves tasks like data validation, computation, or decision-making processes. Instead, these responsibilities are delegated to the Model and Controller components. By adhering to this guideline, the View remains focused on its core function of presenting data and interacting with the user interface.
 
 \subsubsection{Avoiding Direct Model Manipulation}
 This guideline reinforces the principle of ensuring that the View does not directly modify the state or data of the Model. Instead, any alterations to the underlying data should be orchestrated through the Controller. This guideline establishes a controlled data flow within the application, maintaining data integrity and adherence to the MVC architectural pattern.
@@ -99,7 +99,7 @@ The last type of bitmap button is Type 3. In terms of appearance, it differs fro
 
 \subsection{Group Box}
 
-Buttons with similar functions can be grouped using a Group Box. This component can provide a better user experience by grouping buttons that perform similar functions. For instance, the Capture Panel (refer to Figure \ref{fig:group_example}) contains three buttons: Capture, Calibration, and ROI.
+Organizing buttons with similar functions using a Group Box is a beneficial practice that can elevate the user experience. This component can streamline navigation and improve overall functionality by grouping buttons that perform similar tasks. As an illustration, the Capture Panel (as exemplified in Figure \ref{fig:group_example}) displays three distinct groups: Capture, Calibration, and ROI. Within the Capture Group, three buttons relate to the capturing process: the Capture Button, which captures images; the Load Button, which loads images; and the Toggle Camera Button, which activates the camera.
 
 Furthermore, the Group Box can also display the state of the application. For example, the Capture Group Box shows the current state of the captured data, whether it is empty or already captured (refer to Figure \ref{fig:group_state}). When the data is empty, the Group Box will display \textit{NONE} text in red. On the other hand, if the data is captured, the Group Box will display the text \textit{CAPTURED} in green color.
 
@@ -139,7 +139,7 @@ The button input is handled using wxWidgets' provided event mechanism. For more 
 
 Handling button input involves binding the button to a specific function. When the button is pressed, an event is captured, and the function is executed. Depending on the implementation, different buttons can trigger different functions. For instance, pressing the button to turn on the camera will trigger a function to activate the camera, while pressing the button to capture an image will trigger a function to take a picture.
 
-To assign a specific function to a button, giving each button a unique ID is necessary. This unique identifier makes identifying and linking the button to a particular function easier. Detailed instructions on binding specific buttons to a function can be found in the project documentation (refer to Appendix {appendix:documentation}).
+To assign a specific function to a button, giving each button a unique ID is necessary. This unique identifier makes identifying and linking the button to a particular function easier. Detailed instructions on binding specific buttons to a function can be found in the developer manual in Appendix \ref{appendix:developer-manual}. Alternatively, the project documentation in Appendix \ref{appendix:documentation} also provides a detailed explanation of the process.
 
 \subsubsection{Updating Button State}
 A proper feedback mechanism is essential to ensure that the user is aware of the current state of the application. In the application context, the button state is used to provide feedback to the user on the current state of the application. For example, when the user interacts with a button to turn on the camera, the feedback to the user is that the button state changes from \textit{OFF} to \textit{ON}.
@@ -172,7 +172,7 @@ A dialog is a user interface component commonly used in various libraries and fr
 
 This UI component is crucial, as it can provide users when immediate attention is necessary \cite{MaterialUI}. A simple use case for Dialog is with error handling. When an error occurs, a Dialog can inform the user about the error and provide options for the user to take action and resolve the problem. Another use case is when the user needs to make a decision. For example, when the user wants to exit the application, a Dialog can be used to confirm the user's decision.
 
-A dialog box typically includes a title, some text, and buttons for users to take action, according to Android Developers \cite{Android_Developers}. The title briefly describes the dialog's purpose, while the text provides more detailed information. Users can take action by clicking on the buttons. Figure \ref{fig:message_dialog} shows an example of the dialog component.
+According to Android Developers \cite{Android_Developers}, A dialog box typically includes a title, some text, and buttons for users to take action. The title briefly describes the dialog's purpose, while the text provides more detailed information. Users can take action by clicking on the buttons. Figure \ref{fig:message_dialog} shows an example of the dialog component.
 
 \begin{figure}[!ht]
     \centering
@@ -184,7 +184,7 @@ A dialog box typically includes a title, some text, and buttons for users to tak
 \subsection{Navigating between different panel}
 \label{subsec:navigating_between_different_panel}
 
-This application has multiple panels or views implemented based on its different functionalities. For instance, the capture panel helps capture an image, while the calibration panel helps perform camera calibration. Since there are multiple views, it is essential to have a proper method to display them to the user.
+This application has multiple panels or views implemented based on its different functionalities. For instance, the capture panel helps capture an image, while the calibration panel helps perform camera calibration. Since there are multiple views, it is essential to have a proper control method to display them to the user.
 
 To simplify the process, we have implemented a rule that only one View can be displayed within the frame while the others remain hidden. The implementation is done by using the \texttt{Show()} and \texttt{Hide()} methods provided by wxWidgets. The current active View will be hidden with the \texttt{Hide()} method during the navigation process, while the new View will be shown.
 
@@ -364,7 +364,7 @@ In addition, by using a thread pool as described in section \ref{subsec:thread-p
 \label{subsec:custom_lane}
 According to a previous study \cite{Sabtu_2023}, measuring the distance of an object from the camera requires knowledge of the distance between the two lanes on the road. Typically, in Germany, this distance is around 3.5 meters. However, in real-world situations, this distance may vary, leading to measurement inaccuracies. The study also highlights the importance of accurately selecting the lane representing the distance between the two lanes. Even a slight error in lane selection can result in a significant measurement error.
 
-A more straightforward approach has been implemented to simplify the process of selecting the correct line. A custom object of known dimensions is placed within the camera view, which acts as a reference object (as shown in Figure \ref{fig:custom_object}). The object has two lines: blue and yellow. Both of these lines are parallel to each other and are exactly 420 mm apart. Both of these lines will be used as a reference for the measurement process. Figure \ref{fig:select_lines} shows example of selecting lines for measurement.
+A simplified method has been introduced to streamline the selection of the appropriate line. This method introduces a custom object with predetermined dimensions into the camera's field of view, serving as a reference point (as depicted in Figure \ref{fig:custom_object}). This object includes two lines, one in blue and the other in yellow. Both lines run parallel and are precisely 420 mm apart and will serve as references for the measurement procedure. An illustration of the line selection process can be seen in Figure \ref{fig:select_lines}.
 
 \begin{figure}[!ht]
     \centering
