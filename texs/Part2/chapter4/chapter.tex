@@ -86,7 +86,7 @@ Figure \ref{fig:type1_state} shows the button appearance in different states for
     \label{fig:type2_state}
 \end{figure}
 
-The states for the Type 2 button are shown in Figure \ref{fig:type2_state}. This type of button is used when the button is used to trigger a process that requires toggling. For instance, when turning on a camera, the button assumes an \textit{OFF} state when the process has not been initiated and is available for activation. Upon pressing the button, the process initiates, and the button transitions to an \textit{ON} state, indicating that the process is actively running. If necessary, pressing the button again will revert the state to \textit{OFF}, effectively terminating the ongoing process.
+The states for the Type 2 button are shown in Figure \ref{fig:type2_state}. This type of button is used to trigger a process that requires toggling. For instance, when turning on a camera, the button assumes an \textit{OFF} state when the process has not been initiated and is available for activation. Upon pressing the button, the process initiates, and the button transitions to an \textit{ON} state, indicating that the process is actively running. If necessary, pressing the button again will revert the state to \textit{OFF}, effectively terminating the ongoing process.
 
 \begin{figure}[!ht]
     \centering
@@ -155,7 +155,7 @@ The Image Panel component is a crucial element of the user interface. It is a dy
 Moreover, the Image Panel also functions as a responsive input mechanism. Through proper event handling, users can interact with the Image Panel using various input methods, such as mouse interactions or touch-based inputs. This section focuses on the processes involved in presenting images to the user and enabling user interactions.
 
 \subsubsection{Displaying Image to the User}
-The \texttt{UpdatePreviewEvent} is a specific type of \textit{Data Event} responsible for updating images on the image panel. In general, a \textit{Data Event} is an event that contains data, which is discussed in greater detail in Section \ref{subsec:event_as_feedback_mechanism}. This event is usually created by either the Controller or threads, including the image that needs to be updated.
+The \texttt{UpdatePreviewEvent} is a specific type of \textit{Data Event} responsible for updating images on the image panel. In general, a \textit{Data Event} is an event that contains data, which is discussed later in Section \ref{subsec:event_as_feedback_mechanism}. This event is usually created by either the Controller or threads, including the image that needs to be updated.
 
 For instance, in displaying images from the camera within a thread's execution, every thread loop will create the \texttt{UpdatePreviewEvent} and the current camera image will also be included. The View will catch the submitted event, unpack the data, and display the information on the image panel.
 
@@ -311,7 +311,7 @@ The author has mentioned that the entire process can be pretty time-consuming, e
         Homography                           & 2.27                                & 0.069                      \\ \hline
         Transform                            & 37.01                               & 1.120                      \\ \hline
     \end{tabular}
-    \caption{Time taken for each process}
+    \caption{Time taken for each process (Measured on Raspberry Pi 4)}
     \label{table:time_taken}
 \end{table}
 
